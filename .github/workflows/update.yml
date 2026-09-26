@@ -1,0 +1,51 @@
+name: Update OWCS data
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 01:17 UTC = 10:17 JST
+    - cron: '17 1 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: owcs-data-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Parser self-test
+        run: python fetch_owcs.py --self-test
+
+      - name: Fetch Liquipedia and build cache
+        env:
+          LIQUIPEDIA_CONTACT: ${{ secrets.LIQUIPEDIA_CONTACT }}
+        run: python fetch_owcs.py
+
+      - name: Commit updated JSON
+        run: |
+          git config user.name "owcs-data-bot"
+          git config user.email "owcs-data-bot@users.noreply.github.com"
+          git add data/owcs.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Update OWCS data"
+          git push
