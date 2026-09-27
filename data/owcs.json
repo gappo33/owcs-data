@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generator_version": "3.2.0",
-  "generated_at": "2026-09-27T18:05:24+00:00",
-  "generated_at_jst": "2026-09-28T03:05:24+09:00",
+  "generator_version": "3.4.0",
+  "generated_at": "2026-09-27T22:49:11+00:00",
+  "generated_at_jst": "2026-09-28T07:49:11+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "regions": {
@@ -5733,7 +5733,7 @@
       "match_status": "OK",
       "bans": 0,
       "rosters": 61,
-      "roster_status": "OK"
+      "roster_status": "ERROR"
     },
     {
       "region": "KR",
@@ -5754,7 +5754,7 @@
       "match_status": "OK",
       "bans": 0,
       "rosters": 82,
-      "roster_status": "OK"
+      "roster_status": "ERROR"
     },
     {
       "region": "NA",
@@ -5808,5 +5808,16 @@
       "roster_status": "not-requested"
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "region": "JP",
+      "page": "roster",
+      "error": "roster parser safety stop: visual=parsed 0 entries; legacy=parsed 0 entries"
+    },
+    {
+      "region": "KR",
+      "page": "roster",
+      "error": "roster parser safety stop: visual=parsed 0 entries; legacy=parsed 0 entries"
+    }
+  ]
 }
