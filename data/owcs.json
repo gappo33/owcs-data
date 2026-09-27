@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generator_version": "3.0.0",
-  "generated_at": "2026-09-27T01:24:32+00:00",
-  "generated_at_jst": "2026-09-27T10:24:32+09:00",
+  "generator_version": "3.1.0",
+  "generated_at": "2026-09-27T17:03:55+00:00",
+  "generated_at_jst": "2026-09-28T02:03:55+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "regions": {
@@ -10,8 +10,1505 @@
       "region": "JP",
       "label": "Japan",
       "standings": [],
-      "finished_matches": [],
-      "upcoming_matches": [],
+      "finished_matches": [
+        {
+          "region": "JP",
+          "date_jst": "2026-09-21T18:10:00+09:00",
+          "team_a": "ENTER FORCE.36",
+          "team_b": "Lazuli",
+          "score_a": 3,
+          "score_b": 0,
+          "finished": true,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-09-21T18:10:00+09:00|ENTER FORCE.36|Lazuli",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "Busan",
+              "score_a": "2",
+              "score_b": "0",
+              "winner": "ENTER FORCE.36",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "mauga",
+              "ban_b": "shion",
+              "received_a": "shion",
+              "received_b": "mauga"
+            },
+            {
+              "map_no": 2,
+              "map": "Aatlis",
+              "score_a": "3",
+              "score_b": "1",
+              "winner": "ENTER FORCE.36",
+              "picker": "Lazuli",
+              "picker_basis": "Previous map loser",
+              "ban_a": "cassidy",
+              "ban_b": "jetpack cat",
+              "received_a": "jetpack cat",
+              "received_b": "cassidy"
+            },
+            {
+              "map_no": 3,
+              "map": "Eichenwalde",
+              "score_a": "3",
+              "score_b": "1",
+              "winner": "ENTER FORCE.36",
+              "picker": "Lazuli",
+              "picker_basis": "Previous map loser",
+              "ban_a": "kiriko",
+              "ban_b": "bastion",
+              "received_a": "bastion",
+              "received_b": "kiriko"
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-09-21T19:30:00+09:00",
+          "team_a": "REVATI",
+          "team_b": "Please Not Hero Ban",
+          "score_a": 2,
+          "score_b": 3,
+          "finished": true,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-09-21T19:30:00+09:00|REVATI|Please Not Hero Ban",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "Samoa",
+              "score_a": "2",
+              "score_b": "0",
+              "winner": "REVATI",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "jetpack cat",
+              "ban_b": "tracer",
+              "received_a": "tracer",
+              "received_b": "jetpack cat"
+            },
+            {
+              "map_no": 2,
+              "map": "Esperança",
+              "score_a": "52.69",
+              "score_b": "141.97",
+              "winner": "Please Not Hero Ban",
+              "picker": "Please Not Hero Ban",
+              "picker_basis": "Previous map loser",
+              "ban_a": "bastion",
+              "ban_b": "mauga",
+              "received_a": "mauga",
+              "received_b": "bastion"
+            },
+            {
+              "map_no": 3,
+              "map": "New Junk City",
+              "score_a": "1",
+              "score_b": "3",
+              "winner": "Please Not Hero Ban",
+              "picker": "REVATI",
+              "picker_basis": "Previous map loser",
+              "ban_a": "ana",
+              "ban_b": "cassidy",
+              "received_a": "cassidy",
+              "received_b": "ana"
+            },
+            {
+              "map_no": 4,
+              "map": "Route 66",
+              "score_a": "5",
+              "score_b": "4",
+              "winner": "REVATI",
+              "picker": "REVATI",
+              "picker_basis": "Previous map loser",
+              "ban_a": "wrecking ball",
+              "ban_b": "ana",
+              "received_a": "ana",
+              "received_b": "wrecking ball"
+            },
+            {
+              "map_no": 5,
+              "map": "Paraíso",
+              "score_a": "2",
+              "score_b": "3",
+              "winner": "Please Not Hero Ban",
+              "picker": "Please Not Hero Ban",
+              "picker_basis": "Previous map loser",
+              "ban_a": "wuyang",
+              "ban_b": "shion",
+              "received_a": "shion",
+              "received_b": "wuyang"
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-09-21T21:50:00+09:00",
+          "team_a": "99DIVINE",
+          "team_b": "VARREL",
+          "score_a": 1,
+          "score_b": 3,
+          "finished": true,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-09-21T21:50:00+09:00|99DIVINE|VARREL",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "Nepal",
+              "score_a": "1",
+              "score_b": "2",
+              "winner": "VARREL",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "orisa",
+              "ban_b": "kiriko",
+              "received_a": "kiriko",
+              "received_b": "orisa"
+            },
+            {
+              "map_no": 2,
+              "map": "Neon Junction",
+              "score_a": "2",
+              "score_b": "1",
+              "winner": "99DIVINE",
+              "picker": "99DIVINE",
+              "picker_basis": "Previous map loser",
+              "ban_a": "wuyang",
+              "ban_b": "bastion",
+              "received_a": "bastion",
+              "received_b": "wuyang"
+            },
+            {
+              "map_no": 3,
+              "map": "Shambali Monastery",
+              "score_a": "0",
+              "score_b": "1",
+              "winner": "VARREL",
+              "picker": "VARREL",
+              "picker_basis": "Previous map loser",
+              "ban_a": "illari",
+              "ban_b": "mauga",
+              "received_a": "mauga",
+              "received_b": "illari"
+            },
+            {
+              "map_no": 4,
+              "map": "Aatlis",
+              "score_a": "1",
+              "score_b": "3",
+              "winner": "VARREL",
+              "picker": "99DIVINE",
+              "picker_basis": "Previous map loser",
+              "ban_a": "ana",
+              "ban_b": "shion",
+              "received_a": "shion",
+              "received_b": "ana"
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-09-22T18:10:00+09:00",
+          "team_a": "Please Not Hero Ban",
+          "team_b": "MURASH GAMING",
+          "score_a": 0,
+          "score_b": 3,
+          "finished": true,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-09-22T18:10:00+09:00|Please Not Hero Ban|MURASH GAMING",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "Nepal",
+              "score_a": "1",
+              "score_b": "2",
+              "winner": "MURASH GAMING",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "mizuki",
+              "ban_b": "wrecking ball",
+              "received_a": "wrecking ball",
+              "received_b": "mizuki"
+            },
+            {
+              "map_no": 2,
+              "map": "Esperança",
+              "score_a": "7.38",
+              "score_b": "141.97",
+              "winner": "MURASH GAMING",
+              "picker": "Please Not Hero Ban",
+              "picker_basis": "Previous map loser",
+              "ban_a": "cassidy",
+              "ban_b": "ana",
+              "received_a": "ana",
+              "received_b": "cassidy"
+            },
+            {
+              "map_no": 3,
+              "map": "Route 66",
+              "score_a": "0",
+              "score_b": "1",
+              "winner": "MURASH GAMING",
+              "picker": "Please Not Hero Ban",
+              "picker_basis": "Previous map loser",
+              "ban_a": "jetpack cat",
+              "ban_b": "torbjorn",
+              "received_a": "torbjorn",
+              "received_b": "jetpack cat"
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-09-22T19:20:00+09:00",
+          "team_a": "ENTER FORCE.36",
+          "team_b": "Uwinks",
+          "score_a": 3,
+          "score_b": 0,
+          "finished": true,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-09-22T19:20:00+09:00|ENTER FORCE.36|Uwinks",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "Samoa",
+              "score_a": "2",
+              "score_b": "0",
+              "winner": "ENTER FORCE.36",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "bastion",
+              "ban_b": "d.mon",
+              "received_a": "d.mon",
+              "received_b": "bastion"
+            },
+            {
+              "map_no": 2,
+              "map": "Neon Junction",
+              "score_a": "3",
+              "score_b": "2",
+              "winner": "ENTER FORCE.36",
+              "picker": "Uwinks",
+              "picker_basis": "Previous map loser",
+              "ban_a": "zarya",
+              "ban_b": "jetpack cat",
+              "received_a": "jetpack cat",
+              "received_b": "zarya"
+            },
+            {
+              "map_no": 3,
+              "map": "Esperança",
+              "score_a": "141.97",
+              "score_b": "69.75",
+              "winner": "ENTER FORCE.36",
+              "picker": "Uwinks",
+              "picker_basis": "Previous map loser",
+              "ban_a": "mauga",
+              "ban_b": "bastion",
+              "received_a": "bastion",
+              "received_b": "mauga"
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-09-22T20:40:00+09:00",
+          "team_a": "VARREL",
+          "team_b": "REVATI",
+          "score_a": 3,
+          "score_b": 0,
+          "finished": true,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-09-22T20:40:00+09:00|VARREL|REVATI",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "Busan",
+              "score_a": "2",
+              "score_b": "0",
+              "winner": "VARREL",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "lucio",
+              "ban_b": "cassidy",
+              "received_a": "cassidy",
+              "received_b": "lucio"
+            },
+            {
+              "map_no": 2,
+              "map": "Suravasa",
+              "score_a": "3",
+              "score_b": "0",
+              "winner": "VARREL",
+              "picker": "REVATI",
+              "picker_basis": "Previous map loser",
+              "ban_a": "kiriko",
+              "ban_b": "d.mon",
+              "received_a": "d.mon",
+              "received_b": "kiriko"
+            },
+            {
+              "map_no": 3,
+              "map": "Neon Junction",
+              "score_a": "3",
+              "score_b": "1",
+              "winner": "VARREL",
+              "picker": "REVATI",
+              "picker_basis": "Previous map loser",
+              "ban_a": "bastion",
+              "ban_b": "wuyang",
+              "received_a": "wuyang",
+              "received_b": "bastion"
+            }
+          ]
+        }
+      ],
+      "upcoming_matches": [
+        {
+          "region": "JP",
+          "date_jst": "2026-09-28T18:00:00+09:00",
+          "team_a": "Please Not Hero Ban",
+          "team_b": "Lazuli",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-09-28T18:00:00+09:00|Please Not Hero Ban|Lazuli",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-09-28T19:30:00+09:00",
+          "team_a": "REVATI",
+          "team_b": "99DIVINE",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-09-28T19:30:00+09:00|REVATI|99DIVINE",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-09-28T21:00:00+09:00",
+          "team_a": "MURASH GAMING",
+          "team_b": "ENTER FORCE.36",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-09-28T21:00:00+09:00|MURASH GAMING|ENTER FORCE.36",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-09-29T18:00:00+09:00",
+          "team_a": "Please Not Hero Ban",
+          "team_b": "Uwinks",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-09-29T18:00:00+09:00|Please Not Hero Ban|Uwinks",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-09-29T19:30:00+09:00",
+          "team_a": "MURASH GAMING",
+          "team_b": "99DIVINE",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-09-29T19:30:00+09:00|MURASH GAMING|99DIVINE",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-09-29T21:00:00+09:00",
+          "team_a": "Lazuli",
+          "team_b": "VARREL",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-09-29T21:00:00+09:00|Lazuli|VARREL",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-05T18:00:00+09:00",
+          "team_a": "Uwinks",
+          "team_b": "VARREL",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-05T18:00:00+09:00|Uwinks|VARREL",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-05T19:30:00+09:00",
+          "team_a": "Please Not Hero Ban",
+          "team_b": "ENTER FORCE.36",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-05T19:30:00+09:00|Please Not Hero Ban|ENTER FORCE.36",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-05T21:00:00+09:00",
+          "team_a": "REVATI",
+          "team_b": "Lazuli",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-05T21:00:00+09:00|REVATI|Lazuli",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-06T18:00:00+09:00",
+          "team_a": "Uwinks",
+          "team_b": "99DIVINE",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-06T18:00:00+09:00|Uwinks|99DIVINE",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-06T19:30:00+09:00",
+          "team_a": "ENTER FORCE.36",
+          "team_b": "VARREL",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-06T19:30:00+09:00|ENTER FORCE.36|VARREL",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-06T21:00:00+09:00",
+          "team_a": "MURASH GAMING",
+          "team_b": "Lazuli",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-06T21:00:00+09:00|MURASH GAMING|Lazuli",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-12T18:00:00+09:00",
+          "team_a": "Uwinks",
+          "team_b": "REVATI",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-12T18:00:00+09:00|Uwinks|REVATI",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-12T19:30:00+09:00",
+          "team_a": "Lazuli",
+          "team_b": "99DIVINE",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-12T19:30:00+09:00|Lazuli|99DIVINE",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-12T21:00:00+09:00",
+          "team_a": "VARREL",
+          "team_b": "MURASH GAMING",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-12T21:00:00+09:00|VARREL|MURASH GAMING",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-13T18:00:00+09:00",
+          "team_a": "ENTER FORCE.36",
+          "team_b": "REVATI",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-13T18:00:00+09:00|ENTER FORCE.36|REVATI",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-13T19:30:00+09:00",
+          "team_a": "MURASH GAMING",
+          "team_b": "Uwinks",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-13T19:30:00+09:00|MURASH GAMING|Uwinks",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-13T21:00:00+09:00",
+          "team_a": "99DIVINE",
+          "team_b": "Please Not Hero Ban",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-13T21:00:00+09:00|99DIVINE|Please Not Hero Ban",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-14T18:00:00+09:00",
+          "team_a": "VARREL",
+          "team_b": "Please Not Hero Ban",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-14T18:00:00+09:00|VARREL|Please Not Hero Ban",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-14T19:30:00+09:00",
+          "team_a": "REVATI",
+          "team_b": "MURASH GAMING",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-14T19:30:00+09:00|REVATI|MURASH GAMING",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-14T21:00:00+09:00",
+          "team_a": "99DIVINE",
+          "team_b": "ENTER FORCE.36",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-14T21:00:00+09:00|99DIVINE|ENTER FORCE.36",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-14T22:30:00+09:00",
+          "team_a": "Lazuli",
+          "team_b": "Uwinks",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
+          "key": "JP|2026-10-14T22:30:00+09:00|Lazuli|Uwinks",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        }
+      ],
       "rosters": [],
       "hero_bans": [],
       "sources": {
@@ -2885,14 +4382,23 @@
     {
       "region": "JP",
       "page": "regular",
-      "status": "ERROR",
-      "message": "standings safety stop: expected 8, parsed 0"
+      "status": "OK",
+      "revid": 1147481,
+      "standings": 0,
+      "standings_status": "ERROR",
+      "matches": 28,
+      "match_status": "OK"
     },
     {
       "region": "JP",
       "page": "overview",
-      "status": "ERROR",
-      "message": "overview match parser safety stop: popup exists but parsed 0 matches"
+      "status": "OK",
+      "revid": 1147486,
+      "matches": 0,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 0,
+      "roster_status": "ERROR"
     },
     {
       "region": "KR",
@@ -2900,19 +4406,26 @@
       "status": "OK",
       "revid": 1147545,
       "standings": 0,
-      "matches": 36
+      "standings_status": "OK",
+      "matches": 36,
+      "match_status": "OK"
     },
     {
       "region": "KR",
       "page": "overview",
-      "status": "ERROR",
-      "message": "overview match parser safety stop: popup exists but parsed 0 matches"
+      "status": "OK",
+      "revid": 1147500,
+      "matches": 0,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 0,
+      "roster_status": "ERROR"
     },
     {
       "region": "NA",
       "page": "regular",
-      "status": "ERROR",
-      "message": "Liquipedia API error for Overwatch_Champions_Series/2026/NA/Stage_3/Regular_Season: {'code': 'missingtitle', 'info': \"The page you specified doesn't exist.\", 'docref': 'See https://liquipedia.net/overwatch/api.php for API usage. Subscribe to the mediawiki-api-announce mailing list at &lt;https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/&gt; for notice of API deprecations and breaking changes.'}"
+      "status": "SKIP",
+      "message": "regular-season page not published yet"
     },
     {
       "region": "NA",
@@ -2920,6 +4433,7 @@
       "status": "OK",
       "revid": 1147229,
       "matches": 0,
+      "match_status": "OK",
       "bans": 0,
       "rosters": 0,
       "roster_status": "not-requested"
@@ -2927,8 +4441,8 @@
     {
       "region": "EMEA",
       "page": "regular",
-      "status": "ERROR",
-      "message": "Liquipedia API error for Overwatch_Champions_Series/2026/EMEA/Stage_3/Regular_Season: {'code': 'missingtitle', 'info': \"The page you specified doesn't exist.\", 'docref': 'See https://liquipedia.net/overwatch/api.php for API usage. Subscribe to the mediawiki-api-announce mailing list at &lt;https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/&gt; for notice of API deprecations and breaking changes.'}"
+      "status": "SKIP",
+      "message": "regular-season page not published yet"
     },
     {
       "region": "EMEA",
@@ -2936,6 +4450,7 @@
       "status": "OK",
       "revid": 1144981,
       "matches": 0,
+      "match_status": "OK",
       "bans": 0,
       "rosters": 0,
       "roster_status": "not-requested"
@@ -2943,15 +4458,16 @@
     {
       "region": "CHINA",
       "page": "regular",
-      "status": "ERROR",
-      "message": "Liquipedia API error for Overwatch_Champions_Series/2026/China/Stage_3/Regular_Season: {'code': 'missingtitle', 'info': \"The page you specified doesn't exist.\", 'docref': 'See https://liquipedia.net/overwatch/api.php for API usage. Subscribe to the mediawiki-api-announce mailing list at &lt;https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/&gt; for notice of API deprecations and breaking changes.'}"
+      "status": "SKIP",
+      "message": "regular-season page not published yet"
     },
     {
       "region": "CHINA",
       "page": "overview",
       "status": "OK",
-      "revid": 1147785,
+      "revid": 1147895,
       "matches": 0,
+      "match_status": "OK",
       "bans": 0,
       "rosters": 0,
       "roster_status": "not-requested"
@@ -2960,33 +4476,18 @@
   "errors": [
     {
       "region": "JP",
-      "page": "regular",
+      "page": "regular-standings",
       "error": "standings safety stop: expected 8, parsed 0"
     },
     {
       "region": "JP",
-      "page": "overview",
-      "error": "overview match parser safety stop: popup exists but parsed 0 matches"
+      "page": "roster",
+      "error": "roster parser safety stop: parsed 0 entries"
     },
     {
       "region": "KR",
-      "page": "overview",
-      "error": "overview match parser safety stop: popup exists but parsed 0 matches"
-    },
-    {
-      "region": "NA",
-      "page": "regular",
-      "error": "Liquipedia API error for Overwatch_Champions_Series/2026/NA/Stage_3/Regular_Season: {'code': 'missingtitle', 'info': \"The page you specified doesn't exist.\", 'docref': 'See https://liquipedia.net/overwatch/api.php for API usage. Subscribe to the mediawiki-api-announce mailing list at &lt;https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/&gt; for notice of API deprecations and breaking changes.'}"
-    },
-    {
-      "region": "EMEA",
-      "page": "regular",
-      "error": "Liquipedia API error for Overwatch_Champions_Series/2026/EMEA/Stage_3/Regular_Season: {'code': 'missingtitle', 'info': \"The page you specified doesn't exist.\", 'docref': 'See https://liquipedia.net/overwatch/api.php for API usage. Subscribe to the mediawiki-api-announce mailing list at &lt;https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/&gt; for notice of API deprecations and breaking changes.'}"
-    },
-    {
-      "region": "CHINA",
-      "page": "regular",
-      "error": "Liquipedia API error for Overwatch_Champions_Series/2026/China/Stage_3/Regular_Season: {'code': 'missingtitle', 'info': \"The page you specified doesn't exist.\", 'docref': 'See https://liquipedia.net/overwatch/api.php for API usage. Subscribe to the mediawiki-api-announce mailing list at &lt;https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/&gt; for notice of API deprecations and breaking changes.'}"
+      "page": "roster",
+      "error": "roster parser safety stop: parsed 0 entries"
     }
   ]
 }
