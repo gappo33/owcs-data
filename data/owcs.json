@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "generator_version": "3.4.0",
-  "generated_at": "2026-09-27T22:49:11+00:00",
-  "generated_at_jst": "2026-09-28T07:49:11+09:00",
+  "generated_at": "2026-09-28T01:25:43+00:00",
+  "generated_at_jst": "2026-09-28T10:25:43+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "regions": {
@@ -5717,107 +5717,114 @@
     {
       "region": "JP",
       "page": "regular",
-      "status": "OK",
-      "revid": 1147481,
-      "standings": 8,
-      "standings_status": "OK",
-      "matches": 28,
-      "match_status": "OK"
+      "status": "ERROR",
+      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
     },
     {
       "region": "JP",
       "page": "overview",
-      "status": "OK",
-      "revid": 1147486,
-      "matches": 0,
-      "match_status": "OK",
-      "bans": 0,
-      "rosters": 61,
-      "roster_status": "ERROR"
+      "status": "ERROR",
+      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
     },
     {
       "region": "KR",
       "page": "regular",
-      "status": "OK",
-      "revid": 1147545,
-      "standings": 9,
-      "standings_status": "OK",
-      "matches": 36,
-      "match_status": "OK"
+      "status": "ERROR",
+      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
     },
     {
       "region": "KR",
       "page": "overview",
-      "status": "OK",
-      "revid": 1147500,
-      "matches": 0,
-      "match_status": "OK",
-      "bans": 0,
-      "rosters": 82,
-      "roster_status": "ERROR"
+      "status": "ERROR",
+      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
     },
     {
       "region": "NA",
       "page": "regular",
-      "status": "SKIP",
-      "message": "regular-season page not published yet"
+      "status": "ERROR",
+      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
     },
     {
       "region": "NA",
       "page": "overview",
-      "status": "OK",
-      "revid": 1147229,
-      "matches": 0,
-      "match_status": "OK",
-      "bans": 0,
-      "rosters": 0,
-      "roster_status": "not-requested"
+      "status": "ERROR",
+      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
     },
     {
       "region": "EMEA",
       "page": "regular",
-      "status": "SKIP",
-      "message": "regular-season page not published yet"
+      "status": "ERROR",
+      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
     },
     {
       "region": "EMEA",
       "page": "overview",
-      "status": "OK",
-      "revid": 1144981,
-      "matches": 0,
-      "match_status": "OK",
-      "bans": 0,
-      "rosters": 0,
-      "roster_status": "not-requested"
+      "status": "ERROR",
+      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
     },
     {
       "region": "CHINA",
       "page": "regular",
-      "status": "SKIP",
-      "message": "regular-season page not published yet"
+      "status": "ERROR",
+      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
     },
     {
       "region": "CHINA",
       "page": "overview",
-      "status": "OK",
-      "revid": 1147895,
-      "matches": 0,
-      "match_status": "OK",
-      "bans": 0,
-      "rosters": 0,
-      "roster_status": "not-requested"
+      "status": "ERROR",
+      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
     }
   ],
   "errors": [
     {
       "region": "JP",
-      "page": "roster",
-      "error": "roster parser safety stop: visual=parsed 0 entries; legacy=parsed 0 entries"
+      "page": "regular",
+      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+    },
+    {
+      "region": "JP",
+      "page": "overview",
+      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
     },
     {
       "region": "KR",
-      "page": "roster",
-      "error": "roster parser safety stop: visual=parsed 0 entries; legacy=parsed 0 entries"
+      "page": "regular",
+      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+    },
+    {
+      "region": "KR",
+      "page": "overview",
+      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+    },
+    {
+      "region": "NA",
+      "page": "regular",
+      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+    },
+    {
+      "region": "NA",
+      "page": "overview",
+      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+    },
+    {
+      "region": "EMEA",
+      "page": "regular",
+      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+    },
+    {
+      "region": "EMEA",
+      "page": "overview",
+      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+    },
+    {
+      "region": "CHINA",
+      "page": "regular",
+      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+    },
+    {
+      "region": "CHINA",
+      "page": "overview",
+      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
     }
   ]
 }
