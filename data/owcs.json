@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generator_version": "3.4.0",
-  "generated_at": "2026-09-28T01:25:43+00:00",
-  "generated_at_jst": "2026-09-28T10:25:43+09:00",
+  "generator_version": "3.5.0",
+  "generated_at": "2026-09-28T17:33:25+00:00",
+  "generated_at_jst": "2026-09-29T02:33:25+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "regions": {
@@ -450,165 +450,204 @@
               "received_b": "bastion"
             }
           ]
-        }
-      ],
-      "upcoming_matches": [
+        },
         {
           "region": "JP",
-          "date_jst": "2026-09-28T18:00:00+09:00",
+          "date_jst": "2026-09-28T18:10:00+09:00",
           "team_a": "Please Not Hero Ban",
           "team_b": "Lazuli",
-          "score_a": 0,
-          "score_b": 0,
-          "finished": false,
+          "score_a": 2,
+          "score_b": 3,
+          "finished": true,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
-          "key": "JP|2026-09-28T18:00:00+09:00|Please Not Hero Ban|Lazuli",
+          "key": "JP|2026-09-28T18:10:00+09:00|Please Not Hero Ban|Lazuli",
           "maps": [
             {
               "map_no": 1,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
+              "map": "Busan",
+              "score_a": "0",
+              "score_b": "2",
+              "winner": "Lazuli",
               "picker": "",
               "picker_basis": "Map 1: not inferred",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "ban_a": "mizuki",
+              "ban_b": "wrecking ball",
+              "received_a": "wrecking ball",
+              "received_b": "mizuki"
             },
             {
               "map_no": 2,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Esperança",
+              "score_a": "127.72",
+              "score_b": "55.14",
+              "winner": "Please Not Hero Ban",
+              "picker": "Please Not Hero Ban",
+              "picker_basis": "Previous map loser",
+              "ban_a": "cassidy",
+              "ban_b": "kiriko",
+              "received_a": "kiriko",
+              "received_b": "cassidy"
             },
             {
               "map_no": 3,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Aatlis",
+              "score_a": "3",
+              "score_b": "2",
+              "winner": "Please Not Hero Ban",
+              "picker": "Lazuli",
+              "picker_basis": "Previous map loser",
+              "ban_a": "tracer",
+              "ban_b": "jetpack cat",
+              "received_a": "jetpack cat",
+              "received_b": "tracer"
+            },
+            {
+              "map_no": 4,
+              "map": "Eichenwalde",
+              "score_a": "2",
+              "score_b": "3",
+              "winner": "Lazuli",
+              "picker": "Lazuli",
+              "picker_basis": "Previous map loser",
+              "ban_a": "jetpack cat",
+              "ban_b": "torbjorn",
+              "received_a": "torbjorn",
+              "received_b": "jetpack cat"
+            },
+            {
+              "map_no": 5,
+              "map": "Route 66",
+              "score_a": "0",
+              "score_b": "1",
+              "winner": "Lazuli",
+              "picker": "Please Not Hero Ban",
+              "picker_basis": "Previous map loser",
+              "ban_a": "mauga",
+              "ban_b": "bastion",
+              "received_a": "bastion",
+              "received_b": "mauga"
             }
           ]
         },
         {
           "region": "JP",
-          "date_jst": "2026-09-28T19:30:00+09:00",
+          "date_jst": "2026-09-28T20:15:00+09:00",
           "team_a": "REVATI",
           "team_b": "99DIVINE",
           "score_a": 0,
-          "score_b": 0,
-          "finished": false,
+          "score_b": 3,
+          "finished": true,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
-          "key": "JP|2026-09-28T19:30:00+09:00|REVATI|99DIVINE",
+          "key": "JP|2026-09-28T20:15:00+09:00|REVATI|99DIVINE",
           "maps": [
             {
               "map_no": 1,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
+              "map": "Nepal",
+              "score_a": "0",
+              "score_b": "2",
+              "winner": "99DIVINE",
               "picker": "",
               "picker_basis": "Map 1: not inferred",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "ban_a": "cassidy",
+              "ban_b": "kiriko",
+              "received_a": "kiriko",
+              "received_b": "cassidy"
             },
             {
               "map_no": 2,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Eichenwalde",
+              "score_a": "0",
+              "score_b": "1",
+              "winner": "99DIVINE",
+              "picker": "REVATI",
+              "picker_basis": "Previous map loser",
+              "ban_a": "d.mon",
+              "ban_b": "bastion",
+              "received_a": "bastion",
+              "received_b": "d.mon"
             },
             {
               "map_no": 3,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Esperança",
+              "score_a": "0.58",
+              "score_b": "141.97",
+              "winner": "99DIVINE",
+              "picker": "REVATI",
+              "picker_basis": "Previous map loser",
+              "ban_a": "shion",
+              "ban_b": "jetpack cat",
+              "received_a": "jetpack cat",
+              "received_b": "shion"
             }
           ]
         },
         {
           "region": "JP",
-          "date_jst": "2026-09-28T21:00:00+09:00",
+          "date_jst": "2026-09-28T21:30:00+09:00",
           "team_a": "MURASH GAMING",
           "team_b": "ENTER FORCE.36",
-          "score_a": 0,
-          "score_b": 0,
-          "finished": false,
+          "score_a": 3,
+          "score_b": 1,
+          "finished": true,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
-          "key": "JP|2026-09-28T21:00:00+09:00|MURASH GAMING|ENTER FORCE.36",
+          "key": "JP|2026-09-28T21:30:00+09:00|MURASH GAMING|ENTER FORCE.36",
           "maps": [
             {
               "map_no": 1,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
+              "map": "Samoa",
+              "score_a": "2",
+              "score_b": "1",
+              "winner": "MURASH GAMING",
               "picker": "",
               "picker_basis": "Map 1: not inferred",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "ban_a": "ana",
+              "ban_b": "bastion",
+              "received_a": "bastion",
+              "received_b": "ana"
             },
             {
               "map_no": 2,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Suravasa",
+              "score_a": "1",
+              "score_b": "3",
+              "winner": "ENTER FORCE.36",
+              "picker": "ENTER FORCE.36",
+              "picker_basis": "Previous map loser",
+              "ban_a": "shion",
+              "ban_b": "mauga",
+              "received_a": "mauga",
+              "received_b": "shion"
             },
             {
               "map_no": 3,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Neon Junction",
+              "score_a": "2",
+              "score_b": "1",
+              "winner": "MURASH GAMING",
+              "picker": "MURASH GAMING",
+              "picker_basis": "Previous map loser",
+              "ban_a": "d.mon",
+              "ban_b": "kiriko",
+              "received_a": "kiriko",
+              "received_b": "d.mon"
+            },
+            {
+              "map_no": 4,
+              "map": "Shambali Monastery",
+              "score_a": "2",
+              "score_b": "1",
+              "winner": "MURASH GAMING",
+              "picker": "ENTER FORCE.36",
+              "picker_basis": "Previous map loser",
+              "ban_a": "winston",
+              "ban_b": "tracer",
+              "received_a": "tracer",
+              "received_b": "winston"
             }
           ]
-        },
+        }
+      ],
+      "upcoming_matches": [
         {
           "region": "JP",
           "date_jst": "2026-09-29T18:00:00+09:00",
@@ -1650,94 +1689,6 @@
         {
           "region": "JP",
           "team": "VARREL",
-          "role": "DPS",
-          "player": "Viper",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "VARREL",
-          "role": "DPS",
-          "player": "ky0n",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "VARREL",
-          "role": "Tank",
-          "player": "PEPPI",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "VARREL",
-          "role": "Support",
-          "player": "epic",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "VARREL",
-          "role": "Support",
-          "player": "orca",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "VARREL",
-          "role": "DPS",
-          "player": "Edison",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "VARREL",
-          "role": "DPS",
-          "player": "NewJ",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "VARREL",
-          "role": "DPS",
-          "player": "Soulsay",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "VARREL",
-          "role": "Tank",
-          "player": "Fearless",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "VARREL",
-          "role": "Support",
-          "player": "Ydot",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "VARREL",
-          "role": "Support",
-          "player": "Gaisen",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "VARREL",
           "role": "Coach",
           "player": "Pain",
           "status": "",
@@ -1753,7 +1704,47 @@
         },
         {
           "region": "JP",
-          "team": "VARREL",
+          "team": "MURASH GAMING",
+          "role": "DPS",
+          "player": "Viper",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
+          "team": "MURASH GAMING",
+          "role": "DPS",
+          "player": "ky0n",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
+          "team": "MURASH GAMING",
+          "role": "Tank",
+          "player": "PEPPI",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
+          "team": "MURASH GAMING",
+          "role": "Support",
+          "player": "epic",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
+          "team": "MURASH GAMING",
+          "role": "Support",
+          "player": "orca",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
+          "team": "MURASH GAMING",
           "role": "Coach",
           "player": "YaHo",
           "status": "",
@@ -1761,7 +1752,47 @@
         },
         {
           "region": "JP",
-          "team": "VARREL",
+          "team": "ENTER FORCE.36",
+          "role": "DPS",
+          "player": "Edison",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
+          "team": "ENTER FORCE.36",
+          "role": "DPS",
+          "player": "NewJ",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
+          "team": "ENTER FORCE.36",
+          "role": "Tank",
+          "player": "Fearless",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
+          "team": "ENTER FORCE.36",
+          "role": "Support",
+          "player": "Ydot",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
+          "team": "ENTER FORCE.36",
+          "role": "Support",
+          "player": "Gaisen",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
+          "team": "ENTER FORCE.36",
           "role": "Coach",
           "player": "Tydolla",
           "status": "",
@@ -1890,6 +1921,14 @@
         {
           "region": "JP",
           "team": "99DIVINE",
+          "role": "Coach",
+          "player": "Dreamer",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
+          "team": "Please Not Hero Ban",
           "role": "DPS",
           "player": "RLG5656",
           "status": "",
@@ -1897,7 +1936,7 @@
         },
         {
           "region": "JP",
-          "team": "99DIVINE",
+          "team": "Please Not Hero Ban",
           "role": "DPS",
           "player": "Suraimu1",
           "status": "",
@@ -1905,7 +1944,7 @@
         },
         {
           "region": "JP",
-          "team": "99DIVINE",
+          "team": "Please Not Hero Ban",
           "role": "Tank",
           "player": "UYOU",
           "status": "",
@@ -1913,7 +1952,7 @@
         },
         {
           "region": "JP",
-          "team": "99DIVINE",
+          "team": "Please Not Hero Ban",
           "role": "Support",
           "player": "Neivis",
           "status": "",
@@ -1921,15 +1960,15 @@
         },
         {
           "region": "JP",
-          "team": "99DIVINE",
+          "team": "Please Not Hero Ban",
           "role": "Support",
-          "player": "Secret",
+          "player": "깡돌이",
           "status": "",
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
         },
         {
           "region": "JP",
-          "team": "99DIVINE",
+          "team": "Please Not Hero Ban",
           "role": "Support",
           "player": "Langley",
           "status": "",
@@ -1937,17 +1976,9 @@
         },
         {
           "region": "JP",
-          "team": "99DIVINE",
-          "role": "Coach",
-          "player": "Hyunjae",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
           "team": "Lazuli",
           "role": "DPS",
-          "player": "Probe",
+          "player": "키드",
           "status": "",
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
         },
@@ -2001,22 +2032,6 @@
         },
         {
           "region": "JP",
-          "team": "Lazuli",
-          "role": "Coach",
-          "player": "Mazzless",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "Lazuli",
-          "role": "Coach",
-          "player": "Baksa",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
           "team": "REVATI",
           "role": "DPS",
           "player": "BreadTurtle",
@@ -2043,6 +2058,14 @@
           "region": "JP",
           "team": "REVATI",
           "role": "Support",
+          "player": "NHZ",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
+          "team": "REVATI",
+          "role": "Support",
           "player": "Elysia",
           "status": "",
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
@@ -2052,7 +2075,7 @@
           "team": "REVATI",
           "role": "Support",
           "player": "Azue1recker",
-          "status": "",
+          "status": "DNP",
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
         },
         {
@@ -2060,30 +2083,6 @@
           "team": "REVATI",
           "role": "Coach",
           "player": "Menhera",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "REVATI",
-          "role": "Coach",
-          "player": "Nyammulba",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "REVATI",
-          "role": "Manager",
-          "player": "LUD",
-          "status": "",
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
-        },
-        {
-          "region": "JP",
-          "team": "REVATI",
-          "role": "Manager",
-          "player": "KISHI",
           "status": "",
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
         }
@@ -5717,114 +5716,102 @@
     {
       "region": "JP",
       "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1147997,
+      "standings": 8,
+      "standings_status": "OK",
+      "matches": 28,
+      "match_status": "OK"
     },
     {
       "region": "JP",
       "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1147956,
+      "matches": 0,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 56,
+      "roster_status": "FALLBACK_JP_STAGE3"
     },
     {
       "region": "KR",
       "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1147545,
+      "standings": 9,
+      "standings_status": "OK",
+      "matches": 36,
+      "match_status": "OK"
     },
     {
       "region": "KR",
       "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1147500,
+      "matches": 0,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 82,
+      "roster_status": "ERROR"
     },
     {
       "region": "NA",
       "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "SKIP",
+      "message": "regular-season page not published yet"
     },
     {
       "region": "NA",
       "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1147999,
+      "matches": 0,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 0,
+      "roster_status": "not-requested"
     },
     {
       "region": "EMEA",
       "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "SKIP",
+      "message": "regular-season page not published yet"
     },
     {
       "region": "EMEA",
       "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1148000,
+      "matches": 0,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 0,
+      "roster_status": "not-requested"
     },
     {
       "region": "CHINA",
       "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "SKIP",
+      "message": "regular-season page not published yet"
     },
     {
       "region": "CHINA",
       "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1147976,
+      "matches": 0,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 0,
+      "roster_status": "not-requested"
     }
   ],
   "errors": [
     {
-      "region": "JP",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "JP",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
       "region": "KR",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "KR",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "NA",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "NA",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "EMEA",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "EMEA",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "CHINA",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "CHINA",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "page": "roster",
+      "error": "roster parser safety stop: visual=parsed 0 entries; legacy=parsed 0 entries"
     }
   ]
 }
