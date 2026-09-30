@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "generator_version": "3.9.0",
-  "generated_at": "2026-09-29T16:29:58+00:00",
-  "generated_at_jst": "2026-09-30T01:29:58+09:00",
+  "generated_at": "2026-09-30T01:27:25+00:00",
+  "generated_at_jst": "2026-09-30T10:27:25+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "regions": {
@@ -645,165 +645,191 @@
               "received_b": "winston"
             }
           ]
-        }
-      ],
-      "upcoming_matches": [
+        },
         {
           "region": "JP",
-          "date_jst": "2026-09-29T18:00:00+09:00",
+          "date_jst": "2026-09-29T18:10:00+09:00",
           "team_a": "Please Not Hero Ban",
           "team_b": "Uwinks",
-          "score_a": 0,
-          "score_b": 0,
-          "finished": false,
+          "score_a": 2,
+          "score_b": 3,
+          "finished": true,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
-          "key": "JP|2026-09-29T18:00:00+09:00|Please Not Hero Ban|Uwinks",
+          "key": "JP|2026-09-29T18:10:00+09:00|Please Not Hero Ban|Uwinks",
           "maps": [
             {
               "map_no": 1,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
+              "map": "Samoa",
+              "score_a": "0",
+              "score_b": "2",
+              "winner": "Uwinks",
               "picker": "",
               "picker_basis": "Map 1: not inferred",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "ban_a": "mizuki",
+              "ban_b": "wrecking ball",
+              "received_a": "wrecking ball",
+              "received_b": "mizuki"
             },
             {
               "map_no": 2,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Esperança",
+              "score_a": "95.26",
+              "score_b": "85.94",
+              "winner": "Please Not Hero Ban",
+              "picker": "Please Not Hero Ban",
+              "picker_basis": "Previous map loser",
+              "ban_a": "mauga",
+              "ban_b": "ana",
+              "received_a": "ana",
+              "received_b": "mauga"
             },
             {
               "map_no": 3,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Neon Junction",
+              "score_a": "0",
+              "score_b": "2",
+              "winner": "Uwinks",
+              "picker": "Uwinks",
+              "picker_basis": "Previous map loser",
+              "ban_a": "kiriko",
+              "ban_b": "bastion",
+              "received_a": "bastion",
+              "received_b": "kiriko"
+            },
+            {
+              "map_no": 4,
+              "map": "Suravasa",
+              "score_a": "3",
+              "score_b": "1",
+              "winner": "Please Not Hero Ban",
+              "picker": "Please Not Hero Ban",
+              "picker_basis": "Previous map loser",
+              "ban_a": "cassidy",
+              "ban_b": "jetpack cat",
+              "received_a": "jetpack cat",
+              "received_b": "cassidy"
+            },
+            {
+              "map_no": 5,
+              "map": "Shambali Monastery",
+              "score_a": "1",
+              "score_b": "2",
+              "winner": "Uwinks",
+              "picker": "Uwinks",
+              "picker_basis": "Previous map loser",
+              "ban_a": "shion",
+              "ban_b": "d.mon",
+              "received_a": "d.mon",
+              "received_b": "shion"
             }
           ]
         },
         {
           "region": "JP",
-          "date_jst": "2026-09-29T19:30:00+09:00",
+          "date_jst": "2026-09-29T20:25:00+09:00",
           "team_a": "MURASH GAMING",
           "team_b": "99DIVINE",
           "score_a": 0,
-          "score_b": 0,
-          "finished": false,
+          "score_b": 3,
+          "finished": true,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
-          "key": "JP|2026-09-29T19:30:00+09:00|MURASH GAMING|99DIVINE",
+          "key": "JP|2026-09-29T20:25:00+09:00|MURASH GAMING|99DIVINE",
           "maps": [
             {
               "map_no": 1,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
+              "map": "Nepal",
+              "score_a": "1",
+              "score_b": "2",
+              "winner": "99DIVINE",
               "picker": "",
               "picker_basis": "Map 1: not inferred",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "ban_a": "shion",
+              "ban_b": "kiriko",
+              "received_a": "kiriko",
+              "received_b": "shion"
             },
             {
               "map_no": 2,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Aatlis",
+              "score_a": "0",
+              "score_b": "3",
+              "winner": "99DIVINE",
+              "picker": "MURASH GAMING",
+              "picker_basis": "Previous map loser",
+              "ban_a": "cassidy",
+              "ban_b": "mauga",
+              "received_a": "mauga",
+              "received_b": "cassidy"
             },
             {
               "map_no": 3,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Neon Junction",
+              "score_a": "3",
+              "score_b": "4",
+              "winner": "99DIVINE",
+              "picker": "MURASH GAMING",
+              "picker_basis": "Previous map loser",
+              "ban_a": "d.mon",
+              "ban_b": "jetpack cat",
+              "received_a": "jetpack cat",
+              "received_b": "d.mon"
             }
           ]
         },
         {
           "region": "JP",
-          "date_jst": "2026-09-29T21:00:00+09:00",
+          "date_jst": "2026-09-29T22:00:00+09:00",
           "team_a": "Lazuli",
           "team_b": "VARREL",
           "score_a": 0,
-          "score_b": 0,
-          "finished": false,
+          "score_b": 3,
+          "finished": true,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season",
-          "key": "JP|2026-09-29T21:00:00+09:00|Lazuli|VARREL",
+          "key": "JP|2026-09-29T22:00:00+09:00|Lazuli|VARREL",
           "maps": [
             {
               "map_no": 1,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
+              "map": "Busan",
+              "score_a": "0",
+              "score_b": "2",
+              "winner": "VARREL",
               "picker": "",
               "picker_basis": "Map 1: not inferred",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "ban_a": "bastion",
+              "ban_b": "roadhog",
+              "received_a": "roadhog",
+              "received_b": "bastion"
             },
             {
               "map_no": 2,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Neon Junction",
+              "score_a": "1",
+              "score_b": "3",
+              "winner": "VARREL",
+              "picker": "Lazuli",
+              "picker_basis": "Previous map loser",
+              "ban_a": "wuyang",
+              "ban_b": "tracer",
+              "received_a": "tracer",
+              "received_b": "wuyang"
             },
             {
               "map_no": 3,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Route 66",
+              "score_a": "1",
+              "score_b": "3",
+              "winner": "VARREL",
+              "picker": "Lazuli",
+              "picker_basis": "Previous map loser",
+              "ban_a": "zenyatta",
+              "ban_b": "widowmaker",
+              "received_a": "widowmaker",
+              "received_b": "zenyatta"
             }
           ]
-        },
+        }
+      ],
+      "upcoming_matches": [
         {
           "region": "JP",
           "date_jst": "2026-10-05T18:00:00+09:00",
@@ -5044,9 +5070,411 @@
     "CHINA": {
       "region": "CHINA",
       "label": "China",
-      "standings": [],
+      "standings": [
+        {
+          "rank": 1,
+          "team": "Solus Victorem SV",
+          "wins": 0,
+          "losses": 0,
+          "record": "0-0",
+          "map_wins": 0,
+          "map_losses": 0,
+          "map_record": "0-0",
+          "map_diff": 0
+        },
+        {
+          "rank": 1,
+          "team": "OU Gaming OUG",
+          "wins": 0,
+          "losses": 0,
+          "record": "0-0",
+          "map_wins": 0,
+          "map_losses": 0,
+          "map_record": "0-0",
+          "map_diff": 0
+        },
+        {
+          "rank": 1,
+          "team": "All Gamers AG",
+          "wins": 0,
+          "losses": 0,
+          "record": "0-0",
+          "map_wins": 0,
+          "map_losses": 0,
+          "map_record": "0-0",
+          "map_diff": 0
+        },
+        {
+          "rank": 1,
+          "team": "HUNENG HNG",
+          "wins": 0,
+          "losses": 0,
+          "record": "0-0",
+          "map_wins": 0,
+          "map_losses": 0,
+          "map_record": "0-0",
+          "map_diff": 0
+        },
+        {
+          "rank": 1,
+          "team": "Weibo Gaming WBG",
+          "wins": 0,
+          "losses": 0,
+          "record": "0-0",
+          "map_wins": 0,
+          "map_losses": 0,
+          "map_record": "0-0",
+          "map_diff": 0
+        },
+        {
+          "rank": 1,
+          "team": "SHENGSHI SSE",
+          "wins": 0,
+          "losses": 0,
+          "record": "0-0",
+          "map_wins": 0,
+          "map_losses": 0,
+          "map_record": "0-0",
+          "map_diff": 0
+        },
+        {
+          "rank": 1,
+          "team": "JD Gaming JDG",
+          "wins": 0,
+          "losses": 0,
+          "record": "0-0",
+          "map_wins": 0,
+          "map_losses": 0,
+          "map_record": "0-0",
+          "map_diff": 0
+        },
+        {
+          "rank": 1,
+          "team": "Black Flag BF",
+          "wins": 0,
+          "losses": 0,
+          "record": "0-0",
+          "map_wins": 0,
+          "map_losses": 0,
+          "map_record": "0-0",
+          "map_diff": 0
+        }
+      ],
       "finished_matches": [],
-      "upcoming_matches": [],
+      "upcoming_matches": [
+        {
+          "region": "CHINA",
+          "date_jst": "2026-10-03T16:00:00+09:00",
+          "team_a": "Solus Victorem",
+          "team_b": "OU Gaming",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/China/Stage_3/Regular_Season",
+          "key": "CHINA|2026-10-03T16:00:00+09:00|Solus Victorem|OU Gaming",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 4,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 5,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "CHINA",
+          "date_jst": "2026-10-03T18:00:00+09:00",
+          "team_a": "All Gamers",
+          "team_b": "HUNENG Gaming",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/China/Stage_3/Regular_Season",
+          "key": "CHINA|2026-10-03T18:00:00+09:00|All Gamers|HUNENG Gaming",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 4,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 5,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "CHINA",
+          "date_jst": "2026-10-03T20:00:00+09:00",
+          "team_a": "Weibo Gaming",
+          "team_b": "shengshi esports",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/China/Stage_3/Regular_Season",
+          "key": "CHINA|2026-10-03T20:00:00+09:00|Weibo Gaming|shengshi esports",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 4,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 5,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "CHINA",
+          "date_jst": "2026-10-03T22:00:00+09:00",
+          "team_a": "JD Gaming",
+          "team_b": "Black Flag",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/China/Stage_3/Regular_Season",
+          "key": "CHINA|2026-10-03T22:00:00+09:00|JD Gaming|Black Flag",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 4,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 5,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        }
+      ],
       "rosters": [],
       "hero_bans": [],
       "sources": {
@@ -5059,114 +5487,106 @@
     {
       "region": "JP",
       "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1148101,
+      "standings": 8,
+      "standings_status": "OK",
+      "matches": 28,
+      "match_status": "OK"
     },
     {
       "region": "JP",
       "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1147956,
+      "matches": 0,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 56,
+      "roster_status": "FALLBACK_JP_STAGE3"
     },
     {
       "region": "KR",
       "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1147545,
+      "standings": 9,
+      "standings_status": "OK",
+      "matches": 36,
+      "match_status": "OK"
     },
     {
       "region": "KR",
       "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1147500,
+      "matches": 0,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 0,
+      "roster_status": "ERROR"
     },
     {
       "region": "NA",
       "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "SKIP",
+      "message": "regular-season page not published yet"
     },
     {
       "region": "NA",
       "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1148034,
+      "matches": 0,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 0,
+      "roster_status": "not-requested"
     },
     {
       "region": "EMEA",
       "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "SKIP",
+      "message": "regular-season page not published yet"
     },
     {
       "region": "EMEA",
       "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1148000,
+      "matches": 0,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 0,
+      "roster_status": "not-requested"
     },
     {
       "region": "CHINA",
       "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1148127,
+      "standings": 8,
+      "standings_status": "OK",
+      "matches": 4,
+      "match_status": "OK"
     },
     {
       "region": "CHINA",
       "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1148113,
+      "matches": 0,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 0,
+      "roster_status": "not-requested"
     }
   ],
   "errors": [
     {
-      "region": "JP",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "JP",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
       "region": "KR",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "KR",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "NA",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "NA",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "EMEA",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "EMEA",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "CHINA",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "CHINA",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "page": "roster",
+      "error": "roster parser safety stop: visual=parsed 0 entries; legacy=parsed 0 entries; cleared invalid cached roster (parsed 0 entries)"
     }
   ]
 }
