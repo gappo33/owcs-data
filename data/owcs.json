@@ -1,10 +1,14 @@
 {
-  "schema_version": 2,
-  "generator_version": "3.9.0",
-  "generated_at": "2026-10-02T01:27:49+00:00",
-  "generated_at_jst": "2026-10-02T10:27:49+09:00",
+  "schema_version": 3,
+  "generator_version": "4.0.0",
+  "generated_at": "2026-10-02T17:14:50+00:00",
+  "generated_at_jst": "2026-10-03T02:14:50+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
+  "active_regions": [
+    "JP",
+    "KR"
+  ],
   "regions": {
     "JP": {
       "region": "JP",
@@ -1661,6 +1665,50 @@
               "received_b": ""
             }
           ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-19T18:00:00+09:00",
+          "team_a": "TBD TBD TBD",
+          "team_b": "TBD TBD TBD",
+          "score_a": null,
+          "score_b": null,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan",
+          "key": "JP|2026-10-19T18:00:00+09:00|TBD TBD TBD|TBD TBD TBD|None|None"
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-19T20:00:00+09:00",
+          "team_a": "TBD TBD TBD",
+          "team_b": "TBD TBD TBD",
+          "score_a": null,
+          "score_b": null,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan",
+          "key": "JP|2026-10-19T20:00:00+09:00|TBD TBD TBD|TBD TBD TBD|None|None"
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-20T18:00:00+09:00",
+          "team_a": "TBD TBD TBD",
+          "team_b": "TBD TBD TBD",
+          "score_a": null,
+          "score_b": null,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan",
+          "key": "JP|2026-10-20T18:00:00+09:00|TBD TBD TBD|TBD TBD TBD|None|None"
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-20T20:00:00+09:00",
+          "team_a": "TBD TBD TBD",
+          "team_b": "TBD TBD TBD",
+          "score_a": null,
+          "score_b": null,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan",
+          "key": "JP|2026-10-20T20:00:00+09:00|TBD TBD TBD|TBD TBD TBD|None|None"
         }
       ],
       "rosters": [
@@ -2125,73 +2173,7 @@
       "standings": [
         {
           "rank": 0,
-          "team": "Cheeseburger",
-          "wins": 0,
-          "losses": 0,
-          "record": "0-0",
-          "map_wins": 0,
-          "map_losses": 0,
-          "map_record": "0-0",
-          "map_diff": 0
-        },
-        {
-          "rank": 0,
-          "team": "Crazy Raccoon",
-          "wins": 0,
-          "losses": 0,
-          "record": "0-0",
-          "map_wins": 0,
-          "map_losses": 0,
-          "map_record": "0-0",
-          "map_diff": 0
-        },
-        {
-          "rank": 0,
           "team": "O2 Blast",
-          "wins": 0,
-          "losses": 0,
-          "record": "0-0",
-          "map_wins": 0,
-          "map_losses": 0,
-          "map_record": "0-0",
-          "map_diff": 0
-        },
-        {
-          "rank": 0,
-          "team": "Poker Face",
-          "wins": 0,
-          "losses": 0,
-          "record": "0-0",
-          "map_wins": 0,
-          "map_losses": 0,
-          "map_record": "0-0",
-          "map_diff": 0
-        },
-        {
-          "rank": 0,
-          "team": "SEIJI ESPORTS",
-          "wins": 0,
-          "losses": 0,
-          "record": "0-0",
-          "map_wins": 0,
-          "map_losses": 0,
-          "map_record": "0-0",
-          "map_diff": 0
-        },
-        {
-          "rank": 0,
-          "team": "T1",
-          "wins": 0,
-          "losses": 0,
-          "record": "0-0",
-          "map_wins": 0,
-          "map_losses": 0,
-          "map_record": "0-0",
-          "map_diff": 0
-        },
-        {
-          "rank": 0,
-          "team": "Team Falcons",
           "wins": 0,
           "losses": 0,
           "record": "0-0",
@@ -2213,7 +2195,40 @@
         },
         {
           "rank": 1,
+          "team": "Cheeseburger",
+          "wins": 1,
+          "losses": 0,
+          "record": "1-0",
+          "map_wins": 3,
+          "map_losses": 0,
+          "map_record": "3-0",
+          "map_diff": 3
+        },
+        {
+          "rank": 1,
+          "team": "T1",
+          "wins": 1,
+          "losses": 0,
+          "record": "1-0",
+          "map_wins": 3,
+          "map_losses": 0,
+          "map_record": "3-0",
+          "map_diff": 3
+        },
+        {
+          "rank": 1,
           "team": "ZETA DIVISION",
+          "wins": 1,
+          "losses": 0,
+          "record": "1-0",
+          "map_wins": 3,
+          "map_losses": 0,
+          "map_record": "3-0",
+          "map_diff": 3
+        },
+        {
+          "rank": 2,
+          "team": "Crazy Raccoon",
           "wins": 0,
           "losses": 0,
           "record": "0-0",
@@ -2221,244 +2236,200 @@
           "map_losses": 0,
           "map_record": "0-0",
           "map_diff": 0
+        },
+        {
+          "rank": 7,
+          "team": "Poker Face",
+          "wins": 0,
+          "losses": 1,
+          "record": "0-1",
+          "map_wins": 0,
+          "map_losses": 3,
+          "map_record": "0-3",
+          "map_diff": -3
+        },
+        {
+          "rank": 7,
+          "team": "SEIJI ESPORTS",
+          "wins": 0,
+          "losses": 1,
+          "record": "0-1",
+          "map_wins": 0,
+          "map_losses": 3,
+          "map_record": "0-3",
+          "map_diff": -3
+        },
+        {
+          "rank": 7,
+          "team": "Team Falcons",
+          "wins": 0,
+          "losses": 1,
+          "record": "0-1",
+          "map_wins": 0,
+          "map_losses": 3,
+          "map_record": "0-3",
+          "map_diff": -3
         }
       ],
-      "finished_matches": [],
-      "upcoming_matches": [
+      "finished_matches": [
         {
           "region": "KR",
-          "date_jst": "2026-10-02T17:00:00+09:00",
+          "date_jst": "2026-10-02T17:15:00+09:00",
           "team_a": "Cheeseburger",
           "team_b": "Poker Face",
-          "score_a": 0,
+          "score_a": 3,
           "score_b": 0,
-          "finished": false,
+          "finished": true,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea/Regular_Season",
-          "key": "KR|2026-10-02T17:00:00+09:00|Cheeseburger|Poker Face",
+          "key": "KR|2026-10-02T17:15:00+09:00|Cheeseburger|Poker Face",
           "maps": [
             {
               "map_no": 1,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
+              "map": "Busan",
+              "score_a": "2",
+              "score_b": "1",
+              "winner": "Cheeseburger",
               "picker": "",
               "picker_basis": "Map 1: not inferred",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "ban_a": "d.va",
+              "ban_b": "tracer",
+              "received_a": "tracer",
+              "received_b": "d.va"
             },
             {
               "map_no": 2,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Eichenwalde",
+              "score_a": "3",
+              "score_b": "0",
+              "winner": "Cheeseburger",
+              "picker": "Poker Face",
+              "picker_basis": "Previous map loser",
+              "ban_a": "bastion",
+              "ban_b": "d.mon",
+              "received_a": "d.mon",
+              "received_b": "bastion"
             },
             {
               "map_no": 3,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 4,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 5,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Esperança",
+              "score_a": "141.97",
+              "score_b": "43.57",
+              "winner": "Cheeseburger",
+              "picker": "Poker Face",
+              "picker_basis": "Previous map loser",
+              "ban_a": "mauga",
+              "ban_b": "ana",
+              "received_a": "ana",
+              "received_b": "mauga"
             }
           ]
         },
         {
           "region": "KR",
-          "date_jst": "2026-10-02T18:30:00+09:00",
+          "date_jst": "2026-10-02T18:45:00+09:00",
           "team_a": "Team Falcons",
           "team_b": "ZETA DIVISION",
           "score_a": 0,
-          "score_b": 0,
-          "finished": false,
+          "score_b": 3,
+          "finished": true,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea/Regular_Season",
-          "key": "KR|2026-10-02T18:30:00+09:00|Team Falcons|ZETA DIVISION",
+          "key": "KR|2026-10-02T18:45:00+09:00|Team Falcons|ZETA DIVISION",
           "maps": [
             {
               "map_no": 1,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
+              "map": "Samoa",
+              "score_a": "1",
+              "score_b": "2",
+              "winner": "ZETA DIVISION",
               "picker": "",
               "picker_basis": "Map 1: not inferred",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "ban_a": "reinhardt",
+              "ban_b": "mercy",
+              "received_a": "mercy",
+              "received_b": "reinhardt"
             },
             {
               "map_no": 2,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Esperança",
+              "score_a": "83.41",
+              "score_b": "117.55",
+              "winner": "ZETA DIVISION",
+              "picker": "Team Falcons",
+              "picker_basis": "Previous map loser",
+              "ban_a": "wrecking ball",
+              "ban_b": "widowmaker",
+              "received_a": "widowmaker",
+              "received_b": "wrecking ball"
             },
             {
               "map_no": 3,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 4,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 5,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Neon Junction",
+              "score_a": "2",
+              "score_b": "3",
+              "winner": "ZETA DIVISION",
+              "picker": "Team Falcons",
+              "picker_basis": "Previous map loser",
+              "ban_a": "orisa",
+              "ban_b": "jetpack cat",
+              "received_a": "jetpack cat",
+              "received_b": "orisa"
             }
           ]
         },
         {
           "region": "KR",
-          "date_jst": "2026-10-02T20:00:00+09:00",
+          "date_jst": "2026-10-02T20:30:00+09:00",
           "team_a": "SEIJI ESPORTS",
           "team_b": "T1",
           "score_a": 0,
-          "score_b": 0,
-          "finished": false,
+          "score_b": 3,
+          "finished": true,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea/Regular_Season",
-          "key": "KR|2026-10-02T20:00:00+09:00|SEIJI ESPORTS|T1",
+          "key": "KR|2026-10-02T20:30:00+09:00|SEIJI ESPORTS|T1",
           "maps": [
             {
               "map_no": 1,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
+              "map": "Samoa",
+              "score_a": "1",
+              "score_b": "2",
+              "winner": "T1",
               "picker": "",
               "picker_basis": "Map 1: not inferred",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "ban_a": "mei",
+              "ban_b": "ana",
+              "received_a": "ana",
+              "received_b": "mei"
             },
             {
               "map_no": 2,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Shambali Monastery",
+              "score_a": "0",
+              "score_b": "3",
+              "winner": "T1",
+              "picker": "SEIJI ESPORTS",
+              "picker_basis": "Previous map loser",
+              "ban_a": "bastion",
+              "ban_b": "winston",
+              "received_a": "winston",
+              "received_b": "bastion"
             },
             {
               "map_no": 3,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 4,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 5,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Neon Junction",
+              "score_a": "0",
+              "score_b": "3",
+              "winner": "T1",
+              "picker": "SEIJI ESPORTS",
+              "picker_basis": "Previous map loser",
+              "ban_a": "d.mon",
+              "ban_b": "kiriko",
+              "received_a": "kiriko",
+              "received_b": "d.mon"
             }
           ]
-        },
+        }
+      ],
+      "upcoming_matches": [
         {
           "region": "KR",
           "date_jst": "2026-10-03T15:00:00+09:00",
@@ -5032,6 +5003,72 @@
               "received_b": ""
             }
           ]
+        },
+        {
+          "region": "KR",
+          "date_jst": "2026-10-30T00:00:00+09:00",
+          "team_a": "TBD TBD TBD",
+          "team_b": "TBD TBD TBD",
+          "score_a": null,
+          "score_b": null,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
+          "key": "KR|2026-10-30T00:00:00+09:00|TBD TBD TBD|TBD TBD TBD|None|None"
+        },
+        {
+          "region": "KR",
+          "date_jst": "2026-10-31T00:00:00+09:00",
+          "team_a": "TBD TBD TBD",
+          "team_b": "TBD TBD TBD",
+          "score_a": null,
+          "score_b": null,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
+          "key": "KR|2026-10-31T00:00:00+09:00|TBD TBD TBD|TBD TBD TBD|None|None"
+        },
+        {
+          "region": "KR",
+          "date_jst": "2026-11-01T00:00:00+09:00",
+          "team_a": "TBD TBD TBD",
+          "team_b": "TBD TBD TBD",
+          "score_a": null,
+          "score_b": null,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
+          "key": "KR|2026-11-01T00:00:00+09:00|TBD TBD TBD|TBD TBD TBD|None|None"
+        },
+        {
+          "region": "KR",
+          "date_jst": "2026-11-06T00:00:00+09:00",
+          "team_a": "TBD TBD TBD",
+          "team_b": "TBD TBD TBD",
+          "score_a": null,
+          "score_b": null,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
+          "key": "KR|2026-11-06T00:00:00+09:00|TBD TBD TBD|TBD TBD TBD|None|None"
+        },
+        {
+          "region": "KR",
+          "date_jst": "2026-11-07T00:00:00+09:00",
+          "team_a": "TBD TBD TBD",
+          "team_b": "TBD TBD TBD",
+          "score_a": null,
+          "score_b": null,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
+          "key": "KR|2026-11-07T00:00:00+09:00|TBD TBD TBD|TBD TBD TBD|None|None"
+        },
+        {
+          "region": "KR",
+          "date_jst": "2026-11-08T00:00:00+09:00",
+          "team_a": "TBD TBD TBD",
+          "team_b": "TBD TBD TBD",
+          "score_a": null,
+          "score_b": null,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
+          "key": "KR|2026-11-08T00:00:00+09:00|TBD TBD TBD|TBD TBD TBD|None|None"
         }
       ],
       "rosters": [],
@@ -5483,118 +5520,98 @@
       }
     }
   },
+  "page_cache": {
+    "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season": {
+      "revid": 1148101,
+      "fetched_at": "2026-10-02T17:14:50+00:00",
+      "generator_version": "4.0.0",
+      "status": "OK"
+    },
+    "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan": {
+      "revid": 1148339,
+      "fetched_at": "2026-10-02T17:14:50+00:00",
+      "generator_version": "4.0.0",
+      "status": "OK"
+    },
+    "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea/Regular_Season": {
+      "revid": 1148389,
+      "fetched_at": "2026-10-02T17:14:50+00:00",
+      "generator_version": "4.0.0",
+      "status": "OK"
+    },
+    "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea": {
+      "revid": 1148390,
+      "fetched_at": "2026-10-02T17:14:50+00:00",
+      "generator_version": "4.0.0",
+      "status": "OK"
+    }
+  },
   "fetch_log": [
     {
+      "region": "GLOBAL",
+      "page": "revision-check",
+      "status": "OK",
+      "pages": 4
+    },
+    {
       "region": "JP",
       "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1148101,
+      "standings": 8,
+      "standings_status": "OK",
+      "matches": 28,
+      "match_status": "OK"
     },
     {
       "region": "JP",
       "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1148339,
+      "matches": 4,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 56,
+      "roster_status": "FALLBACK_JP_STAGE3"
     },
     {
       "region": "KR",
       "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1148389,
+      "standings": 9,
+      "standings_status": "OK",
+      "matches": 36,
+      "match_status": "OK"
     },
     {
       "region": "KR",
       "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "NA",
-      "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "NA",
-      "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "EMEA",
-      "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "EMEA",
-      "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "CHINA",
-      "page": "regular",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "CHINA",
-      "page": "overview",
-      "status": "ERROR",
-      "message": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "status": "OK",
+      "revid": 1148390,
+      "matches": 6,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 0,
+      "roster_status": "ERROR"
     }
   ],
   "errors": [
     {
-      "region": "JP",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "JP",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FJapan&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
       "region": "KR",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "KR",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FAsia%2FStage_3%2FKorea&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "NA",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "NA",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FNA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "EMEA",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "EMEA",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FEMEA%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "CHINA",
-      "page": "regular",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3%2FRegular_Season&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
-    },
-    {
-      "region": "CHINA",
-      "page": "overview",
-      "error": "429 Client Error: Too Many Requests for url: https://liquipedia.net/overwatch/api.php?action=parse&page=Overwatch_Champions_Series%2F2026%2FChina%2FStage_3&prop=text%7Cwikitext%7Crevid&disableeditsection=1&format=json&formatversion=2"
+      "page": "roster",
+      "error": "roster parser safety stop: visual=parsed 0 entries; legacy=parsed 0 entries; cleared invalid cached roster (parsed 0 entries)"
     }
-  ]
+  ],
+  "run_stats": {
+    "query_calls": 1,
+    "parse_calls": 4,
+    "cache_hits": 0,
+    "active_regions": [
+      "JP",
+      "KR"
+    ],
+    "force_parse": false,
+    "cache_max_age_hours": 6.0
+  }
 }
