@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
-  "generator_version": "4.2.0",
-  "generated_at": "2026-10-03T18:02:18+00:00",
-  "generated_at_jst": "2026-10-04T03:02:18+09:00",
+  "generator_version": "4.3.0",
+  "generated_at": "2026-10-03T19:27:36+00:00",
+  "generated_at_jst": "2026-10-04T04:27:36+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "active_regions": [
@@ -5487,62 +5487,21 @@
     {
       "region": "GLOBAL",
       "page": "revision-check",
-      "status": "OK",
-      "pages": 4
-    },
-    {
-      "region": "JP",
-      "page": "regular",
-      "status": "OK",
-      "revid": 1148101,
-      "standings": 8,
-      "standings_status": "OK",
-      "matches": 28,
-      "match_status": "OK"
-    },
-    {
-      "region": "JP",
-      "page": "overview",
-      "status": "OK",
-      "revid": 1148519,
-      "matches": 4,
-      "match_status": "OK",
-      "bans": 0,
-      "rosters": 56,
-      "roster_status": "FALLBACK_JP_STAGE3"
-    },
-    {
-      "region": "KR",
-      "page": "regular",
-      "status": "OK",
-      "revid": 1148634,
-      "standings": 9,
-      "standings_status": "OK",
-      "matches": 36,
-      "match_status": "OK"
-    },
-    {
-      "region": "KR",
-      "page": "overview",
-      "status": "PARTIAL",
-      "revid": 1148524,
-      "matches": 6,
-      "match_status": "OK",
-      "bans": 0,
-      "rosters": 0,
-      "roster_status": "ERROR"
+      "status": "RATE_LIMITED",
+      "message": "Liquipedia returned HTTP 429 Too Many Requests",
+      "retry_after": null
     }
   ],
   "errors": [
     {
-      "region": "KR",
-      "page": "roster",
-      "error": "roster parser safety stop: visual=parsed 0 entries; legacy=parsed 0 entries; cleared invalid cached roster (parsed 0 entries)"
+      "region": "GLOBAL",
+      "page": "revision-check",
+      "error": "Liquipedia returned HTTP 429 Too Many Requests"
     }
   ],
   "run_stats": {
     "query_calls": 1,
-    "parse_calls": 4,
+    "parse_calls": 0,
     "cache_hits": 0,
     "active_regions": [
       "JP",
@@ -5550,5 +5509,6 @@
     ],
     "force_parse": false,
     "cache_max_age_hours": 6.0
-  }
+  },
+  "rate_limit_until": "2026-10-03T20:27:36+00:00"
 }
