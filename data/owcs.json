@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "generator_version": "4.0.0",
-  "generated_at": "2026-10-03T01:25:58+00:00",
-  "generated_at_jst": "2026-10-03T10:25:58+09:00",
+  "generated_at": "2026-10-03T04:37:20+00:00",
+  "generated_at_jst": "2026-10-03T13:37:20+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "active_regions": [
@@ -5556,57 +5556,33 @@
     {
       "region": "JP",
       "page": "regular",
-      "status": "OK",
-      "revid": 1148101,
-      "standings": 8,
-      "standings_status": "OK",
-      "matches": 28,
-      "match_status": "OK"
+      "status": "CACHE_FRESH",
+      "revid": 1148101
     },
     {
       "region": "JP",
       "page": "overview",
-      "status": "OK",
-      "revid": 1148339,
-      "matches": 4,
-      "match_status": "OK",
-      "bans": 0,
-      "rosters": 56,
-      "roster_status": "FALLBACK_JP_STAGE3"
+      "status": "CACHE_FRESH",
+      "revid": 1148339
     },
     {
       "region": "KR",
       "page": "regular",
-      "status": "OK",
-      "revid": 1148389,
-      "standings": 9,
-      "standings_status": "OK",
-      "matches": 36,
-      "match_status": "OK"
+      "status": "CACHE_FRESH",
+      "revid": 1148389
     },
     {
       "region": "KR",
       "page": "overview",
-      "status": "OK",
-      "revid": 1148390,
-      "matches": 6,
-      "match_status": "OK",
-      "bans": 0,
-      "rosters": 0,
-      "roster_status": "ERROR"
+      "status": "CACHE_FRESH",
+      "revid": 1148390
     }
   ],
-  "errors": [
-    {
-      "region": "KR",
-      "page": "roster",
-      "error": "roster parser safety stop: visual=parsed 0 entries; legacy=parsed 0 entries; cleared invalid cached roster (parsed 0 entries)"
-    }
-  ],
+  "errors": [],
   "run_stats": {
     "query_calls": 1,
-    "parse_calls": 4,
-    "cache_hits": 0,
+    "parse_calls": 0,
+    "cache_hits": 4,
     "active_regions": [
       "JP",
       "KR"
