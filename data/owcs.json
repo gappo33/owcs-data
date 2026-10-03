@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
-  "generator_version": "4.1.0",
-  "generated_at": "2026-10-03T17:46:09+00:00",
-  "generated_at_jst": "2026-10-04T02:46:09+09:00",
+  "generator_version": "4.2.0",
+  "generated_at": "2026-10-03T18:02:18+00:00",
+  "generated_at_jst": "2026-10-04T03:02:18+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "active_regions": [
@@ -5458,29 +5458,29 @@
   "page_cache": {
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season": {
       "revid": 1148101,
-      "fetched_at": "2026-10-03T17:46:09+00:00",
-      "generator_version": "4.1.0",
+      "fetched_at": "2026-10-03T18:02:18+00:00",
+      "generator_version": "4.2.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan": {
       "revid": 1148519,
-      "fetched_at": "2026-10-03T17:46:09+00:00",
-      "generator_version": "4.1.0",
+      "fetched_at": "2026-10-03T18:02:18+00:00",
+      "generator_version": "4.2.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea/Regular_Season": {
       "revid": 1148634,
-      "fetched_at": "2026-10-03T17:46:09+00:00",
-      "generator_version": "4.1.0",
+      "fetched_at": "2026-10-03T18:02:18+00:00",
+      "generator_version": "4.2.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea": {
       "revid": 1148524,
-      "fetched_at": "2026-10-03T17:46:09+00:00",
-      "generator_version": "4.1.0",
+      "fetched_at": "2026-10-03T18:02:18+00:00",
+      "generator_version": "4.2.0",
       "status": "PARTIAL_ERROR",
       "detail": "overview parse partial: matches=OK, roster=ERROR",
-      "retry_after": "2026-10-03T18:46:09+00:00"
+      "retry_after": "2026-10-03T19:02:18+00:00"
     }
   },
   "fetch_log": [
