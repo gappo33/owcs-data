@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
-  "generator_version": "4.3.0",
-  "generated_at": "2026-10-03T19:27:36+00:00",
-  "generated_at_jst": "2026-10-04T04:27:36+09:00",
+  "generator_version": "4.4.0",
+  "generated_at": "2026-10-04T04:01:24+00:00",
+  "generated_at_jst": "2026-10-04T13:01:24+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "active_regions": [
@@ -5006,7 +5006,664 @@
           "key": "KR|2026-11-08T00:00:00+09:00|TBD TBD TBD|TBD TBD TBD|None|None"
         }
       ],
-      "rosters": [],
+      "rosters": [
+        {
+          "region": "KR",
+          "team": "ZETA DIVISION",
+          "role": "DPS",
+          "player": "Proper",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZETA DIVISION",
+          "role": "DPS",
+          "player": "KNIFE",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZETA DIVISION",
+          "role": "Tank",
+          "player": "Mealgaru",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZETA DIVISION",
+          "role": "Tank",
+          "player": "Bernar",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZETA DIVISION",
+          "role": "Support",
+          "player": "Shu",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZETA DIVISION",
+          "role": "Support",
+          "player": "Viol2t",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZETA DIVISION",
+          "role": "Head Coach",
+          "player": "Crusty",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZETA DIVISION",
+          "role": "Coach",
+          "player": "Twilight",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Crazy Raccoon",
+          "role": "DPS",
+          "player": "LIP",
+          "status": "DNP",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Crazy Raccoon",
+          "role": "DPS",
+          "player": "HeeSang",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Crazy Raccoon",
+          "role": "DPS",
+          "player": "Stalk3r",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Crazy Raccoon",
+          "role": "Tank",
+          "player": "MAX",
+          "status": "DNP",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Crazy Raccoon",
+          "role": "Tank",
+          "player": "JunBin",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Crazy Raccoon",
+          "role": "Support",
+          "player": "CH0R0NG",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Crazy Raccoon",
+          "role": "Support",
+          "player": "vigilante",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Crazy Raccoon",
+          "role": "Assistant Coach",
+          "player": "Kong",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Crazy Raccoon",
+          "role": "Assistant Coach",
+          "player": "Izayaki",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "T1",
+          "role": "DPS",
+          "player": "Proud",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "T1",
+          "role": "DPS",
+          "player": "ZEST",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "T1",
+          "role": "Tank",
+          "player": "DONGHAK",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "T1",
+          "role": "Tank",
+          "player": "Jasm1ne",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "T1",
+          "role": "Support",
+          "player": "skewed",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "T1",
+          "role": "Support",
+          "player": "Bliss",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "T1",
+          "role": "Head Coach",
+          "player": "RUSH",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "T1",
+          "role": "Coach",
+          "player": "Fleta",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "T1",
+          "role": "Coach",
+          "player": "GgulTaek",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZANSIDE GAMING",
+          "role": "DPS",
+          "player": "Becky",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZANSIDE GAMING",
+          "role": "DPS",
+          "player": "Kilo",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZANSIDE GAMING",
+          "role": "DPS",
+          "player": "Taejong",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZANSIDE GAMING",
+          "role": "Tank",
+          "player": "HEESUNG",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZANSIDE GAMING",
+          "role": "Tank",
+          "player": "HEISER",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZANSIDE GAMING",
+          "role": "Support",
+          "player": "IRONY",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZANSIDE GAMING",
+          "role": "Support",
+          "player": "OPENER",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZANSIDE GAMING",
+          "role": "Head Coach",
+          "player": "KariV",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZANSIDE GAMING",
+          "role": "Coach",
+          "player": "Ir1s",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "ZANSIDE GAMING",
+          "role": "Coach",
+          "player": "Mircalla",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Team Falcons",
+          "role": "DPS",
+          "player": "Checkmate",
+          "status": "DNP",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Team Falcons",
+          "role": "DPS",
+          "player": "MER1T",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Team Falcons",
+          "role": "DPS",
+          "player": "SP1NT",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Team Falcons",
+          "role": "Tank",
+          "player": "Hanbin",
+          "status": "DNP",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Team Falcons",
+          "role": "Tank",
+          "player": "SOMEONE",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Team Falcons",
+          "role": "Support",
+          "player": "ChiYo",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Team Falcons",
+          "role": "Support",
+          "player": "Fielder",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Team Falcons",
+          "role": "Head Coach",
+          "player": "NineK",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Team Falcons",
+          "role": "Coach",
+          "player": "SP9RK1E",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Team Falcons",
+          "role": "Coach",
+          "player": "Junkbuck",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Team Falcons",
+          "role": "Team Manager",
+          "player": "Levi",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "O2 Blast",
+          "role": "DPS",
+          "player": "Perr",
+          "status": "DNP",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "O2 Blast",
+          "role": "DPS",
+          "player": "WuTian",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "O2 Blast",
+          "role": "DPS",
+          "player": "A1IEN",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "O2 Blast",
+          "role": "Tank",
+          "player": "Fate",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "O2 Blast",
+          "role": "Tank",
+          "player": "Homerunball",
+          "status": "DNP",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "O2 Blast",
+          "role": "Support",
+          "player": "Faith",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "O2 Blast",
+          "role": "Support",
+          "player": "Gamjung",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "O2 Blast",
+          "role": "Head Coach",
+          "player": "O2Boss",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "O2 Blast",
+          "role": "Coach",
+          "player": "Chilhwa",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "O2 Blast",
+          "role": "Coach",
+          "player": "Myunb0ng",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "O2 Blast",
+          "role": "Coach",
+          "player": "Cane",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Cheeseburger",
+          "role": "DPS",
+          "player": "K4NE",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Cheeseburger",
+          "role": "DPS",
+          "player": "Profit",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Cheeseburger",
+          "role": "DPS",
+          "player": "AZENT",
+          "status": "DNP",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Cheeseburger",
+          "role": "Tank",
+          "player": "Belosrea",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Cheeseburger",
+          "role": "Support",
+          "player": "TENTEN",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Cheeseburger",
+          "role": "Support",
+          "player": "Trest",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Cheeseburger",
+          "role": "Coach",
+          "player": "KRILLIN",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Poker Face",
+          "role": "DPS",
+          "player": "F1nally",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Poker Face",
+          "role": "DPS",
+          "player": "SORI",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Poker Face",
+          "role": "Tank",
+          "player": "SoLA",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Poker Face",
+          "role": "Tank",
+          "player": "SWOO",
+          "status": "DNP",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Poker Face",
+          "role": "Support",
+          "player": "Dumbbell",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Poker Face",
+          "role": "Support",
+          "player": "Caffeine",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Poker Face",
+          "role": "Support",
+          "player": "Soae",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Poker Face",
+          "role": "Head Coach",
+          "player": "SEON",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "Poker Face",
+          "role": "Coach",
+          "player": "Mandu",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "SEIJI ESPORTS",
+          "role": "DPS",
+          "player": "D4RT",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "SEIJI ESPORTS",
+          "role": "DPS",
+          "player": "M1NUT2",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "SEIJI ESPORTS",
+          "role": "Tank",
+          "player": "DOX",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "SEIJI ESPORTS",
+          "role": "Tank",
+          "player": "SENTIER",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "SEIJI ESPORTS",
+          "role": "Support",
+          "player": "OFF",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "SEIJI ESPORTS",
+          "role": "Support",
+          "player": "Lavender",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "SEIJI ESPORTS",
+          "role": "Coach",
+          "player": "Da1Da1Sm00th",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        },
+        {
+          "region": "KR",
+          "team": "SEIJI ESPORTS",
+          "role": "Coach",
+          "player": "SanGuiNar",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
+        }
+      ],
       "hero_bans": [],
       "sources": {
         "overview": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
@@ -5476,39 +6133,41 @@
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea": {
       "revid": 1148524,
-      "fetched_at": "2026-10-03T18:02:18+00:00",
-      "generator_version": "4.2.0",
-      "status": "PARTIAL_ERROR",
-      "detail": "overview parse partial: matches=OK, roster=ERROR",
-      "retry_after": "2026-10-03T19:02:18+00:00"
+      "fetched_at": "2026-10-04T04:01:24+00:00",
+      "generator_version": "4.4.0",
+      "status": "ROSTER_REPAIR_OK",
+      "detail": "OK_WIKITEXT"
     }
   },
   "fetch_log": [
     {
-      "region": "GLOBAL",
-      "page": "revision-check",
-      "status": "RATE_LIMITED",
-      "message": "Liquipedia returned HTTP 429 Too Many Requests",
-      "retry_after": null
-    }
-  ],
-  "errors": [
+      "region": "KR",
+      "page": "roster",
+      "status": "REPAIR_REQUIRED",
+      "message": "parsed 0 entries"
+    },
     {
-      "region": "GLOBAL",
-      "page": "revision-check",
-      "error": "Liquipedia returned HTTP 429 Too Many Requests"
+      "region": "KR",
+      "page": "roster",
+      "status": "REPAIR_OK",
+      "revid": 1148524,
+      "rosters": 82,
+      "roster_status": "OK_WIKITEXT"
     }
   ],
+  "errors": [],
   "run_stats": {
-    "query_calls": 1,
-    "parse_calls": 0,
+    "query_calls": 0,
+    "parse_calls": 1,
     "cache_hits": 0,
     "active_regions": [
       "JP",
       "KR"
     ],
     "force_parse": false,
-    "cache_max_age_hours": 6.0
-  },
-  "rate_limit_until": "2026-10-03T20:27:36+00:00"
+    "cache_max_age_hours": 6.0,
+    "repair_regions": [
+      "KR"
+    ]
+  }
 }
