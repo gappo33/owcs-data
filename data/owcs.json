@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "generator_version": "4.4.0",
-  "generated_at": "2026-10-09T01:31:28+00:00",
-  "generated_at_jst": "2026-10-09T10:31:28+09:00",
+  "generated_at": "2026-10-10T01:30:24+00:00",
+  "generated_at_jst": "2026-10-10T10:30:24+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "active_regions": [
@@ -2831,243 +2831,165 @@
               "received_b": "jetpack cat"
             }
           ]
-        }
-      ],
-      "upcoming_matches": [
+        },
         {
           "region": "KR",
-          "date_jst": "2026-10-09T17:00:00+09:00",
+          "date_jst": "2026-10-09T17:20:00+09:00",
           "team_a": "Team Falcons",
           "team_b": "O2 Blast",
-          "score_a": 0,
+          "score_a": 3,
           "score_b": 0,
-          "finished": false,
+          "finished": true,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea/Regular_Season",
-          "key": "KR|2026-10-09T17:00:00+09:00|Team Falcons|O2 Blast",
+          "key": "KR|2026-10-09T17:20:00+09:00|Team Falcons|O2 Blast",
           "maps": [
             {
               "map_no": 1,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
+              "map": "Busan",
+              "score_a": "2",
+              "score_b": "0",
+              "winner": "Team Falcons",
               "picker": "",
               "picker_basis": "Map 1: not inferred",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "ban_a": "tracer",
+              "ban_b": "sombra",
+              "received_a": "sombra",
+              "received_b": "tracer"
             },
             {
               "map_no": 2,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "New Junk City",
+              "score_a": "3",
+              "score_b": "0",
+              "winner": "Team Falcons",
+              "picker": "O2 Blast",
+              "picker_basis": "Previous map loser",
+              "ban_a": "orisa",
+              "ban_b": "mercy",
+              "received_a": "mercy",
+              "received_b": "orisa"
             },
             {
               "map_no": 3,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 4,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 5,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Esperança",
+              "score_a": "141.97",
+              "score_b": "21.94",
+              "winner": "Team Falcons",
+              "picker": "O2 Blast",
+              "picker_basis": "Previous map loser",
+              "ban_a": "doctrine",
+              "ban_b": "bastion",
+              "received_a": "bastion",
+              "received_b": "doctrine"
             }
           ]
         },
         {
           "region": "KR",
-          "date_jst": "2026-10-09T18:30:00+09:00",
+          "date_jst": "2026-10-09T18:35:00+09:00",
           "team_a": "Poker Face",
           "team_b": "T1",
           "score_a": 0,
-          "score_b": 0,
-          "finished": false,
+          "score_b": 3,
+          "finished": true,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea/Regular_Season",
-          "key": "KR|2026-10-09T18:30:00+09:00|Poker Face|T1",
+          "key": "KR|2026-10-09T18:35:00+09:00|Poker Face|T1",
           "maps": [
             {
               "map_no": 1,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
+              "map": "Nepal",
+              "score_a": "0",
+              "score_b": "2",
+              "winner": "T1",
               "picker": "",
               "picker_basis": "Map 1: not inferred",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "ban_a": "jetpack cat",
+              "ban_b": "d.mon",
+              "received_a": "d.mon",
+              "received_b": "jetpack cat"
             },
             {
               "map_no": 2,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Shambali Monastery",
+              "score_a": "0",
+              "score_b": "3",
+              "winner": "T1",
+              "picker": "Poker Face",
+              "picker_basis": "Previous map loser",
+              "ban_a": "lucio",
+              "ban_b": "bastion",
+              "received_a": "bastion",
+              "received_b": "lucio"
             },
             {
               "map_no": 3,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 4,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 5,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Suravasa",
+              "score_a": "0",
+              "score_b": "3",
+              "winner": "T1",
+              "picker": "Poker Face",
+              "picker_basis": "Previous map loser",
+              "ban_a": "wrecking ball",
+              "ban_b": "reaper",
+              "received_a": "reaper",
+              "received_b": "wrecking ball"
             }
           ]
         },
         {
           "region": "KR",
-          "date_jst": "2026-10-09T20:00:00+09:00",
+          "date_jst": "2026-10-09T20:05:00+09:00",
           "team_a": "SEIJI ESPORTS",
           "team_b": "ZETA DIVISION",
           "score_a": 0,
-          "score_b": 0,
-          "finished": false,
+          "score_b": 3,
+          "finished": true,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea/Regular_Season",
-          "key": "KR|2026-10-09T20:00:00+09:00|SEIJI ESPORTS|ZETA DIVISION",
+          "key": "KR|2026-10-09T20:05:00+09:00|SEIJI ESPORTS|ZETA DIVISION",
           "maps": [
             {
               "map_no": 1,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
+              "map": "Samoa",
+              "score_a": "0",
+              "score_b": "2",
+              "winner": "ZETA DIVISION",
               "picker": "",
               "picker_basis": "Map 1: not inferred",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "ban_a": "d.va",
+              "ban_b": "mercy",
+              "received_a": "mercy",
+              "received_b": "d.va"
             },
             {
               "map_no": 2,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "Shambali Monastery",
+              "score_a": "1",
+              "score_b": "2",
+              "winner": "ZETA DIVISION",
+              "picker": "SEIJI ESPORTS",
+              "picker_basis": "Previous map loser",
+              "ban_a": "cassidy",
+              "ban_b": "jetpack cat",
+              "received_a": "jetpack cat",
+              "received_b": "cassidy"
             },
             {
               "map_no": 3,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 4,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 5,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "map": "New Junk City",
+              "score_a": "2",
+              "score_b": "3",
+              "winner": "ZETA DIVISION",
+              "picker": "SEIJI ESPORTS",
+              "picker_basis": "Previous map loser",
+              "ban_a": "wrecking ball",
+              "ban_b": "shion",
+              "received_a": "shion",
+              "received_b": "wrecking ball"
             }
           ]
-        },
+        }
+      ],
+      "upcoming_matches": [
         {
           "region": "KR",
           "date_jst": "2026-10-10T15:00:00+09:00",
@@ -5245,7 +5167,7 @@
           "team": "ZANSIDE GAMING",
           "role": "Tank",
           "player": "HEESUNG",
-          "status": "",
+          "status": "DNP",
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
         },
         {
@@ -6116,25 +6038,25 @@
   "page_cache": {
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season": {
       "revid": 1148890,
-      "fetched_at": "2026-10-08T01:30:19+00:00",
+      "fetched_at": "2026-10-10T01:30:24+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan": {
       "revid": 1148519,
-      "fetched_at": "2026-10-08T01:30:19+00:00",
+      "fetched_at": "2026-10-10T01:30:24+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea/Regular_Season": {
-      "revid": 1148809,
-      "fetched_at": "2026-10-08T01:30:19+00:00",
+      "revid": 1149262,
+      "fetched_at": "2026-10-10T01:30:24+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea": {
-      "revid": 1148727,
-      "fetched_at": "2026-10-08T01:30:19+00:00",
+      "revid": 1149210,
+      "fetched_at": "2026-10-10T01:30:24+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     }
@@ -6143,21 +6065,56 @@
     {
       "region": "GLOBAL",
       "page": "revision-check",
-      "status": "RATE_LIMITED",
-      "message": "Liquipedia returned HTTP 429 Too Many Requests",
-      "retry_after": null
-    }
-  ],
-  "errors": [
+      "status": "OK",
+      "pages": 4
+    },
     {
-      "region": "GLOBAL",
-      "page": "revision-check",
-      "error": "Liquipedia returned HTTP 429 Too Many Requests"
+      "region": "JP",
+      "page": "regular",
+      "status": "OK",
+      "revid": 1148890,
+      "standings": 8,
+      "standings_status": "OK",
+      "matches": 28,
+      "match_status": "OK"
+    },
+    {
+      "region": "JP",
+      "page": "overview",
+      "status": "OK",
+      "revid": 1148519,
+      "matches": 4,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 61,
+      "roster_status": "OK_WIKITEXT"
+    },
+    {
+      "region": "KR",
+      "page": "regular",
+      "status": "OK",
+      "revid": 1149262,
+      "standings": 9,
+      "standings_status": "OK",
+      "matches": 36,
+      "match_status": "OK"
+    },
+    {
+      "region": "KR",
+      "page": "overview",
+      "status": "OK",
+      "revid": 1149210,
+      "matches": 6,
+      "match_status": "OK",
+      "bans": 0,
+      "rosters": 82,
+      "roster_status": "OK_WIKITEXT"
     }
   ],
+  "errors": [],
   "run_stats": {
     "query_calls": 1,
-    "parse_calls": 0,
+    "parse_calls": 4,
     "cache_hits": 0,
     "active_regions": [
       "JP",
@@ -6165,6 +6122,5 @@
     ],
     "force_parse": false,
     "cache_max_age_hours": 6.0
-  },
-  "rate_limit_until": "2026-10-09T07:31:28+00:00"
+  }
 }
