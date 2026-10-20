@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "generator_version": "4.4.0",
-  "generated_at": "2026-10-19T01:42:48+00:00",
-  "generated_at_jst": "2026-10-19T10:42:48+09:00",
+  "generated_at": "2026-10-20T01:43:59+00:00",
+  "generated_at_jst": "2026-10-20T10:43:59+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "active_regions": [
@@ -1715,19 +1715,188 @@
               "received_b": "d.va"
             }
           ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-19T18:45:00+09:00",
+          "team_a": "99DIVINE",
+          "team_b": "MURASH GAMING",
+          "score_a": 3,
+          "score_b": 4,
+          "finished": true,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan",
+          "key": "JP|2026-10-19T18:45:00+09:00|99DIVINE|MURASH GAMING",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "Nepal",
+              "score_a": "0",
+              "score_b": "2",
+              "winner": "MURASH GAMING",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "mercy",
+              "ban_b": "bastion",
+              "received_a": "bastion",
+              "received_b": "mercy"
+            },
+            {
+              "map_no": 2,
+              "map": "Aatlis",
+              "score_a": "3",
+              "score_b": "1",
+              "winner": "99DIVINE",
+              "picker": "99DIVINE",
+              "picker_basis": "Previous map loser",
+              "ban_a": "sombra",
+              "ban_b": "shion",
+              "received_a": "shion",
+              "received_b": "sombra"
+            },
+            {
+              "map_no": 3,
+              "map": "Neon Junction",
+              "score_a": "1",
+              "score_b": "2",
+              "winner": "MURASH GAMING",
+              "picker": "MURASH GAMING",
+              "picker_basis": "Previous map loser",
+              "ban_a": "torbjorn",
+              "ban_b": "sombra",
+              "received_a": "sombra",
+              "received_b": "torbjorn"
+            },
+            {
+              "map_no": 4,
+              "map": "Esperança",
+              "score_a": "118.72",
+              "score_b": "67.30",
+              "winner": "99DIVINE",
+              "picker": "99DIVINE",
+              "picker_basis": "Previous map loser",
+              "ban_a": "mauga",
+              "ban_b": "jetpack cat",
+              "received_a": "jetpack cat",
+              "received_b": "mauga"
+            },
+            {
+              "map_no": 5,
+              "map": "Route 66",
+              "score_a": "1",
+              "score_b": "3",
+              "winner": "MURASH GAMING",
+              "picker": "MURASH GAMING",
+              "picker_basis": "Previous map loser",
+              "ban_a": "genji",
+              "ban_b": "d.mon",
+              "received_a": "d.mon",
+              "received_b": "genji"
+            },
+            {
+              "map_no": 6,
+              "map": "New Junk City",
+              "score_a": "3",
+              "score_b": "0",
+              "winner": "99DIVINE",
+              "picker": "99DIVINE",
+              "picker_basis": "Previous map loser",
+              "ban_a": "kiriko",
+              "ban_b": "orisa",
+              "received_a": "orisa",
+              "received_b": "kiriko"
+            },
+            {
+              "map_no": 7,
+              "map": "Junkertown",
+              "score_a": "1",
+              "score_b": "3",
+              "winner": "MURASH GAMING",
+              "picker": "MURASH GAMING",
+              "picker_basis": "Previous map loser",
+              "ban_a": "sigma",
+              "ban_b": "widowmaker",
+              "received_a": "widowmaker",
+              "received_b": "sigma"
+            }
+          ]
+        },
+        {
+          "region": "JP",
+          "date_jst": "2026-10-19T21:45:00+09:00",
+          "team_a": "VARREL",
+          "team_b": "ENTER FORCE.36",
+          "score_a": 4,
+          "score_b": 0,
+          "finished": true,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan",
+          "key": "JP|2026-10-19T21:45:00+09:00|VARREL|ENTER FORCE.36",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "Nepal",
+              "score_a": "2",
+              "score_b": "1",
+              "winner": "VARREL",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "shion",
+              "ban_b": "doctrine",
+              "received_a": "doctrine",
+              "received_b": "shion"
+            },
+            {
+              "map_no": 2,
+              "map": "Neon Junction",
+              "score_a": "5",
+              "score_b": "4",
+              "winner": "VARREL",
+              "picker": "ENTER FORCE.36",
+              "picker_basis": "Previous map loser",
+              "ban_a": "junkrat",
+              "ban_b": "zenyatta",
+              "received_a": "zenyatta",
+              "received_b": "junkrat"
+            },
+            {
+              "map_no": 3,
+              "map": "Route 66",
+              "score_a": "3",
+              "score_b": "2",
+              "winner": "VARREL",
+              "picker": "ENTER FORCE.36",
+              "picker_basis": "Previous map loser",
+              "ban_a": "kiriko",
+              "ban_b": "d.va",
+              "received_a": "d.va",
+              "received_b": "kiriko"
+            },
+            {
+              "map_no": 4,
+              "map": "Aatlis",
+              "score_a": "3",
+              "score_b": "0",
+              "winner": "VARREL",
+              "picker": "ENTER FORCE.36",
+              "picker_basis": "Previous map loser",
+              "ban_a": "winston",
+              "ban_b": "kiriko",
+              "received_a": "kiriko",
+              "received_b": "winston"
+            }
+          ]
         }
       ],
       "upcoming_matches": [
         {
           "region": "JP",
-          "date_jst": "2026-10-19T18:00:00+09:00",
+          "date_jst": "2026-10-20T18:00:00+09:00",
           "team_a": "99DIVINE",
-          "team_b": "MURASH GAMING",
+          "team_b": "ENTER FORCE.36",
           "score_a": 0,
           "score_b": 0,
           "finished": false,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan",
-          "key": "JP|2026-10-19T18:00:00+09:00|99DIVINE|MURASH GAMING",
+          "key": "JP|2026-10-20T18:00:00+09:00|99DIVINE|ENTER FORCE.36",
           "maps": [
             {
               "map_no": 1,
@@ -1824,14 +1993,14 @@
         },
         {
           "region": "JP",
-          "date_jst": "2026-10-19T20:00:00+09:00",
-          "team_a": "VARREL",
-          "team_b": "ENTER FORCE.36",
+          "date_jst": "2026-10-20T20:00:00+09:00",
+          "team_a": "MURASH GAMING",
+          "team_b": "VARREL",
           "score_a": 0,
           "score_b": 0,
           "finished": false,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan",
-          "key": "JP|2026-10-19T20:00:00+09:00|VARREL|ENTER FORCE.36",
+          "key": "JP|2026-10-20T20:00:00+09:00|MURASH GAMING|VARREL",
           "maps": [
             {
               "map_no": 1,
@@ -5955,25 +6124,25 @@
   "page_cache": {
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season": {
       "revid": 1150126,
-      "fetched_at": "2026-10-19T01:42:48+00:00",
+      "fetched_at": "2026-10-20T01:43:59+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan": {
-      "revid": 1150083,
-      "fetched_at": "2026-10-19T01:42:48+00:00",
+      "revid": 1150824,
+      "fetched_at": "2026-10-20T01:43:59+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea/Regular_Season": {
       "revid": 1150594,
-      "fetched_at": "2026-10-19T01:42:48+00:00",
+      "fetched_at": "2026-10-20T01:43:59+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea": {
       "revid": 1150258,
-      "fetched_at": "2026-10-19T01:42:48+00:00",
+      "fetched_at": "2026-10-20T01:43:59+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     }
@@ -5999,8 +6168,8 @@
       "region": "JP",
       "page": "overview",
       "status": "OK",
-      "revid": 1150083,
-      "matches": 2,
+      "revid": 1150824,
+      "matches": 4,
       "match_status": "OK",
       "bans": 0,
       "rosters": 61,
