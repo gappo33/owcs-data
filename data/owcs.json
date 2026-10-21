@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "generator_version": "4.4.0",
-  "generated_at": "2026-10-20T01:43:59+00:00",
-  "generated_at_jst": "2026-10-20T10:43:59+09:00",
+  "generated_at": "2026-10-21T01:44:36+00:00",
+  "generated_at_jst": "2026-10-21T10:44:36+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "active_regions": [
@@ -6151,56 +6151,21 @@
     {
       "region": "GLOBAL",
       "page": "revision-check",
-      "status": "OK",
-      "pages": 4
-    },
-    {
-      "region": "JP",
-      "page": "regular",
-      "status": "OK",
-      "revid": 1150126,
-      "standings": 8,
-      "standings_status": "OK",
-      "matches": 28,
-      "match_status": "OK"
-    },
-    {
-      "region": "JP",
-      "page": "overview",
-      "status": "OK",
-      "revid": 1150824,
-      "matches": 4,
-      "match_status": "OK",
-      "bans": 0,
-      "rosters": 61,
-      "roster_status": "OK_WIKITEXT"
-    },
-    {
-      "region": "KR",
-      "page": "regular",
-      "status": "OK",
-      "revid": 1150594,
-      "standings": 9,
-      "standings_status": "OK",
-      "matches": 36,
-      "match_status": "OK"
-    },
-    {
-      "region": "KR",
-      "page": "overview",
-      "status": "OK",
-      "revid": 1150258,
-      "matches": 6,
-      "match_status": "OK",
-      "bans": 0,
-      "rosters": 82,
-      "roster_status": "OK_WIKITEXT"
+      "status": "RATE_LIMITED",
+      "message": "Liquipedia returned HTTP 429 Too Many Requests",
+      "retry_after": null
     }
   ],
-  "errors": [],
+  "errors": [
+    {
+      "region": "GLOBAL",
+      "page": "revision-check",
+      "error": "Liquipedia returned HTTP 429 Too Many Requests"
+    }
+  ],
   "run_stats": {
     "query_calls": 1,
-    "parse_calls": 4,
+    "parse_calls": 0,
     "cache_hits": 0,
     "active_regions": [
       "JP",
@@ -6208,5 +6173,6 @@
     ],
     "force_parse": false,
     "cache_max_age_hours": 6.0
-  }
+  },
+  "rate_limit_until": "2026-10-21T07:44:36+00:00"
 }
