@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "generator_version": "4.4.0",
-  "generated_at": "2026-10-23T01:46:45+00:00",
-  "generated_at_jst": "2026-10-23T10:46:45+09:00",
+  "generated_at": "2026-10-24T01:47:55+00:00",
+  "generated_at_jst": "2026-10-24T10:47:55+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "active_regions": [
@@ -6134,5 +6134,5 @@
     "force_parse": false,
     "cache_max_age_hours": 6.0
   },
-  "rate_limit_until": "2026-10-23T07:46:45+00:00"
+  "rate_limit_until": "2026-10-24T07:47:55+00:00"
 }
