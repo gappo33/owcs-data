@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "generator_version": "4.4.0",
-  "generated_at": "2026-10-26T01:53:13+00:00",
-  "generated_at_jst": "2026-10-26T10:53:13+09:00",
+  "generated_at": "2026-10-27T06:16:02+00:00",
+  "generated_at_jst": "2026-10-27T15:16:02+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "active_regions": [
@@ -4780,92 +4780,14 @@
       "upcoming_matches": [
         {
           "region": "KR",
-          "date_jst": "2026-10-30T00:00:00+09:00",
-          "team_a": "Crazy Raccoon",
-          "team_b": "T1",
-          "score_a": 0,
-          "score_b": 0,
-          "finished": false,
-          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
-          "key": "KR|2026-10-30T00:00:00+09:00|Crazy Raccoon|T1",
-          "maps": [
-            {
-              "map_no": 1,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Map 1: not inferred",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 2,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 3,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 4,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            },
-            {
-              "map_no": 5,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
-            }
-          ]
-        },
-        {
-          "region": "KR",
-          "date_jst": "2026-10-30T00:00:00+09:00",
+          "date_jst": "2026-10-30T17:00:00+09:00",
           "team_a": "Team Falcons",
           "team_b": "SEIJI ESPORTS",
           "score_a": 0,
           "score_b": 0,
           "finished": false,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
-          "key": "KR|2026-10-30T00:00:00+09:00|Team Falcons|SEIJI ESPORTS",
+          "key": "KR|2026-10-30T17:00:00+09:00|Team Falcons|SEIJI ESPORTS",
           "maps": [
             {
               "map_no": 1,
@@ -4936,14 +4858,14 @@
         },
         {
           "region": "KR",
-          "date_jst": "2026-10-30T00:00:00+09:00",
+          "date_jst": "2026-10-30T18:30:00+09:00",
           "team_a": "ZETA DIVISION",
           "team_b": "Cheeseburger",
           "score_a": 0,
           "score_b": 0,
           "finished": false,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
-          "key": "KR|2026-10-30T00:00:00+09:00|ZETA DIVISION|Cheeseburger",
+          "key": "KR|2026-10-30T18:30:00+09:00|ZETA DIVISION|Cheeseburger",
           "maps": [
             {
               "map_no": 1,
@@ -5014,14 +4936,14 @@
         },
         {
           "region": "KR",
-          "date_jst": "2026-10-31T00:00:00+09:00",
+          "date_jst": "2026-10-30T20:00:00+09:00",
           "team_a": "Crazy Raccoon",
-          "team_b": "Cheeseburger",
+          "team_b": "T1",
           "score_a": 0,
           "score_b": 0,
           "finished": false,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
-          "key": "KR|2026-10-31T00:00:00+09:00|Crazy Raccoon|Cheeseburger",
+          "key": "KR|2026-10-30T20:00:00+09:00|Crazy Raccoon|T1",
           "maps": [
             {
               "map_no": 1,
@@ -5092,14 +5014,14 @@
         },
         {
           "region": "KR",
-          "date_jst": "2026-10-31T00:00:00+09:00",
+          "date_jst": "2026-10-31T15:00:00+09:00",
           "team_a": "ZANSIDE GAMING",
           "team_b": "O2 Blast",
           "score_a": 0,
           "score_b": 0,
           "finished": false,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
-          "key": "KR|2026-10-31T00:00:00+09:00|ZANSIDE GAMING|O2 Blast",
+          "key": "KR|2026-10-31T15:00:00+09:00|ZANSIDE GAMING|O2 Blast",
           "maps": [
             {
               "map_no": 1,
@@ -5170,14 +5092,14 @@
         },
         {
           "region": "KR",
-          "date_jst": "2026-10-31T00:00:00+09:00",
+          "date_jst": "2026-10-31T16:30:00+09:00",
           "team_a": "ZETA DIVISION",
           "team_b": "T1",
           "score_a": 0,
           "score_b": 0,
           "finished": false,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
-          "key": "KR|2026-10-31T00:00:00+09:00|ZETA DIVISION|T1",
+          "key": "KR|2026-10-31T16:30:00+09:00|ZETA DIVISION|T1",
           "maps": [
             {
               "map_no": 1,
@@ -5248,14 +5170,14 @@
         },
         {
           "region": "KR",
-          "date_jst": "2026-11-01T00:00:00+09:00",
-          "team_a": "T1",
+          "date_jst": "2026-10-31T18:00:00+09:00",
+          "team_a": "Crazy Raccoon",
           "team_b": "Cheeseburger",
           "score_a": 0,
           "score_b": 0,
           "finished": false,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
-          "key": "KR|2026-11-01T00:00:00+09:00|T1|Cheeseburger",
+          "key": "KR|2026-10-31T18:00:00+09:00|Crazy Raccoon|Cheeseburger",
           "maps": [
             {
               "map_no": 1,
@@ -5326,14 +5248,92 @@
         },
         {
           "region": "KR",
-          "date_jst": "2026-11-01T00:00:00+09:00",
+          "date_jst": "2026-11-01T17:30:00+09:00",
           "team_a": "ZETA DIVISION",
           "team_b": "Crazy Raccoon",
           "score_a": 0,
           "score_b": 0,
           "finished": false,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
-          "key": "KR|2026-11-01T00:00:00+09:00|ZETA DIVISION|Crazy Raccoon",
+          "key": "KR|2026-11-01T17:30:00+09:00|ZETA DIVISION|Crazy Raccoon",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 2,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 3,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 4,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            },
+            {
+              "map_no": 5,
+              "map": "",
+              "score_a": "",
+              "score_b": "",
+              "winner": "",
+              "picker": "",
+              "picker_basis": "Previous map draw/unknown",
+              "ban_a": "",
+              "ban_b": "",
+              "received_a": "",
+              "received_b": ""
+            }
+          ]
+        },
+        {
+          "region": "KR",
+          "date_jst": "2026-11-01T19:00:00+09:00",
+          "team_a": "T1",
+          "team_b": "Cheeseburger",
+          "score_a": 0,
+          "score_b": 0,
+          "finished": false,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
+          "key": "KR|2026-11-01T19:00:00+09:00|T1|Cheeseburger",
           "maps": [
             {
               "map_no": 1,
@@ -6512,25 +6512,25 @@
   "page_cache": {
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season": {
       "revid": 1151238,
-      "fetched_at": "2026-10-26T01:53:13+00:00",
+      "fetched_at": "2026-10-27T06:16:02+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan": {
       "revid": 1151270,
-      "fetched_at": "2026-10-26T01:53:13+00:00",
+      "fetched_at": "2026-10-27T06:16:02+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea/Regular_Season": {
       "revid": 1152085,
-      "fetched_at": "2026-10-26T01:53:13+00:00",
+      "fetched_at": "2026-10-27T06:16:02+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea": {
-      "revid": 1152020,
-      "fetched_at": "2026-10-26T01:53:13+00:00",
+      "revid": 1152187,
+      "fetched_at": "2026-10-27T06:16:02+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     }
@@ -6577,7 +6577,7 @@
       "region": "KR",
       "page": "overview",
       "status": "OK",
-      "revid": 1152020,
+      "revid": 1152187,
       "matches": 8,
       "match_status": "OK",
       "bans": 0,
