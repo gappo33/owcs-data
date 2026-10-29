@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "generator_version": "4.4.0",
-  "generated_at": "2026-10-28T06:51:47+00:00",
-  "generated_at_jst": "2026-10-28T15:51:47+09:00",
+  "generated_at": "2026-10-29T07:03:56+00:00",
+  "generated_at_jst": "2026-10-29T16:03:56+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "active_regions": [
@@ -5721,7 +5721,7 @@
           "team": "Team Falcons",
           "role": "Tank",
           "player": "Hanbin",
-          "status": "DNP",
+          "status": "",
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea"
         },
         {
@@ -6512,25 +6512,25 @@
   "page_cache": {
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season": {
       "revid": 1151238,
-      "fetched_at": "2026-10-28T06:51:47+00:00",
+      "fetched_at": "2026-10-29T07:03:56+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan": {
       "revid": 1151270,
-      "fetched_at": "2026-10-28T06:51:47+00:00",
+      "fetched_at": "2026-10-29T07:03:56+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea/Regular_Season": {
       "revid": 1152085,
-      "fetched_at": "2026-10-28T06:51:47+00:00",
+      "fetched_at": "2026-10-29T07:03:56+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea": {
-      "revid": 1152187,
-      "fetched_at": "2026-10-28T06:51:47+00:00",
+      "revid": 1152411,
+      "fetched_at": "2026-10-29T07:03:56+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     }
@@ -6577,7 +6577,7 @@
       "region": "KR",
       "page": "overview",
       "status": "OK",
-      "revid": 1152187,
+      "revid": 1152411,
       "matches": 8,
       "match_status": "OK",
       "bans": 0,
