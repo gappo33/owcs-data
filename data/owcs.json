@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "generator_version": "4.4.0",
-  "generated_at": "2026-10-29T07:03:56+00:00",
-  "generated_at_jst": "2026-10-29T16:03:56+09:00",
+  "generated_at": "2026-10-30T07:05:07+00:00",
+  "generated_at_jst": "2026-10-30T16:05:07+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "active_regions": [
@@ -23,7 +23,7 @@
           "map_wins": 6,
           "map_losses": 0,
           "map_record": "6-0",
-          "map_diff": 2
+          "map_diff": 6
         },
         {
           "rank": 2,
@@ -34,7 +34,7 @@
           "map_wins": 6,
           "map_losses": 1,
           "map_record": "6-1",
-          "map_diff": 3
+          "map_diff": 5
         },
         {
           "rank": 3,
@@ -45,7 +45,7 @@
           "map_wins": 3,
           "map_losses": 0,
           "map_record": "3-0",
-          "map_diff": 4
+          "map_diff": 3
         },
         {
           "rank": 4,
@@ -56,7 +56,7 @@
           "map_wins": 3,
           "map_losses": 5,
           "map_record": "3-5",
-          "map_diff": 5
+          "map_diff": -2
         },
         {
           "rank": 5,
@@ -67,7 +67,7 @@
           "map_wins": 1,
           "map_losses": 3,
           "map_record": "1-3",
-          "map_diff": 6
+          "map_diff": -2
         },
         {
           "rank": 6,
@@ -78,7 +78,7 @@
           "map_wins": 0,
           "map_losses": 3,
           "map_record": "0-3",
-          "map_diff": 8
+          "map_diff": -3
         },
         {
           "rank": 6,
@@ -89,7 +89,7 @@
           "map_wins": 0,
           "map_losses": 3,
           "map_record": "0-3",
-          "map_diff": 6
+          "map_diff": -3
         },
         {
           "rank": 8,
@@ -100,7 +100,7 @@
           "map_wins": 2,
           "map_losses": 6,
           "map_record": "2-6",
-          "map_diff": 1
+          "map_diff": -4
         }
       ],
       "finished_matches": [
@@ -2403,6 +2403,30 @@
         },
         {
           "region": "JP",
+          "team": "Please Not Hero Ban",
+          "role": "Coach",
+          "player": "estrella",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
+          "team": "Please Not Hero Ban",
+          "role": "Coach",
+          "player": "Barcode",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
+          "team": "Please Not Hero Ban",
+          "role": "Manager",
+          "player": "Drizzling",
+          "status": "",
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Japan"
+        },
+        {
+          "region": "JP",
           "team": "Lazuli",
           "role": "DPS",
           "player": "Probe",
@@ -2565,7 +2589,7 @@
           "map_wins": 6,
           "map_losses": 0,
           "map_record": "6-0",
-          "map_diff": 2
+          "map_diff": 6
         },
         {
           "rank": 2,
@@ -2576,7 +2600,7 @@
           "map_wins": 6,
           "map_losses": 1,
           "map_record": "6-1",
-          "map_diff": 4
+          "map_diff": 5
         },
         {
           "rank": 2,
@@ -2587,7 +2611,7 @@
           "map_wins": 6,
           "map_losses": 1,
           "map_record": "6-1",
-          "map_diff": 2
+          "map_diff": 5
         },
         {
           "rank": 4,
@@ -2598,7 +2622,7 @@
           "map_wins": 4,
           "map_losses": 3,
           "map_record": "4-3",
-          "map_diff": 5
+          "map_diff": 1
         },
         {
           "rank": 5,
@@ -2609,7 +2633,7 @@
           "map_wins": 3,
           "map_losses": 3,
           "map_record": "3-3",
-          "map_diff": 6
+          "map_diff": 0
         },
         {
           "rank": 6,
@@ -2620,7 +2644,7 @@
           "map_wins": 3,
           "map_losses": 4,
           "map_record": "3-4",
-          "map_diff": 7
+          "map_diff": -1
         },
         {
           "rank": 7,
@@ -2631,7 +2655,7 @@
           "map_wins": 1,
           "map_losses": 6,
           "map_record": "1-6",
-          "map_diff": 9
+          "map_diff": -5
         },
         {
           "rank": 7,
@@ -2642,7 +2666,7 @@
           "map_wins": 1,
           "map_losses": 6,
           "map_record": "1-6",
-          "map_diff": 7
+          "map_diff": -5
         },
         {
           "rank": 9,
@@ -2653,7 +2677,7 @@
           "map_wins": 0,
           "map_losses": 6,
           "map_record": "0-6",
-          "map_diff": 1
+          "map_diff": -6
         }
       ],
       "finished_matches": [
@@ -6512,25 +6536,25 @@
   "page_cache": {
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season": {
       "revid": 1151238,
-      "fetched_at": "2026-10-29T07:03:56+00:00",
+      "fetched_at": "2026-10-30T07:05:07+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan": {
-      "revid": 1151270,
-      "fetched_at": "2026-10-29T07:03:56+00:00",
+      "revid": 1152572,
+      "fetched_at": "2026-10-30T07:05:07+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea/Regular_Season": {
       "revid": 1152085,
-      "fetched_at": "2026-10-29T07:03:56+00:00",
+      "fetched_at": "2026-10-30T07:05:07+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea": {
       "revid": 1152411,
-      "fetched_at": "2026-10-29T07:03:56+00:00",
+      "fetched_at": "2026-10-30T07:05:07+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     }
@@ -6556,11 +6580,11 @@
       "region": "JP",
       "page": "overview",
       "status": "OK",
-      "revid": 1151270,
+      "revid": 1152572,
       "matches": 4,
       "match_status": "OK",
       "bans": 0,
-      "rosters": 61,
+      "rosters": 64,
       "roster_status": "OK_WIKITEXT"
     },
     {
