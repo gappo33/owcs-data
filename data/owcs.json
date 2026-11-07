@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "generator_version": "4.4.0",
-  "generated_at": "2026-11-06T07:55:04+00:00",
-  "generated_at_jst": "2026-11-06T16:55:04+09:00",
+  "generated_at": "2026-11-07T07:09:49+00:00",
+  "generated_at_jst": "2026-11-07T16:09:49+09:00",
   "data_source": "Liquipedia Overwatch Wiki / MediaWiki API",
   "api_terms": "https://liquipedia.net/api-terms-of-use",
   "active_regions": [
@@ -5345,45 +5345,186 @@
               "received_b": "bastion"
             }
           ]
-        }
-      ],
-      "upcoming_matches": [
+        },
         {
           "region": "KR",
-          "date_jst": "2026-11-06T15:00:00+09:00",
+          "date_jst": "2026-11-06T17:15:00+09:00",
           "team_a": "T1",
           "team_b": "ZANSIDE GAMING",
-          "score_a": 0,
-          "score_b": 0,
-          "finished": false,
+          "score_a": 4,
+          "score_b": 1,
+          "finished": true,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
-          "key": "KR|2026-11-06T15:00:00+09:00|T1|ZANSIDE GAMING",
+          "key": "KR|2026-11-06T17:15:00+09:00|T1|ZANSIDE GAMING",
           "maps": [
             {
               "map_no": 1,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
+              "map": "Busan",
+              "score_a": "2",
+              "score_b": "1",
+              "winner": "T1",
               "picker": "",
               "picker_basis": "Map 1: not inferred",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "ban_a": "Brigitte",
+              "ban_b": "Mauga",
+              "received_a": "Mauga",
+              "received_b": "Brigitte"
             },
             {
               "map_no": 2,
-              "map": "",
-              "score_a": "",
-              "score_b": "",
-              "winner": "",
+              "map": "Suravasa",
+              "score_a": "3",
+              "score_b": "1",
+              "winner": "T1",
+              "picker": "ZANSIDE GAMING",
+              "picker_basis": "Previous map loser",
+              "ban_a": "Wuyang",
+              "ban_b": "Bastion",
+              "received_a": "Bastion",
+              "received_b": "Wuyang"
+            },
+            {
+              "map_no": 3,
+              "map": "Esperança",
+              "score_a": "141.92",
+              "score_b": "65.51",
+              "winner": "T1",
+              "picker": "ZANSIDE GAMING",
+              "picker_basis": "Previous map loser",
+              "ban_a": "jetpack cat",
+              "ban_b": "wrecking ball",
+              "received_a": "wrecking ball",
+              "received_b": "jetpack cat"
+            },
+            {
+              "map_no": 4,
+              "map": "Neon Junction",
+              "score_a": "4",
+              "score_b": "5",
+              "winner": "ZANSIDE GAMING",
+              "picker": "ZANSIDE GAMING",
+              "picker_basis": "Previous map loser",
+              "ban_a": "kiriko",
+              "ban_b": "zarya",
+              "received_a": "zarya",
+              "received_b": "kiriko"
+            },
+            {
+              "map_no": 5,
+              "map": "Route 66",
+              "score_a": "1",
+              "score_b": "0",
+              "winner": "T1",
+              "picker": "T1",
+              "picker_basis": "Previous map loser",
+              "ban_a": "hazard",
+              "ban_b": "doctrine",
+              "received_a": "doctrine",
+              "received_b": "hazard"
+            }
+          ]
+        },
+        {
+          "region": "KR",
+          "date_jst": "2026-11-06T19:40:00+09:00",
+          "team_a": "Cheeseburger",
+          "team_b": "Team Falcons",
+          "score_a": 0,
+          "score_b": 4,
+          "finished": true,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
+          "key": "KR|2026-11-06T19:40:00+09:00|Cheeseburger|Team Falcons",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "Nepal",
+              "score_a": "0",
+              "score_b": "2",
+              "winner": "Team Falcons",
               "picker": "",
-              "picker_basis": "Previous map draw/unknown",
-              "ban_a": "",
-              "ban_b": "",
-              "received_a": "",
-              "received_b": ""
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "bastion",
+              "ban_b": "illari",
+              "received_a": "illari",
+              "received_b": "bastion"
+            },
+            {
+              "map_no": 2,
+              "map": "New Junk City",
+              "score_a": "0",
+              "score_b": "3",
+              "winner": "Team Falcons",
+              "picker": "Cheeseburger",
+              "picker_basis": "Previous map loser",
+              "ban_a": "lucio",
+              "ban_b": "symmetra",
+              "received_a": "symmetra",
+              "received_b": "lucio"
+            },
+            {
+              "map_no": 3,
+              "map": "Eichenwalde",
+              "score_a": "1",
+              "score_b": "3",
+              "winner": "Team Falcons",
+              "picker": "Cheeseburger",
+              "picker_basis": "Previous map loser",
+              "ban_a": "brigitte",
+              "ban_b": "cassidy",
+              "received_a": "cassidy",
+              "received_b": "brigitte"
+            },
+            {
+              "map_no": 4,
+              "map": "Route 66",
+              "score_a": "0",
+              "score_b": "3",
+              "winner": "Team Falcons",
+              "picker": "Cheeseburger",
+              "picker_basis": "Previous map loser",
+              "ban_a": "d.va",
+              "ban_b": "Illari",
+              "received_a": "Illari",
+              "received_b": "d.va"
+            }
+          ]
+        },
+        {
+          "region": "KR",
+          "date_jst": "2026-11-07T15:15:00+09:00",
+          "team_a": "ZETA DIVISION",
+          "team_b": "Team Falcons",
+          "score_a": 1,
+          "score_b": 1,
+          "finished": true,
+          "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
+          "key": "KR|2026-11-07T15:15:00+09:00|ZETA DIVISION|Team Falcons",
+          "maps": [
+            {
+              "map_no": 1,
+              "map": "Busan",
+              "score_a": "2",
+              "score_b": "1",
+              "winner": "ZETA DIVISION",
+              "picker": "",
+              "picker_basis": "Map 1: not inferred",
+              "ban_a": "shion",
+              "ban_b": "ana",
+              "received_a": "ana",
+              "received_b": "shion"
+            },
+            {
+              "map_no": 2,
+              "map": "Suravasa",
+              "score_a": "2",
+              "score_b": "3",
+              "winner": "Team Falcons",
+              "picker": "Team Falcons",
+              "picker_basis": "Previous map loser",
+              "ban_a": "kiriko",
+              "ban_b": "tracer",
+              "received_a": "tracer",
+              "received_b": "kiriko"
             },
             {
               "map_no": 3,
@@ -5391,8 +5532,8 @@
               "score_a": "",
               "score_b": "",
               "winner": "",
-              "picker": "",
-              "picker_basis": "Previous map draw/unknown",
+              "picker": "ZETA DIVISION",
+              "picker_basis": "Previous map loser",
               "ban_a": "",
               "ban_b": "",
               "received_a": "",
@@ -5451,17 +5592,19 @@
               "received_b": ""
             }
           ]
-        },
+        }
+      ],
+      "upcoming_matches": [
         {
           "region": "KR",
-          "date_jst": "2026-11-06T17:00:00+09:00",
-          "team_a": "Cheeseburger",
-          "team_b": "Team Falcons",
+          "date_jst": "2026-11-07T17:00:00+09:00",
+          "team_a": "Crazy Raccoon",
+          "team_b": "T1",
           "score_a": 0,
           "score_b": 0,
           "finished": false,
           "source": "https://liquipedia.net/overwatch/Overwatch_Champions_Series/2026/Asia/Stage_3/Korea",
-          "key": "KR|2026-11-06T17:00:00+09:00|Cheeseburger|Team Falcons",
+          "key": "KR|2026-11-07T17:00:00+09:00|Crazy Raccoon|T1",
           "maps": [
             {
               "map_no": 1,
@@ -6666,25 +6809,25 @@
   "page_cache": {
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan/Regular_Season": {
       "revid": 1151238,
-      "fetched_at": "2026-11-06T07:55:04+00:00",
+      "fetched_at": "2026-11-07T07:09:49+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Japan": {
       "revid": 1152572,
-      "fetched_at": "2026-11-06T07:55:04+00:00",
+      "fetched_at": "2026-11-07T07:09:49+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea/Regular_Season": {
-      "revid": 1152085,
-      "fetched_at": "2026-11-06T07:55:04+00:00",
+      "revid": 1153867,
+      "fetched_at": "2026-11-07T07:09:49+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     },
     "Overwatch_Champions_Series/2026/Asia/Stage_3/Korea": {
-      "revid": 1153177,
-      "fetched_at": "2026-11-06T07:55:04+00:00",
+      "revid": 1153911,
+      "fetched_at": "2026-11-07T07:09:49+00:00",
       "generator_version": "4.4.0",
       "status": "OK"
     }
@@ -6721,7 +6864,7 @@
       "region": "KR",
       "page": "regular",
       "status": "OK",
-      "revid": 1152085,
+      "revid": 1153867,
       "standings": 9,
       "standings_status": "OK",
       "matches": 36,
@@ -6731,8 +6874,8 @@
       "region": "KR",
       "page": "overview",
       "status": "OK",
-      "revid": 1153177,
-      "matches": 11,
+      "revid": 1153911,
+      "matches": 13,
       "match_status": "OK",
       "bans": 0,
       "rosters": 82,
