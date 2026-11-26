@@ -2,6 +2,10 @@ name: OWCS archive update
 on:
   workflow_dispatch:
     inputs:
+      restore_debug:
+        description: 'v1.8: Restore six verified pages from v18_recovery.json (zero API calls)'
+        type: boolean
+        default: false
       repair_only:
         description: 'Repair duplicate team names from cache only (zero API calls)'
         type: boolean
@@ -30,7 +34,9 @@ jobs:
           LIQUIPEDIA_CONTACT: ${{ secrets.LIQUIPEDIA_CONTACT }}
           OWCS_PARSE_BUDGET: '6'
         run: |
-          if [ "${{ inputs.repair_only }}" = "true" ]; then
+          if [ "${{ inputs.restore_debug }}" = "true" ]; then
+            python collect_all.py --restore-debug
+          elif [ "${{ inputs.repair_only }}" = "true" ]; then
             python collect_all.py --repair-only
           else
             python collect_all.py
