@@ -20,7 +20,7 @@ from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any, Iterable
-from urllib.parse import quote
+from urllib.parse import quote, unquote
 from zoneinfo import ZoneInfo
 
 import requests
@@ -1313,6 +1313,24 @@ def parse_timestamp(raw: str | None) -> datetime | None:
         return None
 
 
+def popup_team_name(node: Tag, region: str) -> str:
+    """A team link identifies the team; its rendered descendants may repeat labels."""
+    candidates = set()
+    for a in node.select('.team-template-text a, .team-template-team-short a, .team-template-team-standard a, a'):
+        title = str(a.get('title', '')).strip()
+        href = str(a.get('href', ''))
+        if not title or not href.startswith('/overwatch/') or ':' in title or '/' in title:
+            continue
+        slug = unquote(href.split('?',1)[0].split('#',1)[0].rsplit('/',1)[-1]).replace('_',' ')
+        if normalize_team_key(slug) != normalize_team_key(title):
+            continue
+        candidates.add(canonical_team(region,title))
+    if len(candidates)==1:
+        return next(iter(candidates))
+    name_node = node.select_one('span.name') or node.select_one('.team-template-text')
+    return canonical_team(region, (name_node or node).get_text(' ', strip=True))
+
+
 def parse_matches(html: str, region: str, source: str) -> list[dict[str, Any]]:
     soup = BeautifulSoup(html, "html.parser")
     popups = soup.select(".brkts-match-info-popup")
@@ -1325,15 +1343,13 @@ def parse_matches(html: str, region: str, source: str) -> list[dict[str, Any]]:
         names: list[str] = []
         opponent_nodes = popup.select(".match-info-header-opponent")
         for node in opponent_nodes[:2]:
-            name_node = node.select_one("span.name") or node.select_one(".team-template-text")
-            value = name_node.get_text(" ", strip=True) if name_node else node.get_text(" ", strip=True)
-            value = clean_wiki_value(value)
+            value = popup_team_name(node, region)
             if value:
                 names.append(value)
         if len(names) < 2:
             names = []
             for node in popup.select("span.name"):
-                value = clean_wiki_value(node.get_text(" ", strip=True))
+                value = popup_team_name(node, region)
                 if value:
                     names.append(value)
                 if len(names) >= 2:

@@ -1,5 +1,5 @@
 """Incremental OWCS archive, independent of legacy data/owcs.json."""
-import os, re, json, hashlib, copy
+import os, re, json, hashlib, copy, sys
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
 import owcs_parsers as p
@@ -11,7 +11,14 @@ PARSER_REV = 2
 REGION_ORDER = ["CHINA", "NA", "EMEA", "WORLD", "ASIA", "PACIFIC", "JP", "KR"]
 # Explicit aliases confirmed on the China event pages. No ambiguous global abbreviations.
 CHINA_ALIASES = {"wbg":"Weibo Gaming", "weibogamingwbg":"Weibo Gaming", "ag":"All Gamers", "allgamersag":"All Gamers", "jdg":"JD Gaming", "jdgamingjdg":"JD Gaming", "oug":"OU Gaming", "ougamingoug":"OU Gaming", "sv":"Solus Victorem", "solusvictoremsv":"Solus Victorem", "hng":"HUNENG Gaming", "hunenggaminghng":"HUNENG Gaming", "bf":"Black Flag", "ssf":"SHENGSHI Esports"}
+CHINA_ALIASES.update({'sse':'SHENGSHI Esports','shengshiesports':'SHENGSHI Esports','hunenggaming':'HUNENG Gaming'})
 p.TEAM_ALIASES.setdefault("CHINA", {}).update(CHINA_ALIASES)
+# Full composite labels are not standalone team names. Region-scoped examples
+# observed in the dashboard; generic matching below handles other teams.
+COMPOSITE_LABELS = {
+    'NA': {'daldallasfueldallasfuel':'Dallas Fuel', 'dsgdisguiseddisguised':'Disguised', 'ntmrntmrntmr':'NTMR', 'ssgspacestationgamingspacestationgaming':'Spacestation Gaming', 'tlteamliquidteamliquid':'Team Liquid'},
+    'CHINA': {'hnghunenghunenggaming':'HUNENG Gaming', 'jdgjdgamingjdgaming':'JD Gaming', 'sse shengshi shengshi esports'.replace(' ',''):'SHENGSHI Esports', 'svsolusvictoremsolusvictorem':'Solus Victorem', 'ougougamingougaming':'OU Gaming'},
+}
 
 OUT=Path('data/owcs_all.json'); OLD=Path('data/owcs.json')
 PREFIX='Overwatch Champions Series/'
@@ -51,7 +58,7 @@ def parse_info(wiki):
     return {}
 def canonical(name, region):
     # Region-specific aliases only. For international matches, use full names from the source.
-    return p.canonical_team(region,name)
+    return COMPOSITE_LABELS.get(region,{}).get(key(name), p.canonical_team(region,name))
 
 def page_aliases(html, region):
     """Use team links in team-template nodes, not arbitrary player links."""
@@ -124,6 +131,10 @@ def normalize_match(m,event,region,aliases=None):
     for x in m.get('maps',[]):
         for f in ('winner','picker'):
             if x.get(f) in old: x[f]=[a,b][old.index(x[f])]
+            elif x.get(f) and x[f]!='DRAW':
+                resolved=alias_name(x[f],region,aliases or {})
+                if key(resolved)==key(a): x[f]=a
+                elif key(resolved)==key(b): x[f]=b
         # Only apply the established JP/KR rule; elsewhere require explicit source evidence.
         if region not in ('JP','KR') and x.get('picker_basis')=='Previous map loser': x['picker']=''; x['picker_basis']='Unknown for this event'
     m['maps']=[x for x in m.get('maps',[]) if x.get('map') and x.get('winner') in (a,b,'DRAW')]
@@ -140,6 +151,8 @@ def parse_page(title, html, wiki, rev):
     rows={}; undated=0
     raw_wiki=p.parse_matches_wikitext(wiki,region,src)
     raw_html=p.parse_matches(html,region,src)
+    # Wikitext opponent names also provide identity evidence when map detail is absent.
+    hints=list(dict.fromkeys(hints+[alias_name(m[f],region,aliases) for m in raw_wiki for f in ('team_a','team_b') if m.get(f)]))
     for raw in raw_html+raw_wiki:
         if not raw.get('date_jst'): undated+=1; continue
         m=normalize_match(raw,event,region,aliases)
@@ -179,11 +192,80 @@ def discover(client,year):
         params.update(result['continue'])
     return out
 
-def merge_archive(state):
-    events={}; matches={}; rosters={}; alias_sets=defaultdict(lambda:defaultdict(set))
-    for title,row in state['pages'].items():
-        for k,v in row.get('aliases',{}).items(): alias_sets[row['event_id']][k].add(v)
-    event_aliases={e:{k:next(iter(v)) for k,v in a.items() if len(v)==1} for e,a in alias_sets.items()}
+def team_identity_maps(pages, legacy=None):
+    """Use registered rosters, link targets and map-detailed matches as identity evidence.
+    Resolve case variants globally, composite labels only against event-local evidence.
+    Never merge on substring or edit distance alone."""
+    evidence=defaultdict(lambda:defaultdict(lambda:defaultdict(int)))
+    global_names=defaultdict(lambda:defaultdict(int))
+    observed=defaultdict(set)
+    link_aliases=defaultdict(lambda:defaultdict(set))
+    def add(eid, region, name, weight):
+        name=canonical(name,region)
+        if not key(name) or key(name) in {'tbd','tba','bye','unknown','draw'}: return
+        evidence[eid][key(name)][name]+=weight
+        global_names[key(name)][name]+=weight
+    for row in pages.values():
+        eid,reg=row['event_id'],row['region']
+        for r in row.get('rosters',[]):
+            observed[eid].add(r['team']); add(eid,reg,r['team'],5)
+        for name in row.get('team_hints',[]):
+            observed[eid].add(name); add(eid,reg,name,3)
+        for k,v in row.get('aliases',{}).items():
+            add(eid,reg,v,4); link_aliases[eid][k].add(canonical(v,reg))
+        for m in row.get('matches',[]):
+            for name in (m['team_a'],m['team_b']):
+                observed[eid].add(name)
+                if m.get('maps'): add(eid,reg,name,2)
+    # Legacy rows are candidates for normalization, not trusted identity evidence.
+    legacy_paths={'JP':'Asia/Stage 3/Japan','KR':'Asia/Stage 3/Korea','NA':'NA/Stage 3','EMEA':'EMEA/Stage 3','CHINA':'China/Stage 3'}
+    for reg,r in (legacy or {}).get('regions',{}).items():
+        if reg not in legacy_paths: continue
+        eid=ROOT+legacy_paths[reg]
+        for m in r.get('finished_matches',[])+r.get('upcoming_matches',[]):
+            observed[eid].update(t for t in [m.get('team_a'),m.get('team_b')] if t)
+        observed[eid].update(x['team'] for x in r.get('rosters',[]) if x.get('team'))
+    preferred={k:sorted(v,key=lambda n:(-v[n],n.casefold(),n))[0] for k,v in global_names.items()}
+    result={}
+    def is_composite(raw, full):
+        rk,fk=key(raw),key(full)
+        if not fk or len(fk)<2 or rk==fk: return False
+        words=re.findall(r'[^\W_]+',full,flags=re.UNICODE)
+        labels={fk, ''.join(w[0] for w in words).casefold()}
+        if words: labels.update((key(words[0]),key(words[-1])))
+        labels.discard('')
+        # Typical DOM: abbreviation + mobile label + desktop name, or repeated name.
+        # Also accept unknown leading acronym only if the full name is repeated.
+        if rk==fk+fk or (rk.endswith(fk+fk) and 1<=len(rk)-2*len(fk)<=6): return True
+        return any(rk==a+fk+fk or rk==a+b+fk or rk==a+fk+b for a in labels for b in labels)
+    for eid,names in observed.items():
+        region=region_for(eid); trusted={k:preferred[k] for k in evidence[eid]}
+        # unique link aliases override abbreviations, but not a genuine registered team.
+        aliases=dict(trusted)
+        for k,vs in link_aliases[eid].items():
+            targets={preferred.get(key(v),v) for v in vs}
+            if len(targets)==1 and (k not in trusted or key(trusted[k])==key(next(iter(targets)))): aliases[k]=next(iter(targets))
+        # Prefer an explicit source identity; otherwise collapse proven compound labels.
+        for raw in sorted(names):
+            clean=canonical(raw,region); ck=key(clean)
+            direct=aliases.get(ck) or aliases.get(key(raw))
+            if direct: aliases[key(raw)]=direct; continue
+            candidates={v for v in trusted.values() if is_composite(raw,v)}
+            if len(candidates)==1: aliases[key(raw)]=next(iter(candidates))
+            elif ck in preferred: aliases[key(raw)]=preferred[ck]
+            elif clean!=raw: aliases[key(raw)]=clean
+        for raw in sorted(names):
+            clean=canonical(raw,region); ck=key(clean)
+            if ck and key(raw) not in aliases:
+                aliases[key(raw)]=aliases.get(ck,preferred.get(ck,clean))
+        result[eid]=aliases
+    return result
+
+
+def merge_archive(state, legacy=None):
+    events={}; matches={}; rosters={}
+    event_aliases=team_identity_maps(state['pages'],legacy)
+    state['team_aliases']=event_aliases
     for title,row in state['pages'].items():
         eid=row['event_id']; info=row.get('info',{}); e=events.setdefault(eid,{'id':eid,'name':eid.replace(PREFIX,''),'year':int(eid.split('/')[1]),'region':row['region'],'source':p.source_url(eid.replace(' ','_')),'fetched_at':'','start':'','end':'','pages':[],'warnings':[]})
         if title==eid or not e['start']:
@@ -230,6 +312,16 @@ def target_priority(t,state,dt):
 
 def main():
     state=read(OUT) or {'schema_version':4,'pages':{},'discovered':{},'discovery_dates':{},'errors':[]}
+    if '--repair-only' in sys.argv:
+        if not OUT.exists() or not state.get('pages'):
+            raise SystemExit('No collected archive pages to repair. Run normal collection first.')
+        old_count=len(state.get('matches',[])); old_teams={m[k] for m in state.get('matches',[]) for k in ('team_a','team_b')}
+        merge_archive(state,read(OLD))
+        new_teams={m[k] for m in state['matches'] for k in ('team_a','team_b')}
+        state['name_repair_at']=now(); save(OUT,state)
+        print('NAME_REPAIR_OK: no API calls; matches',old_count,'->',len(state['matches']),'teams',len(old_teams),'->',len(new_teams))
+        print('RETIRED LABELS:',sorted(old_teams-new_teams))
+        return
     # Store provenance and cooldown; don't hammer on failure.
     state['errors']=[]; state['attempted_at']=now(); state.setdefault('page_attempts',{}); dt=datetime.now(timezone.utc)
     if state.get('collector_rev')!=PARSER_REV:
@@ -237,7 +329,7 @@ def main():
     for seed in SEEDS: state['discovered'].setdefault(seed,None)
     prior=read(OLD); until=max([x for x in [state.get('rate_limit_until'),prior.get('rate_limit_until')] if x] or [''])
     if until and p.parse_iso_dt(until) and p.parse_iso_dt(until)>dt:
-        state['rate_limit_until']=until; state['errors']=['COOLDOWN_SKIP: '+until]; merge_archive(state); save(OUT,state); return
+        state['rate_limit_until']=until; state['errors']=['COOLDOWN_SKIP: '+until]; print(state['errors'][0]); merge_archive(state,prior); save(OUT,state); return
     contact=os.environ.get('LIQUIPEDIA_CONTACT','').strip()
     if not contact: raise SystemExit('LIQUIPEDIA_CONTACT secret required')
     for seed in SEEDS: state['discovered'].setdefault(seed,None)
@@ -287,7 +379,7 @@ def main():
     except p.RateLimitError as e:
         state['rate_limit_until']=(datetime.now(timezone.utc)+timedelta(seconds=max(21600,e.retry_after or 0))).isoformat(); state['errors'].append(str(e))
     except Exception as e: state['errors'].append('Discovery: '+str(e)[:500])
-    state['run_stats']={'query_calls':client.query_calls,'parse_calls':client.parse_calls,'attempted_pages':attempted}; merge_archive(state); save(OUT,state); print(state['run_stats'],len(state['events']),len(state['matches']),state['errors'])
+    state['run_stats']={'query_calls':client.query_calls,'parse_calls':client.parse_calls,'attempted_pages':attempted}; merge_archive(state,prior); save(OUT,state); print(state['run_stats'],len(state['events']),len(state['matches']),state['errors'])
     for region in REGION_ORDER:
         es=[e for e in state['events'] if e['region']==region]; ms=[m for m in state['matches'] if m['event_id'] in {e['id'] for e in es}]; rs=[r for r in state['rosters'] if r['event_id'] in {e['id'] for e in es}]
         print('COVERAGE',region,'events',len(es),'fetched',sum(bool(e['fetched_at']) for e in es),'series',sum(bool(m.get('finished')) for m in ms),'maps',sum(len(m.get('maps',[])) for m in ms if m.get('finished')),'roster_rows',len(rs))
