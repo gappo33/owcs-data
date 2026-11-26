@@ -29,15 +29,19 @@ for region,path in [('NA','NA/Stage 3'),('EMEA','EMEA/Stage 3'),('PACIFIC','Asia
 assert c.candidate(c.PREFIX+'2027/Asia/Stage 1/Japan')
 assert not c.candidate(c.PREFIX+'2025/Asia/Stage 3/Japan')
 assert c.alias_name('AG','EMEA',{})=='AG' # no cross-region abbreviation leak
-state={'pages':{},'page_attempts':{}}
-now=datetime(2026,11,26,tzinfo=timezone.utc)
-targets=sorted(c.SEEDS,key=lambda x:c.target_priority(x,state,now),reverse=True)
-assert {'WORLD','ASIA','EMEA'} <= {c.region_for(x) for x in targets[:4]}
-for title in targets[:4]:
-    state['pages'][title]={'parser_rev':c.PARSER_REV,'fetched_at':now.isoformat(),'info':{'edate':'2026-11-08'}}
-    state['page_attempts'][title]=now.isoformat()
-next_targets=sorted(c.SEEDS,key=lambda x:c.target_priority(x,state,now+timedelta(days=1)),reverse=True)
-assert all(t not in targets[:4] for t in next_targets[:4])
+# v1.7: no region priority, no date guess from title, explicit result order.
+now=datetime(2026,11,26,12,tzinfo=timezone.utc)
+a=c.ROOT+'Asia/Stage 3/Japan'; b=c.ROOT+'World Finals'; z=c.ROOT+'EMEA/Stage 3'; future=c.PREFIX+'2027/NA/Stage 1'; unknown=c.ROOT+'NA/Stage 1'; phase=a+'/Playoffs'
+state={'pages':{},'page_attempts':{},'discovered':{x:1 for x in (a,b,z,future,unknown,phase)},'schedule_hints':{}}
+for t,d in [(a,'2026-11-26 18:00'),(b,'2026-11-25 19:00'),(z,'2026-10-01 19:00'),(future,'2027-02-01 19:00'),(phase,'2026-11-28 19:00')]:
+    state['schedule_hints'][t]=c.schedule_hint(t,game('Team A','Team B',3,1,d),1,now)
+idx=c.update_lifecycle(state,now)
+assert [t for t in sorted(state['discovered'],key=lambda t:c.target_priority(t,state,now,idx),reverse=True) if c.target_priority(t,state,now,idx)[0]>0]==[a,b,z]
+assert c.target_priority(future,state,now,idx)[0]<0 and c.target_priority(phase,state,now,idx)[0]<0 and c.target_priority(unknown,state,now,idx)[0]<0
+state['page_attempts'][a]=now.isoformat(); assert c.target_priority(a,state,now,idx)[0]<0
+# Same-day start with explicit unfinished score is not a verified finished result.
+assert not c.schedule_hint(a,game('A','B',1,0,'2026-11-26 18:00').replace('finished=true','finished=false'),1,now)['completed']
+assert not c.p.parse_matches_wikitext(game('A','B',1,0,'2026-11-26 18:00').replace('|finished=true',''),'JP','fixture')[0]['finished']
 print('ARCHIVE_SELF_TEST_OK: roster boundaries, incomplete rosters, alias isolation, repeated opponents, phase dedup, map BAN, region detection, future discovery, scheduling')
 
 # Regression: screenshot-style duplicate DOM labels, one record with detailed maps
@@ -105,7 +109,7 @@ def check(s):
     c.update_lifecycle(s,enddt); return s['lifecycle'][eid]
 s=full_event(); assert check(s)['collection']=='archived'; assert c.target_priority(eid,s,enddt)[0]<0
 s['discovered'][eid+'/Playoffs']=2; assert check(s)['collection']=='partial'; assert c.target_priority(eid+'/Playoffs',s,enddt)[0]>0
-s=full_event(); s['pages'][eid]['info']['edate']='2026-12-04'; assert check(s)['calendar']=='active' and check(s)['collection']=='partial'; assert c.target_priority(eid,s,enddt)[0]>0
+s=full_event(); s['pages'][eid]['info']['edate']='2026-12-04'; assert check(s)['calendar']=='active' and check(s)['collection']=='partial'; assert c.target_priority(eid,s,enddt)[0]<0
 s=full_event(); s['pages'][eid]['info'].pop('edate'); assert check(s)['collection']=='partial'
 s=full_event(); s['pages'][eid]['fetched_at']='2026-11-02T00:00:00+00:00'; assert eid in check(s)['verify_pending']; assert c.target_priority(eid,s,enddt)[0]>0
 s=full_event(); s['matches'][0]['maps'].pop(); assert check(s)['map_missing_series']==1; assert check(s)['collection']=='partial'
@@ -144,3 +148,24 @@ with tempfile.TemporaryDirectory() as d:
         c.main(); after=c.read(out); assert after['run_stats']['query_calls']==1 and after['run_stats']['parse_calls']==0 and after['rate_limit_streak']==2
         assert c.p.parse_iso_dt(after['rate_limit_until'])-datetime.now(timezone.utc)>timedelta(hours=11,minutes=59)
 print('RATE_LIMIT_SELF_TEST_OK: zero API in cooldown, immediate stop, persisted progressive backoff')
+
+# Real scheduling interface exercised through a fake MediaWiki query response.
+scan_dt=datetime(2026,11,27,2,tzinfo=timezone.utc)
+recent=c.ROOT+'Asia/Stage 3/Japan'; prior=c.ROOT+'World Finals'; upcoming=c.PREFIX+'2027/NA/Stage 1'; ongoing=c.ROOT+'EMEA/Stage 3'
+fixtures={recent:game('A','B',3,1,'2026-11-27 09:30'),prior:game('A','B',3,1,'2026-11-26 22:00'),upcoming:'{{Infobox league|sdate=2027-01-01|edate=2027-01-31}}'+game('A','B',0,0,'2027-01-01 10:00').replace('finished=true','finished=false'),ongoing:game('A','B',1,0,'2026-11-27 09:00').replace('finished=true','finished=false')}
+class ScanMock:
+    def __init__(self): self.content_calls=0; self.revision_calls=0
+    def _request(self,params,is_parse):
+        assert not is_parse; assert params['rvprop']=='ids|content'; self.content_calls+=1
+        class Response:
+            def json(self): return {'query':{'pages':[{'title':t,'revisions':[{'revid':42,'slots':{'main':{'content':fixtures[t]}}}]} for t in params['titles'].split('|')]}}
+        return Response()
+    def query_revisions(self,pages): self.revision_calls+=1; return {t:42 for t in pages}
+s={'pages':{},'discovered':{t:1 for t in fixtures},'errors':[]}; client=ScanMock(); c.update_lifecycle(s,scan_dt); c.schedule_scan(client,s,scan_dt); index=c.update_lifecycle(s,scan_dt)
+assert s['next_queue']==[recent,prior],s['next_queue']
+assert s['lifecycle'][upcoming]['priority_reason']=='future'
+assert s['lifecycle'][ongoing]['priority_reason']=='today_unconfirmed'
+assert client.content_calls==1 and client.revision_calls==0
+c.schedule_scan(client,s,scan_dt+timedelta(hours=12)); assert client.content_calls==1 and client.revision_calls==1
+assert not any('content' in h or 'wiki' in h for h in s['schedule_hints'].values())
+print('V17_SCHEDULE_SCAN_SELF_TEST_OK: cached revisions, recent JST dates, future and ongoing excluded, metadata only')

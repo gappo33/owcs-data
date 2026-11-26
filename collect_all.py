@@ -8,7 +8,7 @@ from collections import defaultdict
 from urllib.parse import unquote
 
 PARSER_REV = 3
-SCHEDULER_REV = 1
+SCHEDULER_REV = 2
 REGION_ORDER = ["WORLD", "ASIA", "EMEA", "CHINA", "NA", "JP", "KR", "PACIFIC"]
 # Explicit aliases confirmed on the China event pages. No ambiguous global abbreviations.
 CHINA_ALIASES = {"wbg":"Weibo Gaming", "weibogamingwbg":"Weibo Gaming", "ag":"All Gamers", "allgamersag":"All Gamers", "jdg":"JD Gaming", "jdgamingjdg":"JD Gaming", "oug":"OU Gaming", "ougamingoug":"OU Gaming", "sv":"Solus Victorem", "solusvictoremsv":"Solus Victorem", "hng":"HUNENG Gaming", "hunenggaminghng":"HUNENG Gaming", "bf":"Black Flag", "ssf":"SHENGSHI Esports"}
@@ -321,6 +321,83 @@ def absent_page(t,state):
     # A guessed seed not listed in a successful allpages scan may be absent. Re-discovery can reopen it.
     return t in state.get('absent_pages',{}) and not state.get('discovered',{}).get(t) and t not in state.get('pages',{})
 
+def schedule_hint(title, wiki, revision, dt):
+    """Read only calendar and result markers; no MAP/roster extraction or storage."""
+    info=parse_info(wiki); region=region_for(title); dates=[]; completed=[]
+    for raw in p.extract_templates_by_name(wiki,'match'):
+        q=(p.parse_template(raw) or {}).get('params',{})
+        try: stamp=p.parse_liquipedia_date(q.get('date',''),region)
+        except (ValueError,TypeError): continue
+        if not stamp: continue
+        dates.append(stamp.isoformat()); flag=p.clean_wiki_value(q.get('finished','')).lower()
+        if stamp<=dt and flag in {'true','1','yes'}: completed.append(stamp.isoformat())
+    return {'checked_at':dt.isoformat(),'revision':revision,'start':info.get('sdate',''),'end':info.get('edate',''),
+            'dates':sorted(set(dates)), 'completed':sorted(set(completed))}
+
+def schedule_scan(client,state,dt):
+    """Bounded metadata requests, using same rate-limited session as parse."""
+    hints=state.setdefault('schedule_hints',{}); attempts=state.setdefault('schedule_attempts',{}); due=[]; today=(dt+timedelta(hours=9)).date()
+    for t in known_pages(state):
+        if absent_page(t,state): continue
+        eid=event_for(t); meta=state.get('lifecycle',{}).get(eid,{})
+        if meta.get('collection')=='archived': continue
+        h=hints.get(t,{}); start=date_only(h.get('start') or hints.get(eid,{}).get('start') or meta.get('start')); end=date_only(h.get('end') or meta.get('end'))
+        interval=timedelta(hours=10)
+        if start and start>today: interval=timedelta(days=1 if (start-today).days<=2 else 7)
+        elif end and end<today: interval=timedelta(days=7)
+        elif int(eid.split('/')[1])>today.year: interval=timedelta(days=7)
+        if dt_age(h.get('checked_at'),dt)>=interval and dt_age(attempts.get(t),dt)>=timedelta(hours=10): due.append(t)
+    # Never let a permanent stream of recent pages prevent initial discovery of older dates.
+    due.sort(key=lambda t:(max(hints.get(t,{}).get('checked_at',''),attempts.get(t,'')),t not in SEEDS,t!=event_for(t),t))
+    for i in range(0,min(len(due),40),10):
+        batch=due[i:i+10]
+        for t in batch: attempts[t]=dt.isoformat()
+        # Unchanged revisions need no repeated raw content download.
+        cached=[t for t in batch if hints.get(t,{}).get('revision') is not None]
+        if cached:
+            current=client.query_revisions(cached)
+            for t in cached:
+                if current.get(t) is not None and str(current[t])==str(hints[t]['revision']):
+                    hints[t]['checked_at']=dt.isoformat()
+            batch=[t for t in batch if t not in cached or current.get(t) is None or str(current[t])!=str(hints[t]['revision'])]
+        if not batch: continue
+        data=client._request({'action':'query','prop':'revisions','rvprop':'ids|content','rvslots':'main','titles':'|'.join(batch),'format':'json','formatversion':2},is_parse=False).json()
+        if 'error' in data: raise RuntimeError('Schedule metadata: '+str(data['error']))
+        for item in data.get('query',{}).get('pages',[]):
+            t=norm(item.get('title','')); revs=item.get('revisions') or []
+            if t not in batch or not revs: continue
+            rev=revs[0]; slot=rev.get('slots',{}).get('main',{}); wiki=slot.get('content',slot.get('*',rev.get('*')))
+            if not isinstance(wiki,str): continue
+            try: hints[t]=schedule_hint(t,wiki,rev.get('revid'),dt)
+            except Exception as e:
+                state['errors'].append('Schedule hint '+t+': '+str(e)[:200]); continue
+            row=state.get('pages',{}).get(t,{})
+            if row.get('revision') is not None and rev.get('revid') is not None and str(row['revision'])!=str(rev['revid']): state.setdefault('revision_dirty',{})[t]=True
+    print('SCHEDULE_SCAN',min(len(due),40),'of',len(due),'due')
+
+def schedule_index(state,dt):
+    """Aggregate signals by event, not by arbitrary page or region."""
+    out=defaultdict(lambda:{'completed':None,'past':None,'future':None,'start':None,'end':None,'has_dates':False})
+    def push(e,k,value,choose=max):
+        if value is not None: e[k]=choose(e[k],value) if e[k] is not None else value
+    for t,h in state.get('schedule_hints',{}).items():
+        eid=event_for(t); e=out[eid]
+        if t==eid: push(e,'start',date_only(h.get('start')),min); push(e,'end',date_only(h.get('end')))
+        for raw in h.get('dates',[]):
+            stamp=p.parse_iso_dt(raw)
+            if stamp: e['has_dates']=True; push(e,'past' if stamp<=dt else 'future',stamp,min if stamp>dt else max)
+        for raw in h.get('completed',[]):
+            stamp=p.parse_iso_dt(raw)
+            if stamp and stamp<=dt: push(e,'completed',stamp)
+    for m in state.get('matches',[]):
+        stamp=p.parse_iso_dt(m.get('date_jst')); e=out[m['event_id']]
+        if not stamp: continue
+        e['has_dates']=True; push(e,'past' if stamp<=dt else 'future',stamp,min if stamp>dt else max)
+        if m.get('finished') and stamp<=dt: push(e,'completed',stamp)
+    for eid,m in state.get('lifecycle',{}).items():
+        e=out[eid]; push(e,'start',date_only(m.get('start')),min); push(e,'end',date_only(m.get('end')))
+    return out
+
 def lifecycle(state,dt):
     """Two independent axes: source calendar and collection quality. Never infer finish from a score alone."""
     grouped=defaultdict(list)
@@ -329,7 +406,8 @@ def lifecycle(state,dt):
     result={}
     for eid, titles in grouped.items():
         root=state.get('pages',{}).get(eid,{})
-        start=date_only(root.get('info',{}).get('sdate')); end=date_only(root.get('info',{}).get('edate'))
+        hint=state.get('schedule_hints',{}).get(eid,{})
+        start=date_only(hint.get('start') or root.get('info',{}).get('sdate')); end=date_only(hint.get('end') or root.get('info',{}).get('edate'))
         today=(dt+timedelta(hours=9)).date()
         # Allow a 7-day settling window after scheduled end (timezone/late updates).
         final_day=end+timedelta(days=7) if end else None
@@ -380,40 +458,61 @@ def lifecycle(state,dt):
     return result
 
 def update_lifecycle(state,dt):
-    state['lifecycle']=lifecycle(state,dt)
+    state['lifecycle']=lifecycle(state,dt); index=schedule_index(state,dt)
+    for eid,meta in state['lifecycle'].items():
+        sig=index[eid]; meta['last_finished_match_at']=sig['completed'].isoformat() if sig['completed'] else ''
+        meta['next_scheduled_match_at']=sig['future'].isoformat() if sig['future'] else ''
+        meta['priority_reason']=priority_reason(sig,meta,dt)
     for e in state.get('events',[]):
-        if e['id'] in state['lifecycle']: e['collection_status']=state['lifecycle'][e['id']]
-    queue=sorted(known_pages(state),key=lambda t:target_priority(t,state,dt),reverse=True)
-    state['next_queue']=[t for t in queue if target_priority(t,state,dt)[0]>=0][:12]
+        if e['id'] in state['lifecycle']:
+            e['collection_status']=state['lifecycle'][e['id']]; e['start']=e['collection_status']['start'] or e.get('start',''); e['end']=e['collection_status']['end'] or e.get('end','')
+    queue=sorted(known_pages(state),key=lambda t:target_priority(t,state,dt,index),reverse=True)
+    state['next_queue']=[t for t in queue if target_priority(t,state,dt,index)[0]>=0][:12]
+    return index
 
-def target_priority(t,state,dt):
-    if absent_page(t,state): return (-1,0,0,'')
-    row=state.get('pages',{}).get(t,{})
-    last=row.get('fetched_at'); attempt=state.get('page_attempts',{}).get(t)
-    if dt_age(attempt,dt)<timedelta(hours=20): return (-1,0,0,'')
-    meta=state.get('lifecycle',{}).get(event_for(t),{})
-    ended=meta.get('calendar')=='ended'; active=meta.get('calendar') in {'active','active_or_upcoming','upcoming'}
-    if meta.get('collection')=='archived': return (-1,0,0,'')
-    dirty=state.get('revision_dirty',{}).get(t)
-    region=region_for(t); eid=event_for(t); stage3='2026/' in eid and '/Stage 3' in eid
-    urgent=(region in {'WORLD','ASIA'} and (t in SEEDS or active)) or (region=='EMEA' and stage3 and eid in REGIONAL_ROOTS)
-    if not last or row.get('parser_rev')!=PARSER_REV:
-        tier=112 if urgent and t in SEEDS else 110 if urgent else 95 if t in SEEDS else 70
-        if attempt and not last: tier-=40
-    elif dirty: tier=100 if active else 75
-    elif t in meta.get('verify_pending',[]): tier=85 if urgent else 60
-    elif ended:
-        # Historical incomplete data: light revision check first, and a slow fallback for transcluded updates.
-        if dt_age(last,dt)<timedelta(days=30): return (-1,0,0,'')
-        tier=35
+def priority_reason(sig,meta,dt):
+    today=(dt+timedelta(hours=9)).date()
+    if meta.get('collection')=='archived': return 'archived'
+    if sig['start'] and sig['start']>today and not sig['completed']: return 'future'
+    if sig['completed']: return 'finished'
+    if (sig['past'] and (sig['past']+timedelta(hours=9)).date()<today) or (sig['end'] and sig['end']<today): return 'past_unverified'
+    if sig['past']: return 'today_unconfirmed'
+    if sig['future']: return 'future'
+    return 'unknown'
+
+def target_priority(t,state,dt,index=None):
+    skip=(-1,0,0,'')
+    if absent_page(t,state): return skip
+    eid=event_for(t); meta=state.get('lifecycle',{}).get(eid,{}); row=state.get('pages',{}).get(t,{})
+    if meta.get('collection')=='archived': return skip
+    sig=(index if index is not None else schedule_index(state,dt))[eid]; reason=priority_reason(sig,meta,dt)
+    today=(dt+timedelta(hours=9)).date()
+    if reason in {'future','unknown','today_unconfirmed'}: return skip
+    # Never parse a future-only phase even when another phase of its event has finished.
+    h=state.get('schedule_hints',{}).get(t,{})
+    page_dates=[p.parse_iso_dt(x) for x in h.get('dates',[])]; page_dates=[x for x in page_dates if x]
+    page_start=date_only(h.get('start'))
+    if (page_start and page_start>today) or (t!=eid and page_dates and min(page_dates)>dt): return skip
+    if t!=eid and not h and not row and meta.get('calendar')!='ended': return skip
+    last=row.get('fetched_at'); attempt=state.get('page_attempts',{}).get(t); dirty=state.get('revision_dirty',{}).get(t)
+    fetched=p.parse_iso_dt(last); latest=sig['completed']; pending=t in meta.get('pending_pages',[])
+    recent=bool(latest and (latest+timedelta(hours=9)).date()==today)
+    # Changed revision can be processed on the next scheduled run; never repeatedly retry a failed page.
+    if dt_age(attempt,dt)<timedelta(hours=10): return skip
+    if not last or row.get('parser_rev')!=PARSER_REV or pending or dirty: pass
+    elif t in meta.get('verify_pending',[]) and sig['end'] and today>=sig['end']+timedelta(days=7): pass
+    elif latest and fetched and latest>fetched: pass
+    elif recent and dt_age(last,dt)>=timedelta(hours=10): pass
+    elif meta.get('calendar')=='ended' and dt_age(last,dt)>=timedelta(days=30): pass
+    else: return skip
+    # Verified results first, ordered by actual source match timestamp. Past schedule-only probes are lower.
+    if latest: tier=2; stamp=latest.timestamp()
     else:
-        start=date_only(meta.get('start')); distant=meta.get('calendar')=='upcoming' and start and (start-dt.date()).days>7
-        interval=timedelta(days=7 if distant else 1 if active else 3)
-        if dt_age(last,dt)<interval: return (-1,0,0,'')
-        tier=105 if active else 40
-    order=REGION_ORDER.index(region) if region in REGION_ORDER else 99
-    # Oldest attempts first within equal urgency, while newest Stage 3 is initially preferred.
-    return (tier, -order if tier>=95 else min(dt_age(attempt,dt).total_seconds(),1e9),int(t==eid),t)
+        tier=1; stamp=sig['past'].timestamp() if sig['past'] else datetime.combine(sig['end'],datetime.min.time(),tzinfo=timezone(timedelta(hours=9))).timestamp()
+    # Avoid repeatedly fetching the root before uncollected phase pages of the same event.
+    page_rank=3 if not last else 2 if dirty or pending else 1
+    if t==eid: page_rank+=0.1
+    return (tier,stamp,page_rank,t)
 
 def revision_audit(client,state,dt):
     # Only already collected historical incomplete pages; completed archives get no parse or revision checks.
@@ -445,7 +544,7 @@ def main():
         print('RETIRED LABELS:',sorted(old_teams-new_teams))
         return
     # Store provenance and cooldown; don't hammer on failure.
-    state['errors']=[]; state['last_operation']='collect'; state['attempted_at']=now(); state.setdefault('page_attempts',{}); dt=datetime.now(timezone.utc)
+    state['errors']=[]; state['scheduler_rev']=SCHEDULER_REV; state['last_operation']='collect'; state['attempted_at']=now(); state.setdefault('page_attempts',{}); dt=datetime.now(timezone.utc)
     if state.get('collector_rev')!=PARSER_REV:
         state['collector_rev']=PARSER_REV
     for seed in SEEDS: state['discovered'].setdefault(seed,None)
@@ -472,11 +571,12 @@ def main():
             except p.RateLimitError: raise
             except Exception as e: state['errors'].append('Discovery '+str(y)+': '+str(e)[:300])
         merge_archive(state,prior); update_lifecycle(state,dt)
-        try: revision_audit(client,state,dt)
+        try: schedule_scan(client,state,dt)
         except p.RateLimitError: raise
-        except Exception as e: state['errors'].append('Revision audit: '+str(e)[:300])
+        except Exception as e: state['errors'].append('Schedule scan: '+str(e)[:300])
+        index=update_lifecycle(state,dt)
         titles=known_pages(state)
-        def priority(t): return target_priority(t,state,dt)
+        def priority(t): return target_priority(t,state,dt,index)
         targets=sorted(titles,key=priority,reverse=True)
         eligible=[t for t in targets if priority(t)[0]>=0]
         print('QUEUE',len(eligible),'budget',budget,'archived',sum(x['collection']=='archived' for x in state['lifecycle'].values()),'next',eligible[:budget])
@@ -506,6 +606,8 @@ def main():
                         new['matches']=list(mm.values())
                     if old.get('rosters') and not new['rosters']: new['rosters']=old['rosters']; new['warnings'].append('Roster retained from prior fetch; not verified current')
                 state['pages'][t]=new
+                try: state.setdefault('schedule_hints',{})[t]=schedule_hint(t,w,rev,dt)
+                except Exception as e: state['errors'].append('Schedule hint '+t+': '+str(e)[:200])
                 state.setdefault('revision_dirty',{}).pop(t,None)
                 state.setdefault('revision_checked',{})[t]=now()
                 print('FETCH',t,len(new['matches']),len(new['rosters']),new['warnings'])

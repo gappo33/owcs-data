@@ -26,7 +26,7 @@ from zoneinfo import ZoneInfo
 import requests
 from bs4 import BeautifulSoup, NavigableString, Tag
 
-VERSION = "4.4.0"
+VERSION = "4.4.1"
 API_BASE = "https://liquipedia.net/overwatch/api.php"
 SOURCE_BASE = "https://liquipedia.net/overwatch/"
 OUTPUT = Path("data/owcs.json")
@@ -683,7 +683,7 @@ def parse_matches_wikitext(wikitext: str, region: str, source: str) -> list[dict
         if score_b is None and maps:
             score_b = sum(1 for m in maps if m.get("winner") == team_b)
         finished_flag = clean_wiki_value(params.get("finished", "")).lower()
-        finished = finished_flag not in {"false","0","no"} and (finished_flag in {"true","1","yes"} or ((score_a or 0) > 0 or (score_b or 0) > 0))
+        finished = finished_flag in {"true","1","yes"}
         iso = dt.isoformat(timespec="seconds") if dt else None
         key = "|".join([region, iso or "", team_a, team_b])
         if key in seen:
@@ -1371,8 +1371,6 @@ def parse_matches(html: str, region: str, source: str) -> list[dict[str, Any]]:
         score_a: int | None = scores[0] if len(scores) >= 1 else None
         score_b: int | None = scores[1] if len(scores) >= 2 else None
         finished = popup.find(attrs={"data-finished": "finished"}) is not None or popup.get("data-finished") == "finished"
-        if not finished and score_a is not None and score_b is not None and (score_a > 0 or score_b > 0):
-            finished = True
         iso = dt.isoformat(timespec="seconds") if dt else None
         key = "|".join([region, iso or "", names[0], names[1], str(score_a), str(score_b)])
         if key in seen:
