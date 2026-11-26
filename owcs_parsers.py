@@ -26,7 +26,7 @@ from zoneinfo import ZoneInfo
 import requests
 from bs4 import BeautifulSoup, NavigableString, Tag
 
-VERSION = "4.4.1"
+VERSION = "4.4.2"
 API_BASE = "https://liquipedia.net/overwatch/api.php"
 SOURCE_BASE = "https://liquipedia.net/overwatch/"
 OUTPUT = Path("data/owcs.json")
@@ -572,7 +572,7 @@ def parse_liquipedia_date(raw: str, region: str) -> datetime | None:
     s = clean_wiki_value(s)
     s = re.sub(r"\s+-\s+", " ", s)
     s = re.sub(r"(\d+)(st|nd|rd|th)\b", r"\1", s, flags=re.I).strip()
-    offsets = {"UTC":0,"GMT":0,"JST":9,"KST":9,"CST":8,"SGT":8,"HKT":8,"CEST":2,"CET":1,"BST":1,"EDT":-4,"EST":-5,"CDT":-5,"MDT":-6,"MST":-7,"PDT":-7,"PST":-8}
+    offsets = {"UTC":0,"GMT":0,"JST":9,"KST":9,"CST":8,"SGT":8,"HKT":8,"ICT":7,"CEST":2,"CET":1,"BST":1,"EDT":-4,"EST":-5,"CDT":-5,"MDT":-6,"MST":-7,"PDT":-7,"PST":-8}
     if not tz_name:
         tz_name = {"JP":"JST","KR":"KST","CHINA":"CST"}.get(region, "UTC")
     offset = offsets.get(tz_name, 0)
@@ -692,6 +692,7 @@ def parse_matches_wikitext(wikitext: str, region: str, source: str) -> list[dict
         out.append({
             "region": region, "date_jst": iso, "team_a": team_a, "team_b": team_b,
             "score_a": score_a, "score_b": score_b, "finished": finished,
+            "finish_explicit_false": finished_flag in {"false","0","no"},
             "source": source, "key": key, "maps": maps,
         })
     return sorted(out, key=lambda r: (r.get("date_jst") or "9999", r.get("team_a") or ""))

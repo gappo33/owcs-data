@@ -169,3 +169,34 @@ assert client.content_calls==1 and client.revision_calls==0
 c.schedule_scan(client,s,scan_dt+timedelta(hours=12)); assert client.content_calls==1 and client.revision_calls==1
 assert not any('content' in h or 'wiki' in h for h in s['schedule_hints'].values())
 print('V17_SCHEDULE_SCAN_SELF_TEST_OK: cached revisions, recent JST dates, future and ongoing excluded, metadata only')
+
+# v1.8: rendered final flag + Wikitext maps, reversed sides and ICT.
+from unittest.mock import patch
+pac=c.ROOT+'Asia/Stage 3/Pacific'
+wiki=game('Test A','Test B',1,1,'2026-10-03 18:00').replace('Abbr/CST','Abbr/ICT').replace('|finished=true','')
+assert c.p.parse_liquipedia_date('2026-10-03 18:00 {{Abbr/ICT}}','PACIFIC').isoformat()=='2026-10-03T20:00:00+09:00'
+hrow=dict(team_a='Test B',team_b='Test A',score_a=1,score_b=1,finished=True,date_jst='2026-10-03T20:00:00+09:00')
+with patch.object(c.p,'parse_matches',return_value=[hrow]):
+    rr=c.parse_page(pac,'',wiki,1); assert len(rr['matches'])==1
+    m=rr['matches'][0]; assert m['finished'] and m['team_a']=='Test A' and len(m['maps'])==2 and m['maps'][0]['ban_a']=='ana'
+    rr=c.parse_page(pac,'',wiki.replace('|map1=','|finished=false|map1='),1)
+    assert not rr['matches'][0]['finished'] and rr['audit']['unresolved_templates']>0
+with patch.object(c.p,'parse_matches',return_value=[{**hrow,'finished':False}]):
+    assert not c.parse_page(pac,'',wiki,1)['matches'][0]['finished']
+with patch.object(c.p,'parse_matches',return_value=[{**hrow,'score_a':3}]):
+    rr=c.parse_page(pac,'',wiki,1); assert rr['audit']['unresolved_templates']>0 and not rr['matches'][0].get('maps')
+# Unique roster boundary; other team's adjacent card must not contribute.
+def html_card(team,names):
+    return '<div class="team-participant-card"><div class="team-participant-card__header"><div class="block-team"><span class="name"><a>'+team+'</a></span></div></div>'+''.join('<div class="team-participant-card__member"><div class="team-participant-card__member-role-left"><img alt="DPS"/></div><div class="team-participant-card__member-name"><span class="name">'+n+'</span></div></div>' for n in names)+'</div>'
+html=html_card('Test A',['A1','A2','A3','A4','A5'])+html_card('Test B',['B1','B2','B3','B4','B5'])
+rr=c.html_roster_card(html,'Test A','PACIFIC','fixture',{}); assert {r['player'] for r in rr}=={'A1','A2','A3','A4','A5'}
+assert not c.html_roster_card(html+html,'Test A','PACIFIC','fixture',{})
+# Cache repair respects prior data, exact revision, and cooldown; repeated repair is harmless.
+old=c.parse_page(pac,'',wiki,1); old['parser_rev']=3
+with patch.object(c.p,'parse_matches',return_value=[hrow]): new=c.parse_page(pac,'',wiki,1)
+state={'pages':{pac:copy.deepcopy(old)},'rate_limit_until':'2099-01-01T00:00:00+00:00'}
+bundle={'parser_rev':c.PARSER_REV,'pages':{pac:{'row':new,'old_fingerprint':c.page_fingerprint(old),'schedule_hint':{}}}}
+assert c.restore_debug(state,bundle)==1 and state['pages'][pac]['fetched_at']==old['fetched_at']
+assert c.restore_debug(state,bundle)==0 and state['rate_limit_until']=='2099-01-01T00:00:00+00:00'
+state['pages'][pac]={**old,'revision':2}; assert c.restore_debug(state,bundle)==0
+print('V18_MATCH_ROSTER_RESTORE_SELF_TEST_OK')

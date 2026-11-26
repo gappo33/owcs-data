@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from collections import defaultdict
 from urllib.parse import unquote
 
-PARSER_REV = 3
+PARSER_REV = 4
 SCHEDULER_REV = 2
 REGION_ORDER = ["WORLD", "ASIA", "EMEA", "CHINA", "NA", "JP", "KR", "PACIFIC"]
 # Explicit aliases confirmed on the China event pages. No ambiguous global abbreviations.
@@ -90,6 +90,31 @@ def roster_section(wiki):
     level=len(m.group(1)); tail=wiki[m.end():]; end=re.search(r'(?m)^={2,'+str(level)+r'}[^=\n].*?={2,'+str(level)+r'}\s*$',tail)
     return '== Participants ==\n'+(tail[:end.start()] if end else tail)+'\n'
 
+def html_roster_card(html, team, region, source, aliases):
+    """Only members within the uniquely identified team participant card."""
+    soup=BeautifulSoup(html,'html.parser'); cards=[]
+    for card in soup.select('.team-participant-card'):
+        names={key(alias_name(a.get_text(' ',strip=True),region,aliases)) for a in card.select('.team-participant-card__header .block-team .name a') if a.get_text(strip=True)}
+        if names=={key(team)}: cards.append(card)
+    if len(cards)!=1: return []
+    rows=[]
+    for member in cards[0].select('.team-participant-card__member'):
+        node=member.select_one('.team-participant-card__member-name .name')
+        if not node: continue
+        player=node.get_text(' ',strip=True)
+        image=member.select_one('.team-participant-card__member-role-left img')
+        text=member.select_one('.team-participant-card__member-role-right')
+        raw=(image.get('alt') or image.get('title') or '') if image else ''
+        role=raw if raw in {'Tank','DPS','Support','Flex'} else ''
+        if not role and text:
+            staff=text.get_text(' ',strip=True)
+            if staff in p.STAFF_NAMES: role=staff
+        if player and role: rows.append(dict(region=region,team=team,role=role,player=player,status='',source=source))
+    rows=list({(key(r['player']),r['role']):r for r in rows}.values())
+    players=[r for r in rows if r['role'] in {'Tank','DPS','Support','Flex'}]
+    if not 4<=len(players)<=12 or len({key(r['player']) for r in players})!=len(players): return []
+    return rows
+
 def parse_roster_cards(wiki,html,region,source,aliases):
     section=roster_section(wiki); hints=[]; rows=[]; warnings=[]
     # Parse each card independently. Do not discard all teams because one roster is missing.
@@ -116,7 +141,10 @@ def parse_roster_cards(wiki,html,region,source,aliases):
     for team in hints:
         rs=by[team]; n=sum(r['role'] in {'Tank','DPS','Support','Flex'} for r in rs)
         if 4<=n<=12: valid.extend(rs)
-        else: warnings.append(f'Roster missing/invalid: {team} ({n} players)')
+        else:
+            recovered=html_roster_card(html,team,region,source,aliases) if html else []
+            if recovered: valid.extend(recovered)
+            else: warnings.append(f'Roster missing/invalid: {team} ({n} players)')
     # Only structural hints are allowed. Do not guess player ownership from adjacent team text.
     if section and not valid: warnings.append('Participants found but no validated roster')
     return valid,hints,warnings
@@ -156,12 +184,33 @@ def parse_page(title, html, wiki, rev):
     raw_html=p.parse_matches(html,region,src)
     # Wikitext opponent names also provide identity evidence when map detail is absent.
     hints=list(dict.fromkeys(hints+[alias_name(m[f],region,aliases) for m in raw_wiki for f in ('team_a','team_b') if m.get(f)]))
-    for raw in raw_html+raw_wiki:
+    html_rows=defaultdict(list); wiki_rows=defaultdict(list)
+    for raw, bucket in [(r,html_rows) for r in raw_html]+[(r,wiki_rows) for r in raw_wiki]:
         if not raw.get('date_jst'): undated+=1; continue
         m=normalize_match(raw,event,region,aliases)
-        if not m: continue
-        prev=rows.get(m['id'])
-        if not prev or (bool(m.get('finished')),len(m.get('maps',[]))) >= (bool(prev.get('finished')),len(prev.get('maps',[]))): rows[m['id']]=m
+        if m: bucket[m['id']].append(m)
+    conflicts=0
+    for mid in dict.fromkeys([*html_rows,*wiki_rows]):
+        hs=html_rows[mid]; ws=wiki_rows[mid]
+        h=max(hs,key=lambda m:bool(m.get('finished')),default=None)
+        w=max(ws,key=lambda m:(bool(m.get('finished')),len(m.get('maps',[]))),default=None)
+        if h and w:
+            same=key(h['team_a'])==key(w['team_a'])
+            scores=(w['score_a'],w['score_b']) if same else (w['score_b'],w['score_a'])
+            agree=(h['score_a'],h['score_b'])==scores
+            # Do not join conflicting final results or explicit unfinished markers.
+            if agree and not (h.get('finished') and w.get('finish_explicit_false')):
+                m=copy.deepcopy(w)
+                m['finished']=bool(h.get('finished') or w.get('finished'))
+                # Keep Wikitext orientation: map winner and both BAN sides remain aligned.
+                rows[mid]=m
+            else:
+                conflicts+=1
+                m=copy.deepcopy(h if h.get('finished') else w)
+                if h.get('finished') and w.get('finish_explicit_false'): m['finished']=False
+                rows[mid]=m
+        else: rows[mid]=h or w
+    if conflicts: warnings.append(f'HTML/Wikitext result conflicts: {conflicts}; verify source')
     # Never use standings (especially cumulative Swiss snapshots) as independent matches.
     if undated: warnings.append(f'{undated} undated match candidates excluded; verify source')
     if ('{{match' in wiki.lower() or 'brkts-match-info-popup' in html) and not rows: warnings.append('Match templates present but no dated matches parsed')
@@ -175,7 +224,7 @@ def parse_page(title, html, wiki, rev):
         a=a or q.get('opponent1literal',''); b=b or q.get('opponent2literal','')
         if flag in {'false','0','no'} or not a or not b or key(a) in {'tbd','tba','bye','unknown'} or key(b) in {'tbd','tba','bye','unknown'} or not p.parse_liquipedia_date(q.get('date',''),region):
             source_unresolved+=1
-    audit={'unresolved_templates':source_unresolved,'undated':undated,'wiki_matches':len(raw_wiki),'html_matches':len(raw_html)}
+    audit={'unresolved_templates':source_unresolved+conflicts,'undated':undated,'wiki_matches':len(raw_wiki),'html_matches':len(raw_html)}
     no_maps=sum(not m.get('maps') for m in finished)
     incomplete=sum(sum(x.get('winner') in (m['team_a'],m['team_b']) for x in m.get('maps',[])) != m['score_a']+m['score_b'] for m in finished)
     if incomplete: warnings.append(f'{incomplete}/{len(finished)} finished series have incomplete map detail (score comparison)')
@@ -531,8 +580,42 @@ def revision_audit(client,state,dt):
         if str(rev)!=str(state['pages'][t].get('revision')): state.setdefault('revision_dirty',{})[t]=True
     print('REVISION_AUDIT',len(due),'changed',sum(bool(state.get('revision_dirty',{}).get(t)) for t in due))
 
+def page_fingerprint(row):
+    # Stable signature of the exact v1.7 cached content; exclude mutable fetch timestamps.
+    payload={k:row.get(k) for k in ('title','revision','parser_rev','matches','rosters')}
+    return hashlib.sha256(json.dumps(payload,sort_keys=True,ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
+
+def restore_debug(state, bundle):
+    """Apply the six verified offline repairs only to the exact old cache snapshot."""
+    if bundle.get('parser_rev')!=PARSER_REV or not isinstance(bundle.get('pages'),dict):
+        raise ValueError('Invalid recovery bundle')
+    count=0
+    for title,item in bundle['pages'].items():
+        old=state['pages'].get(title); new=copy.deepcopy(item['row'])
+        if not old or new.get('title')!=title or new.get('parser_rev')!=PARSER_REV or page_fingerprint(old)!=item['old_fingerprint']:
+            print('RESTORE_SKIP',title,'cache differs / already repaired / missing'); continue
+        if str(old.get('revision'))!=str(new.get('revision')): raise ValueError('Revision mismatch: '+title)
+        new['fetched_at']=old['fetched_at']
+        new['reparsed_at']=now()
+        state['pages'][title]=new
+        hint=state.setdefault('schedule_hints',{}).get(title,{})
+        if not hint or str(hint.get('revision'))==str(new['revision']):
+            fresh=copy.deepcopy(item['schedule_hint']); fresh['checked_at']=hint.get('checked_at') or old['fetched_at']; state['schedule_hints'][title]=fresh
+        count+=1
+        print('RESTORED',title,len(new['matches']),sum(len(m.get('maps',[])) for m in new['matches'] if m.get('finished')),len(new['rosters']))
+    return count
+
 def main():
     state=read(OUT) or {'schema_version':4,'pages':{},'discovered':{},'discovery_dates':{},'errors':[]}
+    if '--restore-debug' in sys.argv:
+        if not OUT.exists() or not state.get('pages'): raise SystemExit('No existing archive to restore')
+        bundle=read(Path('v18_recovery.json'))
+        count=restore_debug(state,bundle)
+        if count:
+            merge_archive(state,read(OLD)); update_lifecycle(state,datetime.now(timezone.utc))
+            state['last_operation']='restore_debug'; state['debug_restored_at']=now(); save(OUT,state)
+        print('DEBUG_RESTORE_OK',count,'pages; zero API calls')
+        return
     if '--repair-only' in sys.argv:
         if not OUT.exists() or not state.get('pages'):
             raise SystemExit('No collected archive pages to repair. Run normal collection first.')
