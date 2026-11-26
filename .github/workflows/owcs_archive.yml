@@ -7,7 +7,7 @@ on:
         type: boolean
         default: false
   schedule:
-    - cron: '37 1 * * *'
+    - cron: '37 1,13 * * *' # 10:37 / 22:37 JST
 permissions:
   contents: write
 concurrency:
@@ -28,7 +28,7 @@ jobs:
       - name: Collect incremental archive
         env:
           LIQUIPEDIA_CONTACT: ${{ secrets.LIQUIPEDIA_CONTACT }}
-          OWCS_PARSE_BUDGET: '4'
+          OWCS_PARSE_BUDGET: '6'
         run: |
           if [ "${{ inputs.repair_only }}" = "true" ]; then
             python collect_all.py --repair-only
