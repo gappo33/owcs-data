@@ -32,12 +32,12 @@ assert c.alias_name('AG','EMEA',{})=='AG' # no cross-region abbreviation leak
 state={'pages':{},'page_attempts':{}}
 now=datetime(2026,11,26,tzinfo=timezone.utc)
 targets=sorted(c.SEEDS,key=lambda x:c.target_priority(x,state,now),reverse=True)
-assert {c.region_for(x) for x in targets[:4]}=={'CHINA','NA'}
+assert {'WORLD','ASIA','EMEA'} <= {c.region_for(x) for x in targets[:4]}
 for title in targets[:4]:
     state['pages'][title]={'parser_rev':c.PARSER_REV,'fetched_at':now.isoformat(),'info':{'edate':'2026-11-08'}}
     state['page_attempts'][title]=now.isoformat()
 next_targets=sorted(c.SEEDS,key=lambda x:c.target_priority(x,state,now+timedelta(days=1)),reverse=True)
-assert 'EMEA' in {c.region_for(x) for x in next_targets[:4]}
+assert all(t not in targets[:4] for t in next_targets[:4])
 print('ARCHIVE_SELF_TEST_OK: roster boundaries, incomplete rosters, alias isolation, repeated opponents, phase dedup, map BAN, region detection, future discovery, scheduling')
 
 # Regression: screenshot-style duplicate DOM labels, one record with detailed maps
@@ -93,3 +93,54 @@ with tempfile.TemporaryDirectory() as d:
         assert repaired['matches']==state['matches']
     finally: c.OUT,c.OLD,sys.argv,c.p.ApiClient=orig
 print('NAME_REPAIR_SELF_TEST_OK: compound labels, case variants, rich match preservation, distinct teams, rematch, legacy aliases, offline repair')
+
+# Lifecycle: independently verify elapsed calendar, known pages and normalized content.
+enddt=datetime(2026,11,27,12,tzinfo=timezone.utc)
+eid=c.ROOT+'NA/Stage 3'
+def full_event():
+    match={'event_id':eid,'team_a':'Dallas Fuel','team_b':'Disguised','score_a':1,'score_b':1,'finished':True,'date_jst':'2026-11-01T19:00:00+09:00','maps':[{'map':'Busan','winner':'Dallas Fuel','ban_a':'ana','ban_b':'kiriko'},{'map':'Ilios','winner':'Disguised','ban_a':'tracer','ban_b':'bastion'}]}
+    row={'event_id':eid,'title':eid,'region':'NA','info':{'sdate':'2026-10-01','edate':'2026-11-01','team_number':'2'},'fetched_at':'2026-11-12T00:00:00+00:00','parser_rev':c.PARSER_REV,'revision':10,'audit':{'unresolved_templates':0,'undated':0},'warnings':[]}
+    return {'pages':{eid:row},'discovered':{eid:1},'discovery_dates':{'2026':'2026-11-20T00:00:00+00:00'},'page_attempts':{},'matches':[match],'rosters':[{'event_id':eid,'team':t,'role':'DPS','player':t+str(i)} for t in ('Dallas Fuel','Disguised') for i in range(5)]}
+def check(s):
+    c.update_lifecycle(s,enddt); return s['lifecycle'][eid]
+s=full_event(); assert check(s)['collection']=='archived'; assert c.target_priority(eid,s,enddt)[0]<0
+s['discovered'][eid+'/Playoffs']=2; assert check(s)['collection']=='partial'; assert c.target_priority(eid+'/Playoffs',s,enddt)[0]>0
+s=full_event(); s['pages'][eid]['info']['edate']='2026-12-04'; assert check(s)['calendar']=='active' and check(s)['collection']=='partial'; assert c.target_priority(eid,s,enddt)[0]>0
+s=full_event(); s['pages'][eid]['info'].pop('edate'); assert check(s)['collection']=='partial'
+s=full_event(); s['pages'][eid]['fetched_at']='2026-11-02T00:00:00+00:00'; assert eid in check(s)['verify_pending']; assert c.target_priority(eid,s,enddt)[0]>0
+s=full_event(); s['matches'][0]['maps'].pop(); assert check(s)['map_missing_series']==1; assert check(s)['collection']=='partial'
+s=full_event(); s['matches'][0]['maps'][0]['ban_b']=''; assert check(s)['ban_missing_maps']==1 and check(s)['collection']=='partial'
+s=full_event(); s['pages'][eid]['audit']['unresolved_templates']=1; assert check(s)['source_issues']==1 and check(s)['collection']=='partial'
+s=full_event(); s['matches'][0]['finished']=False; assert check(s)['collection']=='partial'
+s=full_event(); s['rosters']=[]; assert check(s)['roster_missing_teams']==2
+s=full_event(); s['pages'][eid]['parser_rev']=2; assert check(s)['pending_pages']==[eid]
+s=full_event(); s['discovery_dates']={}; assert check(s)['collection']=='partial'
+s=full_event(); s['matches'][0]['maps']=[]; check(s)
+class MockRevisions:
+    def __init__(self): self.calls=[]
+    def query_revisions(self,titles): self.calls+=titles; return {t:11 for t in titles}
+client=MockRevisions(); c.revision_audit(client,s,enddt); assert client.calls==[eid] and s['revision_dirty'][eid]
+assert c.target_priority(eid,s,enddt)[0]>0
+s=full_event(); check(s); client=MockRevisions(); c.revision_audit(client,s,enddt); assert not client.calls
+s=full_event(); s['discovered'][eid+'/Regular Season']=None; s['absent_pages']={eid+'/Regular Season':'2026-11-20'}; assert check(s)['collection']=='archived'
+assert c.canonical('SSG Spacestation Spacestation Gaming','NA')=='Spacestation Gaming'
+assert c.canonical('SSG Spacestation Spacestation Gaming','WORLD')=='Spacestation Gaming'
+partial=game('Dallas Fuel','Disguised',1,0,'2026-10-03 18:00').replace('finished=true','finished=false')
+assert not c.p.parse_matches_wikitext(partial,'NA','test')[0]['finished']
+print('LIFECYCLE_SELF_TEST_OK: archived skip, incomplete backfill, active refresh, new pages reopen, date unknown, final validation, map/BAN/roster gaps, revision audit, absent seeds, SSG, explicit unfinished')
+
+# A cooldown run may not construct a client; a rate limit in normal collection must stop after one call.
+from unittest.mock import patch
+with tempfile.TemporaryDirectory() as d:
+    before={'schema_version':4,'pages':{},'discovered':{},'discovery_dates':{},'errors':[],'rate_limit_until':'2099-01-01T00:00:00+00:00'}
+    out=Path(d)/'all.json'; old_path=Path(d)/'old.json'; c.save(out,before)
+    with patch.object(c,'OUT',out),patch.object(c,'OLD',old_path),patch.object(c.p,'ApiClient',side_effect=AssertionError('cooldown accessed API')),patch.object(sys,'argv',['collect_all.py']):
+        c.main(); after=c.read(out); assert after['rate_limit_until']==before['rate_limit_until'] and after['run_stats']['parse_calls']==0
+    before.pop('rate_limit_until'); before['rate_limit_streak']=1; c.save(out,before)
+    class Limited:
+        def __init__(self,contact): self.query_calls=0; self.parse_calls=0
+        def _request(self,*a,**kw): self.query_calls+=1; raise c.p.RateLimitError('HTTP 429', 1)
+    with patch.object(c,'OUT',out),patch.object(c,'OLD',old_path),patch.object(c.p,'ApiClient',Limited),patch.object(sys,'argv',['collect_all.py']),patch.dict(os.environ,{'LIQUIPEDIA_CONTACT':'test@example.invalid'}):
+        c.main(); after=c.read(out); assert after['run_stats']['query_calls']==1 and after['run_stats']['parse_calls']==0 and after['rate_limit_streak']==2
+        assert c.p.parse_iso_dt(after['rate_limit_until'])-datetime.now(timezone.utc)>timedelta(hours=11,minutes=59)
+print('RATE_LIMIT_SELF_TEST_OK: zero API in cooldown, immediate stop, persisted progressive backoff')

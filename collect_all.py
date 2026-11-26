@@ -7,8 +7,9 @@ from bs4 import BeautifulSoup
 from collections import defaultdict
 from urllib.parse import unquote
 
-PARSER_REV = 2
-REGION_ORDER = ["CHINA", "NA", "EMEA", "WORLD", "ASIA", "PACIFIC", "JP", "KR"]
+PARSER_REV = 3
+SCHEDULER_REV = 1
+REGION_ORDER = ["WORLD", "ASIA", "EMEA", "CHINA", "NA", "JP", "KR", "PACIFIC"]
 # Explicit aliases confirmed on the China event pages. No ambiguous global abbreviations.
 CHINA_ALIASES = {"wbg":"Weibo Gaming", "weibogamingwbg":"Weibo Gaming", "ag":"All Gamers", "allgamersag":"All Gamers", "jdg":"JD Gaming", "jdgamingjdg":"JD Gaming", "oug":"OU Gaming", "ougamingoug":"OU Gaming", "sv":"Solus Victorem", "solusvictoremsv":"Solus Victorem", "hng":"HUNENG Gaming", "hunenggaminghng":"HUNENG Gaming", "bf":"Black Flag", "ssf":"SHENGSHI Esports"}
 CHINA_ALIASES.update({'sse':'SHENGSHI Esports','shengshiesports':'SHENGSHI Esports','hunenggaming':'HUNENG Gaming'})
@@ -58,6 +59,8 @@ def parse_info(wiki):
     return {}
 def canonical(name, region):
     # Region-specific aliases only. For international matches, use full names from the source.
+    if key(name) in {'ssgspacestationspacestationgaming','ssgspacestationgamingspacestationgaming'}:
+        return 'Spacestation Gaming'
     return COMPOSITE_LABELS.get(region,{}).get(key(name), p.canonical_team(region,name))
 
 def page_aliases(html, region):
@@ -164,12 +167,21 @@ def parse_page(title, html, wiki, rev):
     if ('{{match' in wiki.lower() or 'brkts-match-info-popup' in html) and not rows: warnings.append('Match templates present but no dated matches parsed')
     if title==event and not rosters: warnings.append('No validated event roster; check Participants source')
     finished=[m for m in rows.values() if m.get('finished')]
+    source_unresolved=0
+    for raw in p.extract_templates_by_name(wiki,'match'):
+        q=(p.parse_template(raw) or {}).get('params',{})
+        flag=p.clean_wiki_value(q.get('finished','')).lower()
+        a,sa=p.parse_opponent(q.get('opponent1',''),region); b,sb=p.parse_opponent(q.get('opponent2',''),region)
+        a=a or q.get('opponent1literal',''); b=b or q.get('opponent2literal','')
+        if flag in {'false','0','no'} or not a or not b or key(a) in {'tbd','tba','bye','unknown'} or key(b) in {'tbd','tba','bye','unknown'} or not p.parse_liquipedia_date(q.get('date',''),region):
+            source_unresolved+=1
+    audit={'unresolved_templates':source_unresolved,'undated':undated,'wiki_matches':len(raw_wiki),'html_matches':len(raw_html)}
     no_maps=sum(not m.get('maps') for m in finished)
     incomplete=sum(sum(x.get('winner') in (m['team_a'],m['team_b']) for x in m.get('maps',[])) != m['score_a']+m['score_b'] for m in finished)
     if incomplete: warnings.append(f'{incomplete}/{len(finished)} finished series have incomplete map detail (score comparison)')
     if no_maps: warnings.append(f'{no_maps}/{len(finished)} finished series have no detailed maps')
     if not rows and title!=event: warnings.append('No dated matches on phase page')
-    return {'title':title,'event_id':event,'region':region,'source':src,'revision':rev,'fetched_at':now(),'parser_rev':PARSER_REV,'info':info,'matches':list(rows.values()),'rosters':rosters,'team_hints':hints,'aliases':aliases,'warnings':list(dict.fromkeys(warnings))}
+    return {'title':title,'event_id':event,'region':region,'source':src,'revision':rev,'fetched_at':now(),'parser_rev':PARSER_REV,'info':info,'matches':list(rows.values()),'rosters':rosters,'team_hints':hints,'aliases':aliases,'audit':audit,'warnings':list(dict.fromkeys(warnings))}
 
 def diagnostic(title, html, wiki, row):
     # Only current response; no extra API calls. Uploaded as a private-run artifact, not committed.
@@ -279,6 +291,7 @@ def merge_archive(state, legacy=None):
         for r in row.get('rosters',[]):
             name=alias_name(r['team'],row['region'],event_aliases.get(eid,{})); rk=(eid,key(name),key(r['player']),r.get('role','')); rosters[rk]={**r,'team':name,'event_id':eid}
     for title in state['discovered']:
+        if absent_page(title,state): continue
         eid=event_for(title)
         if eid not in events: events[eid]={'id':eid,'name':eid.replace(PREFIX,''),'year':int(eid.split('/')[1]),'region':region_for(eid),'source':p.source_url(eid.replace(' ','_')),'fetched_at':'','start':'','end':'','pages':[],'warnings':['未取得']}
     mm=[v[1] for v in matches.values()]; rr=list(rosters.values()); by_m=defaultdict(list); by_r=defaultdict(list)
@@ -292,23 +305,132 @@ def merge_archive(state, legacy=None):
         e['warnings']=list(dict.fromkeys(e['warnings']))
     state['events']=sorted(events.values(),key=lambda e:e['id']); state['matches']=mm; state['rosters']=rr
 
+def dt_age(value, dt):
+    parsed=p.parse_iso_dt(value)
+    return dt-parsed if parsed else timedelta(days=10000)
+
+def date_only(value):
+    try: return datetime.strptime(str(value), '%Y-%m-%d').date()
+    except (ValueError,TypeError): return None
+
+def known_pages(state):
+    # Actual discovered pages plus seeds not yet checked. Don't invent child pages.
+    return sorted(set(state.get('discovered',{})) | set(state.get('pages',{})))
+
+def absent_page(t,state):
+    # A guessed seed not listed in a successful allpages scan may be absent. Re-discovery can reopen it.
+    return t in state.get('absent_pages',{}) and not state.get('discovered',{}).get(t) and t not in state.get('pages',{})
+
+def lifecycle(state,dt):
+    """Two independent axes: source calendar and collection quality. Never infer finish from a score alone."""
+    grouped=defaultdict(list)
+    for t in known_pages(state):
+        if not absent_page(t,state): grouped[event_for(t)].append(t)
+    result={}
+    for eid, titles in grouped.items():
+        root=state.get('pages',{}).get(eid,{})
+        start=date_only(root.get('info',{}).get('sdate')); end=date_only(root.get('info',{}).get('edate'))
+        today=(dt+timedelta(hours=9)).date()
+        # Allow a 7-day settling window after scheduled end (timezone/late updates).
+        final_day=end+timedelta(days=7) if end else None
+        status='date_unknown'
+        if end and today> end: status='ended'
+        elif start and today<start: status='upcoming'
+        elif start and today>=start: status='active'
+        elif end and today<=end: status='active_or_upcoming'
+        pages=state.get('pages',{}); fetched=[t for t in titles if pages.get(t,{}).get('fetched_at')]
+        pending=[t for t in titles if t not in fetched or pages[t].get('parser_rev')!=PARSER_REV]
+        # Rebuild from normalized/deduplicated archive, not duplicated raw HTML rows.
+        ms=[m for m in state.get('matches',[]) if m.get('event_id')==eid]
+        rs=[r for r in state.get('rosters',[]) if r.get('event_id')==eid and r.get('role') in {'Tank','DPS','Support','Flex'}]
+        unfinished=sum(not m.get('finished') for m in ms)
+        finished=[m for m in ms if m.get('finished')]
+        map_missing=0; ban_missing=0; map_total=0
+        for m in finished:
+            maps=m.get('maps',[]); a,b=m['team_a'],m['team_b']
+            if sum(x.get('winner')==a for x in maps)!=m.get('score_a') or sum(x.get('winner')==b for x in maps)!=m.get('score_b') or len({x.get('map_no',i) for i,x in enumerate(maps)})!=len(maps):
+                map_missing+=1
+            map_total+=len(maps); ban_missing+=sum(not x.get('ban_a') or not x.get('ban_b') for x in maps)
+        teams={key(m[x]) for m in ms for x in ('team_a','team_b')}
+        rteams={key(r['team']) for r in rs}
+        root_hints={key(alias_name(n,region_for(eid),state.get('team_aliases',{}).get(eid,{}))) for n in root.get('team_hints',[])}
+        roster_missing=len((teams|root_hints)-rteams)
+        team_count=str(root.get('info',{}).get('team_number',''))
+        if team_count.isdigit(): roster_missing=max(roster_missing,int(team_count)-len(rteams))
+        source_issues=sum(int(pages[t].get('audit',{}).get('unresolved_templates',0))+int(pages[t].get('audit',{}).get('undated',0)) for t in fetched)
+        source_issues+=sum(any('Match templates present but no dated' in w or 'Prior matches retained' in w or 'Roster retained from prior' in w or 'No dated matches on phase page' in w for w in pages[t].get('warnings',[])) for t in fetched)
+        # Only freeze pages successfully fetched after the settling window. Missing date or missing source coverage prevents freeze.
+        verify_pending=[t for t in fetched if final_day and (p.parse_iso_dt(pages[t].get('fetched_at')) is None or (p.parse_iso_dt(pages[t]['fetched_at'])+timedelta(hours=9)).date()<final_day)]
+        discovery_ok=bool(state.get('discovery_dates',{}).get(eid.split('/')[1]))
+        issues=[]
+        if pending: issues.append(f'未取得・要再解析 {len(pending)}ページ')
+        if not discovery_ok: issues.append('年度の大会探索未完了')
+        if not root: issues.append('大会概要未取得')
+        if not end: issues.append('終了日未確認')
+        if not finished: issues.append('終了試合未収録')
+        if unfinished: issues.append(f'結果未確定 {unfinished}試合')
+        if map_missing: issues.append(f'MAP詳細不足 {map_missing}試合')
+        if ban_missing: issues.append(f'BAN未記録 {ban_missing}MAP')
+        if roster_missing: issues.append(f'ロスター未収録 {roster_missing}チーム')
+        if source_issues: issues.append(f'解析要確認 {source_issues}件')
+        if verify_pending: issues.append(f'終了後の確認待ち {len(verify_pending)}ページ')
+        complete=(status=='ended' and today>=final_day and not issues)
+        collection='archived' if complete else 'unfetched' if not fetched else 'partial'
+        result[eid]={'calendar':status,'collection':collection,'total_pages':len(titles),'fetched_pages':len(fetched),'pending_pages':pending,'verify_pending':verify_pending,'issues':issues,'finished_series':len(finished),'map_missing_series':map_missing,'ban_missing_maps':ban_missing,'roster_missing_teams':roster_missing,'source_issues':source_issues,'end':str(end or ''),'start':str(start or '')}
+    return result
+
+def update_lifecycle(state,dt):
+    state['lifecycle']=lifecycle(state,dt)
+    for e in state.get('events',[]):
+        if e['id'] in state['lifecycle']: e['collection_status']=state['lifecycle'][e['id']]
+    queue=sorted(known_pages(state),key=lambda t:target_priority(t,state,dt),reverse=True)
+    state['next_queue']=[t for t in queue if target_priority(t,state,dt)[0]>=0][:12]
+
 def target_priority(t,state,dt):
-    row=state['pages'].get(t,{}); last=p.parse_iso_dt(row.get('fetched_at')); prev=p.parse_iso_dt(state['page_attempts'].get(t)); age=(dt-last).total_seconds()/86400 if last else 10000
-    if prev and dt-prev<timedelta(hours=20): return (-1,0,0,'')
-    rev=row.get('parser_rev')!=PARSER_REV
-    if t in SEEDS and (not last or rev) and not prev: tier=100
-    elif t in SEEDS and (not last or rev): tier=90
-    elif not last: tier=70 if not prev else 40
-    elif rev: tier=65
+    if absent_page(t,state): return (-1,0,0,'')
+    row=state.get('pages',{}).get(t,{})
+    last=row.get('fetched_at'); attempt=state.get('page_attempts',{}).get(t)
+    if dt_age(attempt,dt)<timedelta(hours=20): return (-1,0,0,'')
+    meta=state.get('lifecycle',{}).get(event_for(t),{})
+    ended=meta.get('calendar')=='ended'; active=meta.get('calendar') in {'active','active_or_upcoming','upcoming'}
+    if meta.get('collection')=='archived': return (-1,0,0,'')
+    dirty=state.get('revision_dirty',{}).get(t)
+    region=region_for(t); eid=event_for(t); stage3='2026/' in eid and '/Stage 3' in eid
+    urgent=(region in {'WORLD','ASIA'} and (t in SEEDS or active)) or (region=='EMEA' and stage3 and eid in REGIONAL_ROOTS)
+    if not last or row.get('parser_rev')!=PARSER_REV:
+        tier=112 if urgent and t in SEEDS else 110 if urgent else 95 if t in SEEDS else 70
+        if attempt and not last: tier-=40
+    elif dirty: tier=100 if active else 75
+    elif t in meta.get('verify_pending',[]): tier=85 if urgent else 60
+    elif ended:
+        # Historical incomplete data: light revision check first, and a slow fallback for transcluded updates.
+        if dt_age(last,dt)<timedelta(days=30): return (-1,0,0,'')
+        tier=35
     else:
-        end=row.get('info',{}).get('edate','') or state['pages'].get(event_for(t),{}).get('info',{}).get('edate',''); ended=bool(re.fullmatch(r'\d{4}-\d{2}-\d{2}',end) and end<(dt-timedelta(days=7)).date().isoformat())
-        if age < (30 if ended else 1): return (-1,0,0,'')
-        # Avoid the old fixed bonus for Asia/World that could starve other regions.
-        tier=80 if t in SEEDS[:2] and not ended else 30
-    region=region_for(t); order=REGION_ORDER.index(region) if region in REGION_ORDER else 99
-    # Within stage 3, fetch the two phase/overview pages of each overseas region together.
-    if tier>=90: return (tier,-order,int(t==event_for(t)),t)
-    year=int(t.split('/')[1]); return (tier,year,age,t)
+        start=date_only(meta.get('start')); distant=meta.get('calendar')=='upcoming' and start and (start-dt.date()).days>7
+        interval=timedelta(days=7 if distant else 1 if active else 3)
+        if dt_age(last,dt)<interval: return (-1,0,0,'')
+        tier=105 if active else 40
+    order=REGION_ORDER.index(region) if region in REGION_ORDER else 99
+    # Oldest attempts first within equal urgency, while newest Stage 3 is initially preferred.
+    return (tier, -order if tier>=95 else min(dt_age(attempt,dt).total_seconds(),1e9),int(t==eid),t)
+
+def revision_audit(client,state,dt):
+    # Only already collected historical incomplete pages; completed archives get no parse or revision checks.
+    due=[]
+    for t,row in state.get('pages',{}).items():
+        meta=state.get('lifecycle',{}).get(event_for(t),{})
+        if meta.get('calendar')!='ended' or meta.get('collection')=='archived' or row.get('parser_rev')!=PARSER_REV: continue
+        if dt_age(state.get('revision_checked',{}).get(t),dt)>=timedelta(days=7) and row.get('revision') is not None: due.append(t)
+    due.sort(key=lambda t:state.get('revision_checked',{}).get(t,''))
+    if not due: return
+    due=due[:40]; versions=client.query_revisions(due)
+    for t in due:
+        rev=versions.get(t)
+        if rev is None: continue
+        state.setdefault('revision_checked',{})[t]=now()
+        if str(rev)!=str(state['pages'][t].get('revision')): state.setdefault('revision_dirty',{})[t]=True
+    print('REVISION_AUDIT',len(due),'changed',sum(bool(state.get('revision_dirty',{}).get(t)) for t in due))
 
 def main():
     state=read(OUT) or {'schema_version':4,'pages':{},'discovered':{},'discovery_dates':{},'errors':[]}
@@ -318,26 +440,46 @@ def main():
         old_count=len(state.get('matches',[])); old_teams={m[k] for m in state.get('matches',[]) for k in ('team_a','team_b')}
         merge_archive(state,read(OLD))
         new_teams={m[k] for m in state['matches'] for k in ('team_a','team_b')}
-        state['name_repair_at']=now(); save(OUT,state)
+        state['name_repair_at']=now(); state['last_operation']='repair_only'; update_lifecycle(state,datetime.now(timezone.utc)); save(OUT,state)
         print('NAME_REPAIR_OK: no API calls; matches',old_count,'->',len(state['matches']),'teams',len(old_teams),'->',len(new_teams))
         print('RETIRED LABELS:',sorted(old_teams-new_teams))
         return
     # Store provenance and cooldown; don't hammer on failure.
-    state['errors']=[]; state['attempted_at']=now(); state.setdefault('page_attempts',{}); dt=datetime.now(timezone.utc)
+    state['errors']=[]; state['last_operation']='collect'; state['attempted_at']=now(); state.setdefault('page_attempts',{}); dt=datetime.now(timezone.utc)
     if state.get('collector_rev')!=PARSER_REV:
-        state['page_attempts']={}; state['collector_rev']=PARSER_REV
+        state['collector_rev']=PARSER_REV
     for seed in SEEDS: state['discovered'].setdefault(seed,None)
     prior=read(OLD); until=max([x for x in [state.get('rate_limit_until'),prior.get('rate_limit_until')] if x] or [''])
     if until and p.parse_iso_dt(until) and p.parse_iso_dt(until)>dt:
-        state['rate_limit_until']=until; state['errors']=['COOLDOWN_SKIP: '+until]; print(state['errors'][0]); merge_archive(state,prior); save(OUT,state); return
+        state['rate_limit_until']=until; state['errors']=['COOLDOWN_SKIP: '+until]; print(state['errors'][0]); state['run_stats']={'query_calls':0,'parse_calls':0,'attempted_pages':0}; merge_archive(state,prior); update_lifecycle(state,dt); save(OUT,state); return
     contact=os.environ.get('LIQUIPEDIA_CONTACT','').strip()
     if not contact: raise SystemExit('LIQUIPEDIA_CONTACT secret required')
     for seed in SEEDS: state['discovered'].setdefault(seed,None)
-    client=p.ApiClient(contact); budget=max(1,min(8,int(os.getenv('OWCS_PARSE_BUDGET','4')))); attempted=0
+    client=p.ApiClient(contact); budget=max(1,min(8,int(os.getenv('OWCS_PARSE_BUDGET','6')))); attempted=0
     try:
-        titles=list(state['discovered'])
+        # Discover before planning so new phase pages reopen a previously archived event.
+        years=list(range(2026,max(2026,dt.year)+2))
+        due=[y for y in years if dt_age(state['discovery_dates'].get(str(y)),dt)>=timedelta(days=30 if y<dt.year else 1)]
+        if due:
+            y=min(due,key=lambda y:state['discovery_dates'].get(str(y),''))
+            try:
+                found=discover(client,y); state['discovered'].update(found); state['discovery_dates'][str(y)]=now()
+                absent=state.setdefault('absent_pages',{})
+                for t in found: absent.pop(t,None)
+                for t in SEEDS:
+                    if t.split('/')[1]==str(y) and t not in found and t not in state['pages'] and not state['discovered'].get(t): absent[t]=now()
+                print('DISCOVERY',y,len(found))
+            except p.RateLimitError: raise
+            except Exception as e: state['errors'].append('Discovery '+str(y)+': '+str(e)[:300])
+        merge_archive(state,prior); update_lifecycle(state,dt)
+        try: revision_audit(client,state,dt)
+        except p.RateLimitError: raise
+        except Exception as e: state['errors'].append('Revision audit: '+str(e)[:300])
+        titles=known_pages(state)
         def priority(t): return target_priority(t,state,dt)
         targets=sorted(titles,key=priority,reverse=True)
+        eligible=[t for t in targets if priority(t)[0]>=0]
+        print('QUEUE',len(eligible),'budget',budget,'archived',sum(x['collection']=='archived' for x in state['lifecycle'].values()),'next',eligible[:budget])
         for t in targets:
             if attempted>=budget: break
             if priority(t)[0]<0: continue
@@ -351,7 +493,8 @@ def main():
                         mm={m['id']:m for m in old['matches'] if m.get('finished')}
                         for m in new['matches']:
                             prior_m=mm.get(m['id'])
-                            if prior_m and prior_m.get('finished') and not m.get('finished'): continue
+                            if prior_m and prior_m.get('finished') and not m.get('finished'):
+                                new['warnings'].append('Prior matches retained; verify removed/rescheduled entries'); continue
                             if prior_m and len(prior_m.get('maps',[]))>len(m.get('maps',[])) and (prior_m['score_a'],prior_m['score_b'])==((m['score_a'],m['score_b']) if prior_m['team_a']==m['team_a'] else (m['score_b'],m['score_a'])):
                                 m['maps']=copy.deepcopy(prior_m['maps'])
                                 if prior_m['team_a']!=m['team_a']:
@@ -363,23 +506,20 @@ def main():
                         new['matches']=list(mm.values())
                     if old.get('rosters') and not new['rosters']: new['rosters']=old['rosters']; new['warnings'].append('Roster retained from prior fetch; not verified current')
                 state['pages'][t]=new
+                state.setdefault('revision_dirty',{}).pop(t,None)
+                state.setdefault('revision_checked',{})[t]=now()
                 print('FETCH',t,len(new['matches']),len(new['rosters']),new['warnings'])
             except p.RateLimitError: raise
             except Exception as e: state['errors'].append(t+': '+str(e)[:300])
-        # At most one year discovery per run, rotate oldest discovery; next year proactively discover.
-        years=list(range(2026,max(2026,dt.year)+2)); due=sorted(years,key=lambda y:state['discovery_dates'].get(str(y),''))
-        y=due[0]; last=p.parse_iso_dt(state['discovery_dates'].get(str(y)))
-        if not last or dt-last>=timedelta(days=1):
-            try:
-                state['discovered'].update(discover(client,y)); state['discovery_dates'][str(y)]=now()
-            except p.RateLimitError: raise
-            except Exception as e: state['errors'].append('Discovery '+str(y)+': '+str(e)[:300])
-        for seed in SEEDS: state['discovered'].setdefault(seed,None)
         state.pop('rate_limit_until',None)
+        if attempted: state['rate_limit_streak']=0
     except p.RateLimitError as e:
-        state['rate_limit_until']=(datetime.now(timezone.utc)+timedelta(seconds=max(21600,e.retry_after or 0))).isoformat(); state['errors'].append(str(e))
+        streak=min(3,int(state.get('rate_limit_streak',0))+1); state['rate_limit_streak']=streak
+        seconds=max(21600*2**(streak-1),e.retry_after or 0)
+        state['rate_limit_until']=(datetime.now(timezone.utc)+timedelta(seconds=seconds)).isoformat(); state['errors'].append(str(e))
+        print('RATE_LIMITED: stop; until',state['rate_limit_until'],'streak',streak)
     except Exception as e: state['errors'].append('Discovery: '+str(e)[:500])
-    state['run_stats']={'query_calls':client.query_calls,'parse_calls':client.parse_calls,'attempted_pages':attempted}; merge_archive(state,prior); save(OUT,state); print(state['run_stats'],len(state['events']),len(state['matches']),state['errors'])
+    state['run_stats']={'query_calls':client.query_calls,'parse_calls':client.parse_calls,'attempted_pages':attempted}; merge_archive(state,prior); update_lifecycle(state,datetime.now(timezone.utc)); save(OUT,state); print(state['run_stats'],len(state['events']),len(state['matches']),state['errors'])
     for region in REGION_ORDER:
         es=[e for e in state['events'] if e['region']==region]; ms=[m for m in state['matches'] if m['event_id'] in {e['id'] for e in es}]; rs=[r for r in state['rosters'] if r['event_id'] in {e['id'] for e in es}]
         print('COVERAGE',region,'events',len(es),'fetched',sum(bool(e['fetched_at']) for e in es),'series',sum(bool(m.get('finished')) for m in ms),'maps',sum(len(m.get('maps',[])) for m in ms if m.get('finished')),'roster_rows',len(rs))

@@ -158,12 +158,20 @@ class ApiClient:
         if self.rate_limited:
             raise RateLimitError("Liquipedia request suppressed after earlier 429 in this run", self.retry_after)
 
-        attempts = 3
+        attempts = 1 if is_parse else 3
         for attempt in range(attempts):
             self._wait(is_parse=is_parse)
+            self.last_request_at = time.monotonic()
+            if is_parse:
+                self.last_parse_at = self.last_request_at
+                self.parse_calls += 1
+            else:
+                self.query_calls += 1
             try:
                 response = self.session.get(API_BASE, params=params, timeout=30)
             except requests.RequestException:
+                self.last_request_at = time.monotonic()
+                if is_parse: self.last_parse_at = self.last_request_at
                 if attempt + 1 >= attempts:
                     raise
                 time.sleep(5 if attempt == 0 else 15)
@@ -172,15 +180,12 @@ class ApiClient:
             self.last_request_at = time.monotonic()
             if is_parse:
                 self.last_parse_at = self.last_request_at
-                self.parse_calls += 1
-            else:
-                self.query_calls += 1
 
-            if response.status_code == 429:
+            if response.status_code == 429 or (response.status_code == 503 and response.headers.get('Retry-After')):
                 retry_after = self._retry_after_seconds(response)
                 self.rate_limited = True
                 self.retry_after = retry_after
-                raise RateLimitError("Liquipedia returned HTTP 429 Too Many Requests", retry_after)
+                raise RateLimitError(f"Liquipedia returned HTTP {response.status_code}: request paused", retry_after)
 
             if response.status_code in {500, 502, 503, 504} and attempt + 1 < attempts:
                 delay = self._retry_after_seconds(response)
@@ -678,7 +683,7 @@ def parse_matches_wikitext(wikitext: str, region: str, source: str) -> list[dict
         if score_b is None and maps:
             score_b = sum(1 for m in maps if m.get("winner") == team_b)
         finished_flag = clean_wiki_value(params.get("finished", "")).lower()
-        finished = finished_flag in {"true","1","yes"} or ((score_a or 0) > 0 or (score_b or 0) > 0)
+        finished = finished_flag not in {"false","0","no"} and (finished_flag in {"true","1","yes"} or ((score_a or 0) > 0 or (score_b or 0) > 0))
         iso = dt.isoformat(timespec="seconds") if dt else None
         key = "|".join([region, iso or "", team_a, team_b])
         if key in seen:
