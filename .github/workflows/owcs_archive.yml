@@ -1,6 +1,11 @@
 name: OWCS archive update
 on:
   workflow_dispatch:
+    inputs:
+      repair_only:
+        description: 'Repair duplicate team names from cache only (zero API calls)'
+        type: boolean
+        default: false
   schedule:
     - cron: '37 1 * * *'
 permissions:
@@ -24,7 +29,12 @@ jobs:
         env:
           LIQUIPEDIA_CONTACT: ${{ secrets.LIQUIPEDIA_CONTACT }}
           OWCS_PARSE_BUDGET: '4'
-        run: python collect_all.py
+        run: |
+          if [ "${{ inputs.repair_only }}" = "true" ]; then
+            python collect_all.py --repair-only
+          else
+            python collect_all.py
+          fi
       - name: Commit archive
         run: |
           git config user.name owcs-data-bot
